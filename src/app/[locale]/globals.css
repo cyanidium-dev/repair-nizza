@@ -13,3 +13,11 @@ body {
   color: #1a130d;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}

@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     screens: {
       xs: "360px",
@@ -15,8 +19,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        montserrat: ["var(--font-montserrat)", "sans-serif"],
-        arsenal: ["var(--font-arsenal)", "serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+        arsenal: ["Arsenal", "serif"],
       },
     },
   },
