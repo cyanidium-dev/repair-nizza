@@ -11,7 +11,7 @@ import LinkWithUsBtn from "./LinkWithUsBtn";
 const Header = () => {
   return (
     <Container>
-      <header className="flex items-center justify-between py-[22px]">
+      <header className="flex items-center justify-between py-[22px] lg:py-[25px]">
         <Logo />
         <DeskNavMenu />
         <LocaleSwitcher />
