@@ -5,7 +5,7 @@ import heroBlurImg from "../../../public/images/image/hero-blur-img.webp";
 
 const HeroBlurCard = () => {
   return (
-    <div className="rounded-t-[16px] rounded-b-0 p-7 w-[310px] h-[393px] backdrop-blur-[26px] shadow-[inset_0_4px_13px_0_rgba(255,255,255,0.25)] bg-[rgba(18,18,18,0.26)]">
+    <div className="rounded-t-[16px] rounded-b-0 p-7 w-[310px] h-[393px] backdrop-blur-[16px] shadow-[inset_0_4px_13px_0_rgba(255,255,255,0.25)] bg-[rgba(18,18,18,0.26)]">
       <Image
         src={heroBlurImg}
         alt="hero card image"
