@@ -1,5 +1,6 @@
+/* eslint-disable @next/next/no-page-custom-font */
 import "./globals.css";
-import { Montserrat, Arsenal } from "next/font/google";
+import { Montserrat, Raleway } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -10,10 +11,10 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
-const arsenal = Arsenal({
-  subsets: ["cyrillic"],
-  weight: ["400"],
-  variable: "--font-arsenal",
+const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-raleway",
 });
 
 export const metadata = {
@@ -32,8 +33,14 @@ export default async function LocaleLayout({ children, params: { locale } }) {
   return (
     <html
       lang={locale}
-      className={`${montserrat.variable} ${arsenal.variable}`}
+      className={`${montserrat.variable} ${raleway.variable}`}
     >
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Arsenal+SC&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="font-montserrat bg-primary-white text-primary-black">
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}

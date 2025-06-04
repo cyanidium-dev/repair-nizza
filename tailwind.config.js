@@ -20,7 +20,8 @@ module.exports = {
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
-        arsenal: ["Arsenal", "serif"],
+        arsenal: ["Arsenal SC", "sans-serif"],
+        raleway: ["Raleway", "sans-serif"],
       },
     },
   },

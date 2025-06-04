@@ -2,5 +2,10 @@
   "portfolio": "Portfolio",
   "request": "Make Request",
   "contacts": "Contacts",
-  "linkWithUs": "Contact us"
+  "linkWithUs": "Contact us",
+  "hero": {
+    "title": "Turnkey Designer Renovation",
+    "subtitle": "Creating spaces you want to live in",
+    "button": "Get Consultation"
+  }
 }

@@ -21,3 +21,7 @@ a {
 li {
   list-style: none;
 }
+
+.font-arsenal {
+  font-family: "Arsenal SC", sans-serif;
+}

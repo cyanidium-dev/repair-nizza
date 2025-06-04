@@ -2,5 +2,10 @@
   "portfolio": "Portfolio",
   "request": "Faire une Demande",
   "contacts": "Contacts",
-  "linkWithUs": "Contactez-nous"
+  "linkWithUs": "Contactez-nous",
+  "hero": {
+    "title": "Rénovation Design Clé en Main",
+    "subtitle": "Créer des espaces où il fait bon vivre",
+    "button": "Obtenir une Consultation"
+  }
 }
