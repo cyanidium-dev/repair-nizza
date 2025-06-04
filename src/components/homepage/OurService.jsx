@@ -41,9 +41,9 @@ const OurService = () => {
 
   return (
     <Container>
-      <div className="pt-[94px] mb-[215px] w-[310px] relative">
+      <div className="pt-[94px] mb-[215px] w-[310px] md:w-[715px] relative md:mb-[150px]">
         <div className="relative mb-16">
-          <h2 className="font-arsenal font-normal text-[22px] text-primary-black uppercase w-[299px] mb-[31px]">
+          <h2 className="font-arsenal font-normal text-[22px] text-primary-black uppercase w-[299px] mb-[31px] md:text-3xl md:w-[450px] md:text-center">
             {t("title")}
           </h2>
           <Image
@@ -56,130 +56,134 @@ const OurService = () => {
           <Image
             src={motifMob}
             alt="motif image"
-            className="absolute top-[55px] right-[-10px] -z-20"
+            className="absolute top-[55px] right-[-10px] -z-20 md:top-[75px] md:right-0"
           />
           <Image
             src={bgShadow}
             alt="motif image"
-            className="absolute top-[90px] right-[-10px] -z-10"
+            className="absolute top-[90px] right-[-10px] -z-10 md:right-0"
           />
-          <p className="font-montserrat font-light text-sm text-primary-black text-right w-[290px] ml-auto">
+          <p className="font-montserrat font-light text-sm text-primary-black text-right w-[290px] ml-auto md:text-base md:w-[450px] md:text-center">
             {t("description")}
           </p>
         </div>
-        <div className="mb-9">
-          <Image
-            src={sericeImg1Mob1}
-            alt="service image"
-            className="mb-10 rounded-lg"
-          />
-          <div className="mb-7">
-            <div
-              className="flex justify-between items-center mb-[22px] w-[310px] cursor-pointer"
-              onClick={() => toggleCard("cosmetic")}
-            >
-              <h3 className="font-arsenal font-normal text-xl text-primary-black uppercase">
-                {t("cards.cosmetic.title")}
-              </h3>
-              <Image
-                src={openCards.cosmetic ? minus : plus}
-                alt={openCards.cosmetic ? "icon minus" : "icon plus"}
-                className="transition-transform duration-300"
-                style={{
-                  transform: openCards.cosmetic
-                    ? "rotate(180deg)"
-                    : "rotate(0)",
-                }}
-              />
-            </div>
-            <div
-              className="overflow-hidden transition-all duration-300 ease-in-out"
-              style={{
-                maxHeight: openCards.cosmetic ? "200px" : "0",
-                opacity: openCards.cosmetic ? 1 : 0,
-              }}
-            >
-              <p className="font-montserrat font-light text-xs text-primary-black">
-                {t("cards.cosmetic.description")}
-              </p>
-            </div>
-          </div>
-          <div className="mb-7">
-            <div
-              className="flex justify-between items-center mb-[22px] w-[310px] cursor-pointer"
-              onClick={() => toggleCard("capital")}
-            >
-              <h3 className="font-arsenal font-normal text-xl text-primary-black uppercase">
-                {t("cards.capital.title")}
-              </h3>
-              <Image
-                src={openCards.capital ? minus : plus}
-                alt={openCards.capital ? "icon minus" : "icon plus"}
-                className="transition-transform duration-300"
-                style={{
-                  transform: openCards.capital ? "rotate(180deg)" : "rotate(0)",
-                }}
-              />
-            </div>
-            <div
-              className="overflow-hidden transition-all duration-300 ease-in-out"
-              style={{
-                maxHeight: openCards.capital ? "200px" : "0",
-                opacity: openCards.capital ? 1 : 0,
-              }}
-            >
-              <p className="font-montserrat font-light text-xs text-primary-black">
-                {t("cards.capital.description")}
-              </p>
-            </div>
-          </div>
+        <div className="md:flex md:justify-between">
           <div>
-            <div
-              className="flex justify-between items-center mb-[22px] w-[310px] cursor-pointer"
-              onClick={() => toggleCard("fullSupport")}
-            >
-              <h3 className="font-arsenal font-normal text-xl text-primary-black uppercase">
-                {t("cards.fullSupport.title")}
-              </h3>
-              <Image
-                src={openCards.fullSupport ? minus : plus}
-                alt={openCards.fullSupport ? "icon minus" : "icon plus"}
-                className="transition-transform duration-300"
+            <Image
+              src={sericeImg1Mob1}
+              alt="service image"
+              className="mb-10 rounded-lg"
+            />
+            <div className="mb-7">
+              <div
+                className="flex justify-between items-center mb-[22px] w-[310px] cursor-pointer"
+                onClick={() => toggleCard("cosmetic")}
+              >
+                <h3 className="font-arsenal font-normal text-xl text-primary-black uppercase">
+                  {t("cards.cosmetic.title")}
+                </h3>
+                <Image
+                  src={openCards.cosmetic ? minus : plus}
+                  alt={openCards.cosmetic ? "icon minus" : "icon plus"}
+                  className="transition-transform duration-300"
+                  style={{
+                    transform: openCards.cosmetic
+                      ? "rotate(180deg)"
+                      : "rotate(0)",
+                  }}
+                />
+              </div>
+              <div
+                className="overflow-hidden transition-all duration-300 ease-in-out"
                 style={{
-                  transform: openCards.fullSupport
-                    ? "rotate(180deg)"
-                    : "rotate(0)",
+                  maxHeight: openCards.cosmetic ? "200px" : "0",
+                  opacity: openCards.cosmetic ? 1 : 0,
                 }}
-              />
+              >
+                <p className="font-montserrat font-light text-xs text-primary-black md:w-[300px]">
+                  {t("cards.cosmetic.description")}
+                </p>
+              </div>
             </div>
-            <div
-              className="overflow-hidden transition-all duration-300 ease-in-out"
-              style={{
-                maxHeight: openCards.fullSupport ? "200px" : "0",
-                opacity: openCards.fullSupport ? 1 : 0,
-              }}
-            >
-              <p className="font-montserrat font-light text-xs text-primary-black">
-                {t("cards.fullSupport.description")}
-              </p>
+            <div className="mb-7">
+              <div
+                className="flex justify-between items-center mb-[22px] w-[310px] cursor-pointer"
+                onClick={() => toggleCard("capital")}
+              >
+                <h3 className="font-arsenal font-normal text-xl text-primary-black uppercase">
+                  {t("cards.capital.title")}
+                </h3>
+                <Image
+                  src={openCards.capital ? minus : plus}
+                  alt={openCards.capital ? "icon minus" : "icon plus"}
+                  className="transition-transform duration-300"
+                  style={{
+                    transform: openCards.capital
+                      ? "rotate(180deg)"
+                      : "rotate(0)",
+                  }}
+                />
+              </div>
+              <div
+                className="overflow-hidden transition-all duration-300 ease-in-out"
+                style={{
+                  maxHeight: openCards.capital ? "200px" : "0",
+                  opacity: openCards.capital ? 1 : 0,
+                }}
+              >
+                <p className="font-montserrat font-light text-xs text-primary-black md:w-[300px]">
+                  {t("cards.capital.description")}
+                </p>
+              </div>
+            </div>
+            <div>
+              <div
+                className="flex justify-between items-center mb-[22px] w-[310px] cursor-pointer"
+                onClick={() => toggleCard("fullSupport")}
+              >
+                <h3 className="font-arsenal font-normal text-xl text-primary-black uppercase">
+                  {t("cards.fullSupport.title")}
+                </h3>
+                <Image
+                  src={openCards.fullSupport ? minus : plus}
+                  alt={openCards.fullSupport ? "icon minus" : "icon plus"}
+                  className="transition-transform duration-300"
+                  style={{
+                    transform: openCards.fullSupport
+                      ? "rotate(180deg)"
+                      : "rotate(0)",
+                  }}
+                />
+              </div>
+              <div
+                className="overflow-hidden transition-all duration-300 ease-in-out"
+                style={{
+                  maxHeight: openCards.fullSupport ? "200px" : "0",
+                  opacity: openCards.fullSupport ? 1 : 0,
+                }}
+              >
+                <p className="font-montserrat font-light text-xs text-primary-black md:w-[300px]">
+                  {t("cards.fullSupport.description")}
+                </p>
+              </div>
             </div>
           </div>
+          <Image
+            src={sericeImg2Mob2}
+            alt="second service image"
+            className="rounded-lg mt-9 md:mt-0 md:shrink-0 md:h-[295px]"
+          />
+          <Image
+            src={motifMob2}
+            alt="motif image"
+            className="absolute bottom-[-175px] right-0 -z-20 md:bottom-[-110px]"
+          />
+          <Image
+            src={bgShadow2}
+            alt="motif image"
+            className="absolute bottom-[-185px] right-0 -z-10 md:bottom-[-115px]"
+          />
         </div>
-        <Image
-          src={sericeImg2Mob2}
-          alt="second service image"
-          className="rounded-lg"
-        />
-        <Image
-          src={motifMob2}
-          alt="motif image"
-          className="absolute bottom-[-175px] right-0 -z-20"
-        />
-        <Image
-          src={bgShadow2}
-          alt="motif image"
-          className="absolute bottom-[-185px] right-0 -z-10"
-        />
       </div>
       <div className="pb-[94px]">
         <h2 className="font-arsenal font-normal text-[32px] text-primary-black uppercase mb-6 leading-[39px]">
@@ -188,7 +192,7 @@ const OurService = () => {
         <p className="font-montserrat font-light text-sm text-primary-black mb-12">
           {t("uniqueness.description")}
         </p>
-        <ul className="flex gap-8">
+        <ul className="flex gap-8 md:justify-center">
           <li className="flex flex-col">
             <p className="font-arsenal font-normal text-[40px] text-primary-black leading-[72px]">
               {t("uniqueness.stats.satisfied.value")}
