@@ -7,5 +7,41 @@
     "title": "Rénovation Design Clé en Main",
     "subtitle": "Créer des espaces où il fait bon vivre",
     "button": "Obtenir une Consultation"
+  },
+  "ourService": {
+    "title": "Nous proposons une gamme complète de services de rénovation résidentielle",
+    "description": "Nous travaillons soigneusement, professionnellement et dans les délais. Nous effectuons aussi bien des mises à jour cosmétiques que des rénovations complètes à partir de zéro",
+    "cards": {
+      "cosmetic": {
+        "title": "Rénovation Cosmétique",
+        "description": "Peinture des murs et plafonds, remplacement des revêtements de sol, pose de papier peint, mise à jour de l'intérieur sans réaménagement"
+      },
+      "capital": {
+        "title": "Rénovation Complète",
+        "description": "Rénovation totale incluant les changements structurels, nouvelle plomberie, systèmes électriques et réaménagement complet de l'intérieur"
+      },
+      "fullSupport": {
+        "title": "Accompagnement Complet",
+        "description": "Gestion de projet complète de la conception à la réalisation, incluant la sélection des matériaux et la coordination des entrepreneurs"
+      }
+    },
+    "uniqueness": {
+      "title": "Notre Unicité:",
+      "description": "Nous utilisons: le béton CRM - un matériau spécialisé utilisé dans la construction pour minimiser l'apparition et la propagation des fissures sur les surfaces en béton",
+      "stats": {
+        "satisfied": {
+          "value": "90%",
+          "label": "Projets Satisfaits"
+        },
+        "completed": {
+          "value": "200+",
+          "label": "Projets Réalisés"
+        },
+        "experience": {
+          "value": "10+",
+          "label": "Ans d'Expérience"
+        }
+      }
+    }
   }
 }

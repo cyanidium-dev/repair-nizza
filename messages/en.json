@@ -7,5 +7,41 @@
     "title": "Turnkey Designer Renovation",
     "subtitle": "Creating spaces you want to live in",
     "button": "Get Consultation"
+  },
+  "ourService": {
+    "title": "We provide a full range of residential repair services",
+    "description": "We work carefully, professionally and on time. We perform both cosmetic updates and complete renovation from scratch",
+    "cards": {
+      "cosmetic": {
+        "title": "Cosmetic Renovation",
+        "description": "Painting walls and ceilings, replacing flooring, wallpapering, interior updates without replanning"
+      },
+      "capital": {
+        "title": "Capital Renovation",
+        "description": "Complete renovation including structural changes, new plumbing, electrical systems, and full interior redesign"
+      },
+      "fullSupport": {
+        "title": "Full Support",
+        "description": "Comprehensive project management from design to completion, including material selection and contractor coordination"
+      }
+    },
+    "uniqueness": {
+      "title": "Our Uniqueness:",
+      "description": "We use: CRM concrete - a specialized material used in construction and building works to minimize the occurrence and spread of cracks on concrete surfaces",
+      "stats": {
+        "satisfied": {
+          "value": "90%",
+          "label": "Satisfied Projects"
+        },
+        "completed": {
+          "value": "200+",
+          "label": "Completed Projects"
+        },
+        "experience": {
+          "value": "10+",
+          "label": "Years of Experience"
+        }
+      }
+    }
   }
 }
