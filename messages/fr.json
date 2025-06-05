@@ -59,5 +59,20 @@
     "description": "Contactez-nous - nous vous conseillerons, calculerons le devis et suggérerons la meilleure solution pour vous.",
     "additionalInfo": "Nous vous aiderons à transformer votre maison en un espace confortable, moderne et fonctionnel - sans stress et avec une garantie de qualité.",
     "button": "Obtenir une consultation"
+  },
+  "aboutUs": {
+    "title": "À Propos",
+    "description": "Notre entreprise est spécialisée dans la rénovation de biens résidentiels à Nice et dans d'autres villes de la Côte d'Azur. Nous sommes spécialisés dans les rénovations clé en main : de la réorganisation aux finitions",
+    "button": "Voir le Portfolio",
+    "whyChooseUs": {
+      "title": "Pourquoi Nous Choisir",
+      "advantages": {
+        "fullService": "Gamme complète de services",
+        "transparentEstimate": "Devis transparent",
+        "warranty": "Garantie sur tous les travaux",
+        "control": "Contrôle à toutes les étapes",
+        "experience": "Plus de 10 ans d'expérience"
+      }
+    }
   }
 }

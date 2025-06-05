@@ -59,5 +59,20 @@
     "description": "Contact us - we will consult, calculate the estimate and suggest the best solution for you.",
     "additionalInfo": "We will help transform your home into a cozy, modern and functional space - without stress and with quality guarantee.",
     "button": "Get consultation"
+  },
+  "aboutUs": {
+    "title": "About Us",
+    "description": "Our company specializes in residential property renovation in Nice and other cities of the French Riviera. We specialize in turnkey renovations: from replanning to finishing works",
+    "button": "View Portfolio",
+    "whyChooseUs": {
+      "title": "Why Choose Us",
+      "advantages": {
+        "fullService": "Full range of services",
+        "transparentEstimate": "Transparent estimate",
+        "warranty": "Warranty on all works",
+        "control": "Control at all stages",
+        "experience": "Over 10 years of experience"
+      }
+    }
   }
 }

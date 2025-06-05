@@ -37,7 +37,7 @@ const MobNavMenu = ({ isOpen, setIsOpen }) => {
         <p className="font-montserrat font-light text-xs md:text-sm text-primary-black leading-5 text-center mb-8 mx-auto">
           {t("mobileMenu.leaveContacts")}
         </p>
-        <button className="w-[241px] h-10 bg-transparent border border-primary-black text-primary-black font-montserrat font-light text-sm mx-auto rounded-[20px] mb-20">
+        <button className="w-[241px] h-10 bg-transparent border border-primary-black text-primary-black font-montserrat font-light text-sm mx-auto rounded-[20px] mb-20 hover:bg-primary-black hover:text-primary-white transition-all duration-300">
           {t("mobileMenu.contactButton")}
         </button>
         <nav>

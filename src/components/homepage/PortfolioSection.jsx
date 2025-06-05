@@ -42,7 +42,7 @@ const PortfolioSection = () => {
           <p className="font-montserrat font-light text-sm text-primary-white text-center w-[242px] mx-auto mb-11 md:w-[330px] md:mb-0 md:text-right lg:text-left md:order-3 lg:mx-0 lg:text-xl">
             {t("portfolioSection.description")}
           </p>
-          <button className="w-[310px] h-[52px] rounded-[32px] bg-primary-white text-primary-black font-montserrat font-normal text-sm mx-auto leading-5 block md:mb-0 md:order-2 lg:w-[258px] hover:bg-primary-black hover:text-primary-white transition-all duration-300">
+          <button className="w-[310px] h-[52px] rounded-[32px] bg-primary-white text-primary-black font-montserrat font-normal text-sm mx-auto leading-5 block md:mb-0 md:order-2 lg:w-[258px] hover:bg-transparent hover:text-primary-white hover:border-primary-white border transition-all duration-300">
             {t("portfolioSection.button")}
           </button>
         </div>

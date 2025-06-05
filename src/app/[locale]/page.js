@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import AboutUs from "@/components/homepage/AboutUs";
 import DreamRepair from "@/components/homepage/DreamRepair";
 import Hero from "@/components/homepage/Hero";
 import OurService from "@/components/homepage/OurService";
@@ -11,6 +12,7 @@ export default function Home() {
       <OurService />
       <PortfolioSection />
       <DreamRepair />
+      <AboutUs />
     </div>
   );
 }
