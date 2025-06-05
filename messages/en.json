@@ -8,6 +8,11 @@
     "subtitle": "Creating spaces you want to live in",
     "button": "Get Consultation"
   },
+  "mobileMenu": {
+    "discussProject": "Let's discuss your project",
+    "leaveContacts": "Leave your contacts and we will get in touch with you soon",
+    "contactButton": "Leave contacts"
+  },
   "ourService": {
     "title": "We provide a full range of residential repair services",
     "description": "We work carefully, professionally and on time. We perform both cosmetic updates and complete renovation from scratch",

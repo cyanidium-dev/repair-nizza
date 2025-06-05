@@ -8,6 +8,11 @@
     "subtitle": "Créer des espaces où il fait bon vivre",
     "button": "Obtenir une Consultation"
   },
+  "mobileMenu": {
+    "discussProject": "Discutons de votre projet",
+    "leaveContacts": "Laissez vos coordonnées et nous vous contacterons bientôt",
+    "contactButton": "Laisser les contacts"
+  },
   "ourService": {
     "title": "Nous proposons une gamme complète de services de rénovation résidentielle",
     "description": "Nous travaillons soigneusement, professionnellement et dans les délais. Nous effectuons aussi bien des mises à jour cosmétiques que des rénovations complètes à partir de zéro",
