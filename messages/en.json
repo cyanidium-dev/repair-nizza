@@ -8,6 +8,11 @@
     "subtitle": "Creating spaces you want to live in",
     "button": "Get Consultation"
   },
+  "portfolioSection": {
+    "title": "Our Portfolio",
+    "description": "We take pride in every project we undertake, from cosmetic repairs to full turnkey renovation",
+    "button": "View More"
+  },
   "mobileMenu": {
     "discussProject": "Let's discuss your project",
     "leaveContacts": "Leave your contacts and we will get in touch with you soon",
