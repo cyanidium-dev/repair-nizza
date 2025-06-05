@@ -53,5 +53,11 @@
         }
       }
     }
+  },
+  "dreamRepair": {
+    "title": "Prêt pour la rénovation de vos rêves ?",
+    "description": "Contactez-nous - nous vous conseillerons, calculerons le devis et suggérerons la meilleure solution pour vous.",
+    "additionalInfo": "Nous vous aiderons à transformer votre maison en un espace confortable, moderne et fonctionnel - sans stress et avec une garantie de qualité.",
+    "button": "Obtenir une consultation"
   }
 }

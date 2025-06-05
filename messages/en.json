@@ -53,5 +53,11 @@
         }
       }
     }
+  },
+  "dreamRepair": {
+    "title": "Ready for your dream renovation?",
+    "description": "Contact us - we will consult, calculate the estimate and suggest the best solution for you.",
+    "additionalInfo": "We will help transform your home into a cozy, modern and functional space - without stress and with quality guarantee.",
+    "button": "Get consultation"
   }
 }
