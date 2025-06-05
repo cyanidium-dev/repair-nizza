@@ -6,7 +6,7 @@ import heroBlurImgDesk from "../../../public/images/image/hero-blur-img-desk.web
 
 const HeroBlurCard = () => {
   return (
-    <div className="lg:absolute lg:bottom-0 lg:left-[40px] rounded-t-[16px] rounded-b-0 p-7 w-[310px] lg:w-[359px] h-[393px] backdrop-blur-[16px] shadow-[inset_0_4px_13px_0_rgba(255,255,255,0.25)] bg-[rgba(18,18,18,0.26)]">
+    <div className="absolute top-8 md:top-[56px] md:left-0 lg:top-[-45px] lg:left-0 rounded-t-[16px] rounded-b-0 p-7 w-[310px] lg:w-[359px] h-[393px] backdrop-blur-[16px] shadow-[inset_0_4px_13px_0_rgba(255,255,255,0.25)] bg-[rgba(18,18,18,0.26)]">
       <Image
         src={heroBlurImgMob}
         alt="hero card image"
