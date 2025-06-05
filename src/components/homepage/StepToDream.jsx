@@ -17,10 +17,10 @@ const StepToDream = () => {
           alt="path of three"
           className="absolute top-0 right-0 -z-10"
         />
-        <h2 className="font-arsenal font-normal text-[32px] text-primary-black uppercase mb-[147px] w-[286px] leading-tight">
+        <h2 className="font-arsenal font-normal text-[32px] text-primary-black uppercase mb-[147px] w-[286px] leading-tight md:text-center md:mx-auto">
           {t("title")}
         </h2>
-        <p className="font-montserrat font-light text-base text-primary-black mb-[264px] w-[290px]">
+        <p className="font-montserrat font-light text-base text-primary-black mb-[264px] w-[290px] md:text-center md:mx-auto">
           {t("description")}
         </p>
         <Image
@@ -28,7 +28,7 @@ const StepToDream = () => {
           alt="path of three"
           className="absolute bottom-[130px] left-0 -z-10"
         />
-        <button className="font-montserrat font-normal text-sm text-primary-white bg-primary-black rounded-[32px] w-[310px] h-[52px] mx-auto hover:bg-transparent hover:text-primary-black hover:border-primary-black border transition-all duration-300">
+        <button className="font-montserrat font-normal text-sm text-primary-white bg-primary-black rounded-[32px] w-[310px] h-[52px] flex justify-center items-center mx-auto hover:bg-transparent hover:text-primary-black hover:border-primary-black border transition-all duration-300">
           {t("button")}
         </button>
       </div>
