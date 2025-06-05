@@ -4,6 +4,7 @@ import DreamRepair from "@/components/homepage/DreamRepair";
 import Hero from "@/components/homepage/Hero";
 import OurService from "@/components/homepage/OurService";
 import PortfolioSection from "@/components/homepage/PortfolioSection";
+import StepToDream from "@/components/homepage/StepToDream";
 export default function Home() {
   return (
     <div>
@@ -13,6 +14,7 @@ export default function Home() {
       <PortfolioSection />
       <DreamRepair />
       <AboutUs />
+      <StepToDream />
     </div>
   );
 }

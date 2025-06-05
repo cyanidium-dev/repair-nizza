@@ -74,5 +74,10 @@
         "experience": "Over 10 years of experience"
       }
     }
+  },
+  "stepToDream": {
+    "title": "Take a Step Towards Your Dream Renovation",
+    "description": "Leave a request — and we will contact you for a free consultation. We will help assess the scope of work, offer solutions within your budget, and suggest optimal materials.",
+    "button": "Get Consultation"
   }
 }

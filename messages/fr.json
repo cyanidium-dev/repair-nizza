@@ -74,5 +74,10 @@
         "experience": "Plus de 10 ans d'expérience"
       }
     }
+  },
+  "stepToDream": {
+    "title": "Faites un Pas vers votre Rénovation de Rêve",
+    "description": "Laissez une demande — et nous vous contacterons pour une consultation gratuite. Nous vous aiderons à évaluer l'étendue des travaux, proposerons des solutions adaptées à votre budget et suggérerons les matériaux optimaux.",
+    "button": "Obtenir une Consultation"
   }
 }
