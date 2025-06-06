@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <footer className="bg-primary-black">
       <Container>
-        <div className="pt-20 pb-[30px]">
+        <div className="pt-20 pb-[30px] md:flex md:flex-wrap md:gap-7">
           <div className="flex flex-col gap-3 mb-10">
             <Link
               href="/"
@@ -29,8 +29,8 @@ const Footer = () => {
             </p>
           </div>
           <nav>
-            <ul className="flex flex-col gap-4 mb-8">
-              <li>
+            <ul className="flex flex-col gap-4 mb-8 md:items-center">
+              <li className="hover:scale-105 transition-all duration-300">
                 <Link
                   href="/"
                   className="font-montserrat font-normal text-sm text-primary-white uppercase"
@@ -38,7 +38,7 @@ const Footer = () => {
                   {t("navigation.main")}
                 </Link>
               </li>
-              <li>
+              <li className="hover:scale-105 transition-all duration-300">
                 <Link
                   href="/"
                   className="font-montserrat font-normal text-sm text-primary-white uppercase"
@@ -46,7 +46,7 @@ const Footer = () => {
                   {t("navigation.request")}
                 </Link>
               </li>
-              <li>
+              <li className="hover:scale-105 transition-all duration-300">
                 <Link
                   href="/"
                   className="font-montserrat font-normal text-sm text-primary-white uppercase"
@@ -54,7 +54,7 @@ const Footer = () => {
                   {t("navigation.portfolio")}
                 </Link>
               </li>
-              <li>
+              <li className="hover:scale-105 transition-all duration-300">
                 <Link
                   href="/"
                   className="font-montserrat font-normal text-sm text-primary-white uppercase"
@@ -63,8 +63,8 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-            <ul className="flex flex-col gap-4 mb-16">
-              <li>
+            <ul className="flex flex-col gap-4 mb-16 md:items-center">
+              <li className="hover:scale-105 transition-all duration-300">
                 <Link
                   href="/"
                   className="font-montserrat font-normal text-sm text-primary-white uppercase"
@@ -72,7 +72,7 @@ const Footer = () => {
                   {t("legal.data")}
                 </Link>
               </li>
-              <li>
+              <li className="hover:scale-105 transition-all duration-300">
                 <Link
                   href="/"
                   className="font-montserrat font-normal text-sm text-primary-white uppercase"
@@ -80,7 +80,7 @@ const Footer = () => {
                   {t("legal.contract")}
                 </Link>
               </li>
-              <li>
+              <li className="hover:scale-105 transition-all duration-300">
                 <Link
                   href="/"
                   className="font-montserrat font-normal text-sm text-primary-white uppercase"
@@ -88,7 +88,7 @@ const Footer = () => {
                   {t("legal.offer")}
                 </Link>
               </li>
-              <li>
+              <li className="hover:scale-105 transition-all duration-300">
                 <Link
                   href="/"
                   className="font-montserrat font-normal text-sm text-primary-white uppercase"
@@ -100,13 +100,13 @@ const Footer = () => {
           </nav>
           <address className="flex flex-col gap-3 mb-6">
             <a
-              className="font-montserrat font-normal text-xs not-italic text-primary-white uppercase leading-[18px]"
+              className="font-montserrat font-normal text-xs not-italic text-primary-white uppercase leading-[18px] hover:scale-105 transition-all duration-300"
               href="tel:+380970067656"
             >
               +380-97-006-76-56
             </a>
             <a
-              className="font-montserrat font-normal text-xs not-italic text-primary-white uppercase leading-[18px]"
+              className="font-montserrat font-normal text-xs not-italic text-primary-white uppercase leading-[18px] hover:scale-105 transition-all duration-300"
               href="mailto:email@gmail.com"
             >
               email@gmail.com
@@ -115,24 +115,42 @@ const Footer = () => {
           <ul className="flex gap-5 mb-[94px]">
             <li>
               <Link href="/">
-                <Image src={instagram} alt="instagram" width={24} height={24} />
+                <Image
+                  src={instagram}
+                  alt="instagram"
+                  width={24}
+                  height={24}
+                  className="hover:scale-105 transition-all duration-300"
+                />
               </Link>
             </li>
             <li>
               <Link href="/">
-                <Image src={telegram} alt="telegram" width={24} height={24} />
+                <Image
+                  src={telegram}
+                  alt="telegram"
+                  width={24}
+                  height={24}
+                  className="hover:scale-105 transition-all duration-300"
+                />
               </Link>
             </li>
             <li>
               <Link href="/">
-                <Image src={tikTok} alt="tik tok" width={24} height={24} />
+                <Image
+                  src={tikTok}
+                  alt="tik tok"
+                  width={24}
+                  height={24}
+                  className="hover:scale-105 transition-all duration-300"
+                />
               </Link>
             </li>
           </ul>
-          <p className="font-montserrat font-normal text-base not-italic text-primary-white uppercase leading-[29px] mb-6">
+          <p className="font-montserrat font-normal text-base not-italic text-primary-white uppercase leading-[29px] mb-6 md:mb-0 md:mt-auto">
             &copy; 2025 Solide renovation
           </p>
-          <div>
+          <div className="md:ml-auto">
             <p className="font-raleway font-normal text-[6px] text-primary-white leading-6 uppercase tracking-[0.08em]">
               {t("createdBy")}
             </p>
