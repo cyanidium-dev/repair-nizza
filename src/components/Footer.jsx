@@ -17,68 +17,129 @@ const Footer = () => {
     <footer className="bg-primary-black">
       <Container>
         <div className="pt-20 pb-[30px]">
-          <div>
-            <Link href="/" className="font-arsenal font-normal">
+          <div className="flex flex-col gap-3 mb-10">
+            <Link
+              href="/"
+              className="font-arsenal font-normal text-xl text-primary-white leading-[22px] uppercase hover:scale-105 transition-all duration-300"
+            >
               Solide renovation
             </Link>
-            <p>{t("slogan")}</p>
+            <p className="font-montserrat font-light text-xs text-primary-white w-[195px]">
+              {t("slogan")}
+            </p>
           </div>
           <nav>
-            <ul>
+            <ul className="flex flex-col gap-4 mb-8">
               <li>
-                <Link href="/">{t("navigation.main")}</Link>
+                <Link
+                  href="/"
+                  className="font-montserrat font-normal text-sm text-primary-white uppercase"
+                >
+                  {t("navigation.main")}
+                </Link>
               </li>
               <li>
-                <Link href="/">{t("navigation.request")}</Link>
+                <Link
+                  href="/"
+                  className="font-montserrat font-normal text-sm text-primary-white uppercase"
+                >
+                  {t("navigation.request")}
+                </Link>
               </li>
               <li>
-                <Link href="/">{t("navigation.portfolio")}</Link>
+                <Link
+                  href="/"
+                  className="font-montserrat font-normal text-sm text-primary-white uppercase"
+                >
+                  {t("navigation.portfolio")}
+                </Link>
               </li>
               <li>
-                <Link href="/">{t("navigation.contacts")}</Link>
+                <Link
+                  href="/"
+                  className="font-montserrat font-normal text-sm text-primary-white uppercase"
+                >
+                  {t("navigation.contacts")}
+                </Link>
               </li>
             </ul>
-            <ul>
+            <ul className="flex flex-col gap-4 mb-16">
               <li>
-                <Link href="/">{t("legal.data")}</Link>
+                <Link
+                  href="/"
+                  className="font-montserrat font-normal text-sm text-primary-white uppercase"
+                >
+                  {t("legal.data")}
+                </Link>
               </li>
               <li>
-                <Link href="/">{t("legal.contract")}</Link>
+                <Link
+                  href="/"
+                  className="font-montserrat font-normal text-sm text-primary-white uppercase"
+                >
+                  {t("legal.contract")}
+                </Link>
               </li>
               <li>
-                <Link href="/">{t("legal.offer")}</Link>
+                <Link
+                  href="/"
+                  className="font-montserrat font-normal text-sm text-primary-white uppercase"
+                >
+                  {t("legal.offer")}
+                </Link>
               </li>
               <li>
-                <Link href="/">{t("legal.privacy")}</Link>
+                <Link
+                  href="/"
+                  className="font-montserrat font-normal text-sm text-primary-white uppercase"
+                >
+                  {t("legal.privacy")}
+                </Link>
               </li>
             </ul>
           </nav>
-          <address>
-            <a href="tel:+380970067656">+380-97-006-76-56</a>
-            <a href="mailto:email@gmail.com">email@gmail.com</a>
+          <address className="flex flex-col gap-3 mb-6">
+            <a
+              className="font-montserrat font-normal text-xs not-italic text-primary-white uppercase leading-[18px]"
+              href="tel:+380970067656"
+            >
+              +380-97-006-76-56
+            </a>
+            <a
+              className="font-montserrat font-normal text-xs not-italic text-primary-white uppercase leading-[18px]"
+              href="mailto:email@gmail.com"
+            >
+              email@gmail.com
+            </a>
           </address>
-          <ul>
+          <ul className="flex gap-5 mb-[94px]">
             <li>
               <Link href="/">
-                <Image src={instagram} alt="instagram" />
+                <Image src={instagram} alt="instagram" width={24} height={24} />
               </Link>
             </li>
             <li>
               <Link href="/">
-                <Image src={telegram} alt="telegram" />
+                <Image src={telegram} alt="telegram" width={24} height={24} />
               </Link>
             </li>
             <li>
               <Link href="/">
-                <Image src={tikTok} alt="tik tok" />
+                <Image src={tikTok} alt="tik tok" width={24} height={24} />
               </Link>
             </li>
           </ul>
-          <p>&copy; 2025 Solide renovation</p>
+          <p className="font-montserrat font-normal text-base not-italic text-primary-white uppercase leading-[29px] mb-6">
+            &copy; 2025 Solide renovation
+          </p>
           <div>
-            <p>{t("createdBy")}</p>
-            <div>
-              <p>Code-site.art</p>
+            <p className="font-raleway font-normal text-[6px] text-primary-white leading-6 uppercase tracking-[0.08em]">
+              {t("createdBy")}
+            </p>
+            <div className="flex items-center gap-[6px]">
+              <p className="font-raleway font-medium text-base text-primary-white leading-6 uppercase tracking-[0.04em]">
+                Code-site.art
+              </p>
               <Image src={icon} alt="icon" />
             </div>
           </div>
