@@ -105,5 +105,24 @@
       "privacy": "Politique de Confidentialité"
     },
     "createdBy": "Créé par"
+  },
+  "modalForm": {
+    "title": "Obtenir une consultation sur la rénovation",
+    "placeholders": {
+      "name": "Nom",
+      "phone": "Numéro de téléphone",
+      "message": "Message"
+    },
+    "button": "Envoyer",
+    "validation": {
+      "required": "Champ obligatoire",
+      "name": "Le nom doit contenir au moins 2 caractères",
+      "phone": "Au moins 10 chiffres"
+    },
+    "success": {
+      "title": "Merci! Nous vous contacterons bientôt!",
+      "description": "Si vous devez nous joindre de toute urgence, vous pouvez utiliser notre page de contacts",
+      "button": "Aller à la page des contacts"
+    }
   }
 }

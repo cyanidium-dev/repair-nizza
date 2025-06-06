@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import logo from "../../public/images/SVG/logo-svg.svg";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 
 const Logo = () => {
   return (

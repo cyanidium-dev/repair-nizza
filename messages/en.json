@@ -105,5 +105,24 @@
       "privacy": "Privacy Policy"
     },
     "createdBy": "Created by"
+  },
+  "modalForm": {
+    "title": "Get a consultation about renovation",
+    "placeholders": {
+      "name": "Name",
+      "phone": "Phone number",
+      "message": "Message"
+    },
+    "button": "Send",
+    "validation": {
+      "required": "Required field",
+      "name": "Name must be at least 2 characters",
+      "phone": "At least 10 digits"
+    },
+    "success": {
+      "title": "Thank you! We'll contact you soon!",
+      "description": "If you need to reach us urgently, you can use our contacts page",
+      "button": "Go to contacts page"
+    }
   }
 }
