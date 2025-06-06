@@ -1,11 +1,18 @@
 {
   "portfolio": "Портфолио",
   "request": "Оставить заявку",
-  "contacts": {
-    "title": "Контакты",
-    "description": "Свяжитесь с нами удобным способом — мы всегда рады помочь!"
-  },
+  "contacts": "Контакты",
   "linkWithUs": "Связаться з нами",
+  "contactPage": {
+    "title": "Контакты",
+    "description": "Свяжитесь с нами удобным способом — мы всегда рады помочь!",
+    "contacts": {
+      "email": "Email",
+      "instagram": "Instagram",
+      "telegram": "Telegram",
+      "phone": "Телефон"
+    }
+  },
   "hero": {
     "title": "Дизайнерский ремонт под ключ",
     "subtitle": "Создаём пространство, в котором хочется жить",

@@ -1,11 +1,18 @@
 {
   "portfolio": "Portfolio",
   "request": "Make Request",
-  "contacts": {
-    "title": "Contacts",
-    "description": "Get in touch with us in any convenient way — we're always here to help!"
-  },
+  "contacts": "Contacts",
   "linkWithUs": "Contact us",
+  "contactPage": {
+    "title": "Contacts",
+    "description": "Get in touch with us in any convenient way — we're always here to help!",
+    "contacts": {
+      "email": "Email",
+      "instagram": "Instagram",
+      "telegram": "Telegram",
+      "phone": "Phone"
+    }
+  },
   "hero": {
     "title": "Turnkey Designer Renovation",
     "subtitle": "Creating spaces you want to live in",

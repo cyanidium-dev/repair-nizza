@@ -1,11 +1,18 @@
 {
   "portfolio": "Portfolio",
   "request": "Faire une Demande",
-  "contacts": {
-    "title": "Contacts",
-    "description": "Contactez-nous de la manière qui vous convient — nous sommes toujours là pour vous aider !"
-  },
+  "contacts": "Contacts",
   "linkWithUs": "Contactez-nous",
+  "contactPage": {
+    "title": "Contacts",
+    "description": "Contactez-nous de la manière qui vous convient — nous sommes toujours là pour vous aider !",
+    "contacts": {
+      "email": "Email",
+      "instagram": "Instagram",
+      "telegram": "Telegram",
+      "phone": "Téléphone"
+    }
+  },
   "hero": {
     "title": "Rénovation Design Clé en Main",
     "subtitle": "Créer des espaces où il fait bon vivre",

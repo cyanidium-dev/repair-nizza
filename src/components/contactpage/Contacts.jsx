@@ -8,7 +8,7 @@ import imgMotifMob from "../../../public/images/image/contacts-page-motif-mob.pn
 import imgShadowMob from "../../../public/images/image/contacts-page-shadow-mob.png";
 
 const Contacts = () => {
-  const t = useTranslations("contacts");
+  const t = useTranslations("contactPage");
 
   return (
     <Container>
@@ -40,7 +40,7 @@ const Contacts = () => {
           <ul className="flex flex-col gap-8">
             <li>
               <p className="font-montserrat font-light mb-[13px] text-sm text-primary-black uppercase">
-                Email
+                {t("contacts.email")}
               </p>
               <a
                 href="mailto:support@[yourdomain].com"
@@ -51,7 +51,7 @@ const Contacts = () => {
             </li>
             <li>
               <p className="font-montserrat font-light mb-[13px] text-sm text-primary-black uppercase">
-                Instagram
+                {t("contacts.instagram")}
               </p>
               <a
                 href="/"
@@ -62,7 +62,7 @@ const Contacts = () => {
             </li>
             <li>
               <p className="font-montserrat font-light mb-[13px] text-sm text-primary-black uppercase">
-                Telegram
+                {t("contacts.telegram")}
               </p>
               <a
                 href="/"
@@ -73,7 +73,7 @@ const Contacts = () => {
             </li>
             <li>
               <p className="font-montserrat font-light mb-[13px] text-sm text-primary-black uppercase">
-                Phone
+                {t("contacts.phone")}
               </p>
               <a
                 href="tel:+380984548993"
