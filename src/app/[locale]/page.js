@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import AboutUs from "@/components/homepage/AboutUs";
 import DreamRepair from "@/components/homepage/DreamRepair";
@@ -9,12 +10,15 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <Hero />
-      <OurService />
-      <PortfolioSection />
-      <DreamRepair />
-      <AboutUs />
-      <StepToDream />
+      <main>
+        <Hero />
+        <OurService />
+        <PortfolioSection />
+        <DreamRepair />
+        <AboutUs />
+        <StepToDream />
+      </main>
+      <Footer />
     </div>
   );
 }
