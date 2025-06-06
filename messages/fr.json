@@ -1,7 +1,10 @@
 {
   "portfolio": "Portfolio",
   "request": "Faire une Demande",
-  "contacts": "Contacts",
+  "contacts": {
+    "title": "Contacts",
+    "description": "Contactez-nous de la manière qui vous convient — nous sommes toujours là pour vous aider !"
+  },
   "linkWithUs": "Contactez-nous",
   "hero": {
     "title": "Rénovation Design Clé en Main",

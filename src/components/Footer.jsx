@@ -152,7 +152,7 @@ const Footer = () => {
           </div>
           <ul className="flex gap-5 mb-[94px] md:mb-0 md:ml-auto lg:hidden">
             <li>
-              <Link href="/">
+              <a href="/">
                 <Image
                   src={instagram}
                   alt="instagram"
@@ -160,10 +160,10 @@ const Footer = () => {
                   height={24}
                   className="hover:scale-105 transition-all duration-300"
                 />
-              </Link>
+              </a>
             </li>
             <li>
-              <Link href="/">
+              <a href="/">
                 <Image
                   src={telegram}
                   alt="telegram"
@@ -171,10 +171,10 @@ const Footer = () => {
                   height={24}
                   className="hover:scale-105 transition-all duration-300"
                 />
-              </Link>
+              </a>
             </li>
             <li>
-              <Link href="/">
+              <a href="/">
                 <Image
                   src={tikTok}
                   alt="tik tok"
@@ -182,7 +182,7 @@ const Footer = () => {
                   height={24}
                   className="hover:scale-105 transition-all duration-300"
                 />
-              </Link>
+              </a>
             </li>
           </ul>
           <p className="font-montserrat font-normal text-base not-italic text-primary-white uppercase leading-[29px] mb-6 md:mb-0 md:mt-auto lg:mr-auto">

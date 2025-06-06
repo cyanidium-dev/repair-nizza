@@ -29,6 +29,8 @@ const MobNavMenu = ({ isOpen, setIsOpen }) => {
           src={closeBtn}
           alt="close button"
           className="absolute top-[20px] right-[20px] cursor-pointer"
+          width={16}
+          height={16}
           onClick={() => setIsOpen(false)}
         />
         <h3 className="font-arsenal font-normal text-2xl md:text-3xl text-primary-black text-center uppercase mx-auto mb-4">

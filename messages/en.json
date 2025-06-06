@@ -1,7 +1,10 @@
 {
   "portfolio": "Portfolio",
   "request": "Make Request",
-  "contacts": "Contacts",
+  "contacts": {
+    "title": "Contacts",
+    "description": "Get in touch with us in any convenient way — we're always here to help!"
+  },
   "linkWithUs": "Contact us",
   "hero": {
     "title": "Turnkey Designer Renovation",
