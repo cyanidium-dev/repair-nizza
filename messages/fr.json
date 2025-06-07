@@ -124,5 +124,19 @@
       "description": "Si vous devez nous joindre de toute urgence, vous pouvez utiliser notre page de contacts",
       "button": "Aller à la page des contacts"
     }
+  },
+  "leaveRequest": {
+    "hero": {
+      "title": "Faites une demande pour la rénovation de vos rêves",
+      "repairType": {
+        "title": "Type de rénovation",
+        "description": "Veuillez choisir l'une des options qui correspond le mieux à vos besoins :",
+        "types": {
+          "capital": "Rénovation complète",
+          "cosmetic": "Rénovation cosmétique",
+          "design": "Projet de design"
+        }
+      }
+    }
   }
 }

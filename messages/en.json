@@ -124,5 +124,19 @@
       "description": "If you need to reach us urgently, you can use our contacts page",
       "button": "Go to contacts page"
     }
+  },
+  "leaveRequest": {
+    "hero": {
+      "title": "Submit a Request for Your Dream Renovation",
+      "repairType": {
+        "title": "Renovation Type",
+        "description": "Please choose one of the options that best suits your needs:",
+        "types": {
+          "capital": "Capital Renovation",
+          "cosmetic": "Cosmetic Renovation",
+          "design": "Design Project"
+        }
+      }
+    }
   }
 }

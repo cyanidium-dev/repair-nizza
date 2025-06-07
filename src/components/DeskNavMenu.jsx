@@ -19,7 +19,7 @@ const DeskNavMenu = () => {
         <li className="py-[14px] px-[26px] border border-primary-black rounded-[32px] h-[52px] flex items-center justify-center hover:bg-primary-black hover:text-primary-white transition-colors duration-300">
           <Link
             className="font-montserrat font-light text-[19px]"
-            href="/request"
+            href="/leave-request"
           >
             {t("request")}
           </Link>

@@ -1,16 +1,16 @@
-import Contacts from "@/components/contactpage/Contacts";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import HeroPath from "@/components/leave-request-page/HeroPath";
 
 const Page = () => {
   return (
-    <d>
+    <>
       <Header />
       <main>
-        <Contacts />
+        <HeroPath />
       </main>
       <Footer />
-    </d>
+    </>
   );
 };
 
