@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import closeBtn from "../../public/images/SVG/close-icon.svg";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { useEffect } from "react";
 

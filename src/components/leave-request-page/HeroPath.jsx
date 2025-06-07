@@ -35,18 +35,18 @@ const HeroPath = () => {
           className="absolute top-[230px] right-0 -z-20"
         />
         <div>
-          <h2 className="font-arsenal font-normal text-[32px] leading-[39px] text-primary-black uppercase mb-6">
+          <h2 className="font-arsenal font-normal text-[32px] leading-[39px] text-primary-black uppercase mb-6 md:text-center">
             {t("repairType.title")}
           </h2>
-          <p className="font-montserrat font-light text-sm text-primary-black mb-10">
+          <p className="font-montserrat font-light text-sm text-primary-black mb-10 md:text-center">
             {t("repairType.description")}
           </p>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 md:items-center">
             <div>
               <Image
                 src={imgMob1}
                 alt="leave-request-img"
-                className="rounded-xl"
+                className="rounded-xl mb-3"
               />
               <p className="font-arsenal font-normal text-base text-center text-primary-black uppercase">
                 {t("repairType.types.capital")}
@@ -56,7 +56,7 @@ const HeroPath = () => {
               <Image
                 src={imgMob2}
                 alt="leave-request-img"
-                className="rounded-xl"
+                className="rounded-xl mb-3"
               />
               <p className="font-arsenal font-normal text-base text-center text-primary-black uppercase">
                 {t("repairType.types.cosmetic")}
@@ -66,7 +66,7 @@ const HeroPath = () => {
               <Image
                 src={imgMob3}
                 alt="leave-request-img"
-                className="rounded-xl"
+                className="rounded-xl mb-3"
               />
               <p className="font-arsenal font-normal text-base text-center text-primary-black uppercase">
                 {t("repairType.types.design")}

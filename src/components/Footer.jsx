@@ -2,7 +2,7 @@
 
 import React from "react";
 import Container from "./Container";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import instagram from "../../public/images/SVG/instagram.svg";
@@ -77,7 +77,7 @@ const Footer = () => {
                 </li>
                 <li className="hover:scale-105 transition-all duration-300">
                   <Link
-                    href="/"
+                    href="/leave-request"
                     className="font-montserrat font-normal text-xs text-primary-white uppercase"
                   >
                     {t("navigation.request")}
@@ -85,7 +85,7 @@ const Footer = () => {
                 </li>
                 <li className="hover:scale-105 transition-all duration-300">
                   <Link
-                    href="/"
+                    href="/portfolio"
                     className="font-montserrat font-normal text-xs text-primary-white uppercase"
                   >
                     {t("navigation.portfolio")}
@@ -93,7 +93,7 @@ const Footer = () => {
                 </li>
                 <li className="hover:scale-105 transition-all duration-300">
                   <Link
-                    href="/"
+                    href="/contacts"
                     className="font-montserrat font-normal text-xs text-primary-white uppercase"
                   >
                     {t("navigation.contacts")}
@@ -103,7 +103,7 @@ const Footer = () => {
               <ul className="flex flex-col gap-4 mb-16 md:items-center lg:items-start lg:mb-0">
                 <li className="hover:scale-105 transition-all duration-300">
                   <Link
-                    href="/"
+                    href="/data"
                     className="font-montserrat font-normal text-xs text-primary-white uppercase"
                   >
                     {t("legal.data")}
@@ -111,7 +111,7 @@ const Footer = () => {
                 </li>
                 <li className="hover:scale-105 transition-all duration-300">
                   <Link
-                    href="/"
+                    href="/contract"
                     className="font-montserrat font-normal text-xs text-primary-white uppercase"
                   >
                     {t("legal.contract")}
@@ -119,7 +119,7 @@ const Footer = () => {
                 </li>
                 <li className="hover:scale-105 transition-all duration-300">
                   <Link
-                    href="/"
+                    href="/offer"
                     className="font-montserrat font-normal text-xs text-primary-white uppercase"
                   >
                     {t("legal.offer")}
@@ -127,7 +127,7 @@ const Footer = () => {
                 </li>
                 <li className="hover:scale-105 transition-all duration-300">
                   <Link
-                    href="/"
+                    href="/privacy"
                     className="font-montserrat font-normal text-xs text-primary-white uppercase"
                   >
                     {t("legal.privacy")}
@@ -152,7 +152,7 @@ const Footer = () => {
           </div>
           <ul className="flex gap-5 mb-[94px] md:mb-0 md:ml-auto lg:hidden">
             <li>
-              <a href="/">
+              <Link href="/">
                 <Image
                   src={instagram}
                   alt="instagram"
@@ -160,10 +160,10 @@ const Footer = () => {
                   height={24}
                   className="hover:scale-105 transition-all duration-300"
                 />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/">
+              <Link href="/">
                 <Image
                   src={telegram}
                   alt="telegram"
@@ -171,10 +171,10 @@ const Footer = () => {
                   height={24}
                   className="hover:scale-105 transition-all duration-300"
                 />
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/">
+              <Link href="/">
                 <Image
                   src={tikTok}
                   alt="tik tok"
@@ -182,7 +182,7 @@ const Footer = () => {
                   height={24}
                   className="hover:scale-105 transition-all duration-300"
                 />
-              </a>
+              </Link>
             </li>
           </ul>
           <p className="font-montserrat font-normal text-base not-italic text-primary-white uppercase leading-[29px] mb-6 md:mb-0 md:mt-auto lg:mr-auto">
