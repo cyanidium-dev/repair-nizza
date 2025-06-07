@@ -26,7 +26,7 @@ const SoloInput = () => {
               <Field
                 as="textarea"
                 name="customDescription"
-                className="w-[310px] h-[149px] py-3 px-[14px] border border-primary-white bg-transparent rounded-lg resize-none placeholder:font-montserrat placeholder:font-normal placeholder:text-primary-white placeholder:text-sm placeholder:opacity-70 placeholder:leading-6"
+                className="w-[310px] h-[149px] py-3 px-[14px] text-primary-white border border-primary-white bg-transparent rounded-lg resize-none placeholder:font-montserrat placeholder:font-normal placeholder:text-primary-white placeholder:text-sm placeholder:opacity-70 placeholder:leading-6"
                 placeholder={t("describeRepair")}
               />
             </div>
@@ -47,7 +47,7 @@ const SoloInput = () => {
               <Field
                 as="textarea"
                 name="customDescription"
-                className="w-[310px] h-[149px] py-3 px-[14px] border border-primary-white bg-transparent rounded-lg resize-none lg:w-[571px] lg:h-[84px] placeholder:font-montserrat placeholder:font-normal placeholder:text-primary-white placeholder:text-sm placeholder:opacity-70 placeholder:leading-6"
+                className="w-[310px] h-[149px] py-3 px-[14px] text-primary-white border border-primary-white bg-transparent rounded-lg resize-none lg:w-[571px] lg:h-[84px] placeholder:font-montserrat placeholder:font-normal placeholder:text-primary-white placeholder:text-sm placeholder:opacity-70 placeholder:leading-6"
                 placeholder={t("describeRepair")}
               />
             </div>

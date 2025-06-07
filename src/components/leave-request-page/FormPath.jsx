@@ -4,11 +4,17 @@ import { Formik, Form } from "formik";
 import MainForm from "./MainForm";
 import SoloInput from "./SoloInput";
 import ThreeCards from "./ThreeCards";
+import Container from "../Container";
 
 const FormPath = () => {
   const initialValues = {
     customDescription: "",
-    // здесь будут добавляться другие поля формы по мере создания компонентов
+    area: "",
+    exactArea: "",
+    budget: "",
+    exactBudget: "",
+    timeline: "",
+    exactTimeline: "",
   };
 
   return (
@@ -21,7 +27,9 @@ const FormPath = () => {
     >
       <Form>
         <SoloInput />
-        <ThreeCards />
+        <Container>
+          <ThreeCards />
+        </Container>
         <MainForm />
       </Form>
     </Formik>

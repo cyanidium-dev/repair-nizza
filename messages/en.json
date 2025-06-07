@@ -139,6 +139,44 @@
       }
     },
     "notFoundOption": "Haven't found the right option?",
-    "describeRepair": "Describe what kind of renovation you want"
+    "describeRepair": "Describe what kind of renovation you want",
+    "cards": {
+      "area": {
+        "title": "Room Area",
+        "description": "Specify approximate area:",
+        "options": {
+          "small": "up to 30 m²",
+          "medium": "30–60 m²",
+          "large": "60–100 m²",
+          "extraLarge": "over 100 m²"
+        },
+        "customTitle": "Or enter exact value:",
+        "placeholder": "45 m²"
+      },
+      "budget": {
+        "title": "Renovation Budget",
+        "description": "Choose approximate budget:",
+        "options": {
+          "small": "up to $3,000",
+          "medium": "$3,000 – $7,000",
+          "large": "$7,000 – $15,000",
+          "extraLarge": "over $15,000"
+        },
+        "customTitle": "Or enter your own amount:",
+        "placeholder": "10,500 $"
+      },
+      "timeline": {
+        "title": "Renovation Timeline",
+        "description": "When would you like to start the renovation?",
+        "options": {
+          "asap": "As soon as possible",
+          "month": "Within a month",
+          "threeMonths": "In 1–3 months",
+          "notSure": "Not decided yet"
+        },
+        "customTitle": "Have specific renovation dates?",
+        "placeholder": "2025/09/01 – 2025/10/15"
+      }
+    }
   }
 }

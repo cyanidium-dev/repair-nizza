@@ -139,6 +139,44 @@
       }
     },
     "notFoundOption": "Vous n'avez pas trouvé l'option qui vous convient ?",
-    "describeRepair": "Décrivez le type de rénovation que vous souhaitez"
+    "describeRepair": "Décrivez le type de rénovation que vous souhaitez",
+    "cards": {
+      "area": {
+        "title": "Surface de la pièce",
+        "description": "Indiquez la surface approximative :",
+        "options": {
+          "small": "jusqu'à 30 m²",
+          "medium": "30–60 m²",
+          "large": "60–100 m²",
+          "extraLarge": "plus de 100 m²"
+        },
+        "customTitle": "Ou entrez une valeur exacte :",
+        "placeholder": "45 m²"
+      },
+      "budget": {
+        "title": "Budget de rénovation",
+        "description": "Choisissez un budget approximatif :",
+        "options": {
+          "small": "jusqu'à 3 000 $",
+          "medium": "3 000 $ – 7 000 $",
+          "large": "7 000 $ – 15 000 $",
+          "extraLarge": "plus de 15 000 $"
+        },
+        "customTitle": "Ou entrez votre propre montant :",
+        "placeholder": "10 500 $"
+      },
+      "timeline": {
+        "title": "Calendrier des travaux",
+        "description": "Quand souhaitez-vous commencer les travaux ?",
+        "options": {
+          "asap": "Le plus tôt possible",
+          "month": "Dans le mois",
+          "threeMonths": "Dans 1 à 3 mois",
+          "notSure": "Pas encore décidé(e)"
+        },
+        "customTitle": "Avez-vous des dates précises pour les travaux ?",
+        "placeholder": "2025/09/01 – 2025/10/15"
+      }
+    }
   }
 }
