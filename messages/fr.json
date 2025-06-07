@@ -137,6 +137,8 @@
           "design": "Projet de design"
         }
       }
-    }
+    },
+    "notFoundOption": "Vous n'avez pas trouvé l'option qui vous convient ?",
+    "describeRepair": "Décrivez le type de rénovation que vous souhaitez"
   }
 }
