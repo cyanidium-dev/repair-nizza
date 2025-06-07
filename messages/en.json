@@ -177,6 +177,26 @@
         "customTitle": "Have specific renovation dates?",
         "placeholder": "2025/09/01 – 2025/10/15"
       }
+    },
+    "mainForm": {
+      "title": "Contact Details and Additional Information",
+      "labels": {
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "comment": "Comment / Additional Information"
+      },
+      "placeholders": {
+        "name": "Enter your name",
+        "phone": "Enter your phone number",
+        "email": "Enter your email",
+        "comment": "Describe your wishes, questions, or renovation details..."
+      },
+      "button": "Submit Request",
+      "validation": {
+        "phoneRequired": "Phone number is required",
+        "phoneInvalid": "At least 8 digits"
+      }
     }
   }
 }

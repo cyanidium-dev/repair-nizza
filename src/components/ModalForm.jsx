@@ -43,18 +43,23 @@ const ModalForm = ({ isOpen, closeModal }) => {
   const validationSchema = Yup.object().shape({
     name: Yup.string().min(2, t("validation.name")),
     phone: Yup.string()
-      .min(10, t("validation.phone"))
+      .min(8, t("validation.phone"))
       .max(15, t("validation.phone"))
       .required(t("validation.required")),
     message: Yup.string(),
   });
 
-  const handleSubmit = (values, { setSubmitting, resetForm }) => {
-    // Здесь будет логика отправки формы
-    console.log(values);
-    setSubmitting(false);
-    resetForm();
-    setIsSuccess(true);
+  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+    try {
+      // Здесь будет логика отправки формы
+      console.log("Form submitted:", values);
+      setSubmitting(false);
+      resetForm();
+      setIsSuccess(true);
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitting(false);
+    }
   };
 
   const handleBackdropClick = (e) => {

@@ -177,6 +177,26 @@
         "customTitle": "Avez-vous des dates précises pour les travaux ?",
         "placeholder": "2025/09/01 – 2025/10/15"
       }
+    },
+    "mainForm": {
+      "title": "Coordonnées et Informations Complémentaires",
+      "labels": {
+        "name": "Nom",
+        "phone": "Téléphone",
+        "email": "Email",
+        "comment": "Commentaire / Informations Supplémentaires"
+      },
+      "placeholders": {
+        "name": "Entrez votre nom",
+        "phone": "Entrez votre numéro de téléphone",
+        "email": "Entrez votre email",
+        "comment": "Décrivez vos souhaits, questions ou détails de rénovation..."
+      },
+      "button": "Envoyer la Demande",
+      "validation": {
+        "phoneRequired": "Le numéro de téléphone est requis",
+        "phoneInvalid": "Au moins 8 chiffres"
+      }
     }
   }
 }
