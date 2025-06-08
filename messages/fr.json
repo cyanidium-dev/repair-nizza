@@ -198,5 +198,13 @@
         "phoneInvalid": "Au moins 8 chiffres"
       }
     }
+  },
+  "portfolioPage": {
+    "title": "Notre Portfolio",
+    "filters": {
+      "minimalism": "Minimalisme",
+      "neoclassic": "Néoclassique",
+      "modern": "Moderne"
+    }
   }
 }

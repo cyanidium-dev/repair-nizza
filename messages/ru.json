@@ -198,5 +198,13 @@
         "phoneInvalid": "Не менее 8 цифр"
       }
     }
+  },
+  "portfolioPage": {
+    "title": "Наше портфолио",
+    "filters": {
+      "minimalism": "Минимализм",
+      "neoclassic": "Неоклассика",
+      "modern": "Модерн"
+    }
   }
 }
