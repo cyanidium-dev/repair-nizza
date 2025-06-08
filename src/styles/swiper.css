@@ -313,3 +313,23 @@
     }
   }
 }
+
+.portfolio-grid {
+  margin: 0 !important;
+}
+
+.portfolio-grid .swiper-wrapper {
+  row-gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .portfolio-grid .swiper-wrapper {
+    row-gap: 30px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .portfolio-grid .swiper-wrapper {
+    row-gap: 40px;
+  }
+}
