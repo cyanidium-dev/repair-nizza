@@ -1,0 +1,28 @@
+.swiper-pagination {
+  position: static !important;
+  margin-top: 20px;
+}
+
+.swiper-pagination-bullet {
+  width: 8px !important;
+  height: 8px !important;
+  background: transparent !important;
+  border: 1px solid #ffffff !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ffffff !important;
+}
+
+/* Hide default Swiper navigation buttons */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .swiper-pagination {
+    display: none;
+  }
+}

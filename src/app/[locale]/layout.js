@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import "./globals.css";
+import "@/styles/swiper.css";
 import { Montserrat, Raleway } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
