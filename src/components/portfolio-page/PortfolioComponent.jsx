@@ -5,6 +5,8 @@ import Container from "../Container";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import portfolioMob from "../../../public/images/image/portfolio-page.webp";
+import motif from "../../../public/images/image/porto-page-motif.png";
+import shadow from "../../../public/images/image/porto-page-shadow.png";
 import arrowWhite from "../../../public/images/SVG/arrow-white-portfolio.svg";
 import arrowBlack from "../../../public/images/SVG/arrow-black-portfolio.svg";
 import arrowDiagonal from "../../../public/images/SVG/arrow-diagonal-portfolio.svg";
@@ -107,7 +109,17 @@ const PortfolioComponent = () => {
 
   return (
     <div>
-      <Container>
+      <Container className="relative overflow-hidden">
+        <Image
+          src={motif}
+          alt="motif image"
+          className="hidden lg:block absolute top-[-60px] right-0"
+        />
+        <Image
+          src={shadow}
+          alt="shadow image"
+          className="hidden lg:block absolute top-0 right-0"
+        />
         <div className="pt-[34px] pb-[94px]">
           <h1 className="font-arsenal font-normal text-primary-black uppercase text-[22px] mb-6 md:text-3xl md:text-center lg:text-5xl lg:text-left">
             {t("title")}
