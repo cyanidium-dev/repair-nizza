@@ -7,6 +7,12 @@ import dreamDesk from "../../../public/images/image/dream-img-desk.webp";
 import { useTranslations } from "next-intl";
 import Container from "../Container";
 import { useEffect, useState } from "react";
+import motifMob1 from "../../../public/images/image/dream-motif-mob-1.png";
+import motifMob2 from "../../../public/images/image/dream-motif-mob-2.png";
+import motifDesk1 from "../../../public/images/image/dream-motif-desk-1.png";
+import motifDesk2 from "../../../public/images/image/dream-motif-desk-2.png";
+import motifShadowMob from "../../../public/images/image/service-bg-shadow.png";
+import motifShadowDesk from "../../../public/images/image/service-shadow-desk.png";
 
 const DreamRepair = () => {
   const t = useTranslations();
@@ -17,8 +23,33 @@ const DreamRepair = () => {
   ]);
 
   return (
-    <Container>
-      <div className="py-[94px] lg:flex lg:justify-between lg:flex-row-reverse lg:pt-[213px] lg:pb-[186px]">
+    <Container className="relative">
+      <Image
+        src={motifMob1}
+        alt="motif image"
+        className="absolute top-[75px] right-0 -z-20 md:top-[95px] lg:hidden"
+      />
+      <Image
+        src={motifDesk1}
+        alt="motif image"
+        className="absolute top-[50px] left-[90px] -z-20 lg:block hidden"
+      />
+      <Image
+        src={motifShadowMob}
+        alt="motif image"
+        className="absolute top-[140px] right-0 -z-20 lg:hidden"
+      />
+      <Image
+        src={motifShadowDesk}
+        alt="motif image"
+        className="absolute top-[160px] left-[360px] -z-20 lg:block hidden"
+      />
+      <Image
+        src={motifShadowDesk}
+        alt="motif image"
+        className="absolute top-[40px] right-0 -z-20 lg:block hidden"
+      />
+      <div className="pt-[94px] pb-[137px] lg:flex lg:justify-between lg:flex-row-reverse lg:pt-[213px] lg:pb-[186px]">
         <div className="mb-auto">
           <h2 className="font-arsenal font-normal text-[32px] uppercase mb-[18px] md:text-center lg:text-right lg:text-[64px] lg:mb-1 lg:leading-none lg:w-[572px]">
             {t("dreamRepair.title")}
@@ -66,6 +97,26 @@ const DreamRepair = () => {
           {t("dreamRepair.button")}
         </button>
       </div>
+      <Image
+        src={motifMob2}
+        alt="motif image"
+        className="absolute bottom-[90px] md:bottom-[120px] right-0 -z-20 lg:hidden"
+      />
+      <Image
+        src={motifDesk2}
+        alt="motif image"
+        className="absolute bottom-[110px] right-0 -z-20 lg:block hidden"
+      />
+      <Image
+        src={motifShadowMob}
+        alt="motif image"
+        className="absolute bottom-[75px] right-0 -z-20 lg:bottom-[190px]"
+      />
+      <Image
+        src={motifShadowMob}
+        alt="motif image"
+        className="absolute bottom-[120px] right-[200px] -z-20 lg:block hidden"
+      />
     </Container>
   );
 };
