@@ -8,6 +8,7 @@ import { useRouter } from "@/i18n/navigation";
 import Image from "next/image";
 import motif1 from "../../public/images/image/modal-motif-1.png";
 import motif2 from "../../public/images/image/modal-motif-2.png";
+import axios from "axios";
 
 const ModalForm = ({ isOpen, closeModal }) => {
   const t = useTranslations("modalForm");
@@ -51,14 +52,24 @@ const ModalForm = ({ isOpen, closeModal }) => {
 
   const handleSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
-      // Здесь будет логика отправки формы
-      console.log("Form submitted:", values);
-      setSubmitting(false);
-      resetForm();
-      setIsSuccess(true);
+      const response = await axios.post("/api/send-message", {
+        form_type: "Modal Form",
+        name: values.name || "Not provided",
+        phone: values.phone,
+        message: values.message || "No message",
+      });
+
+      if (response.data.success) {
+        setSubmitting(false);
+        resetForm();
+        setIsSuccess(true);
+      } else {
+        throw new Error("Failed to send message");
+      }
     } catch (error) {
       console.error("Form submission error:", error);
       setSubmitting(false);
+      // Можно добавить состояние для отображения ошибки пользователю
     }
   };
 
