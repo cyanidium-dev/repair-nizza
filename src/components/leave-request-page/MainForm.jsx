@@ -4,7 +4,9 @@ import { useTranslations } from "next-intl";
 import { Field, ErrorMessage } from "formik";
 import Image from "next/image";
 import motif from "../../../public/images/image/leave-request-img/leave-motif-desk-2.png";
+import mainMotif from "../../../public/images/image/leave-request-img/request-page-motif-desk.png";
 import shadowDesk from "../../../public/images/image/leave-request-img/leave-shadow-desk.png";
+import mainShadowDesk from "../../../public/images/image/leave-request-img/request-page-shadow.png";
 import Container from "../Container";
 
 const MainForm = () => {
@@ -12,6 +14,16 @@ const MainForm = () => {
 
   return (
     <div className="relative">
+      <Image
+        src={mainMotif}
+        alt="motif"
+        className="hidden absolute top-[-180px] right-0 -z-10 lg:block"
+      />
+      <Image
+        src={mainShadowDesk}
+        alt="motif"
+        className="hidden absolute bottom-[-245px] right-0 -z-10 lg:block"
+      />
       <Container>
         <div className="pb-[94px] lg:pb-[150px]">
           <div className="p-6 border border-primary-black rounded-xl w-[310px] md:w-[571px] md:mx-auto lg:w-[1200px]">
@@ -84,7 +96,7 @@ const MainForm = () => {
       <Image
         src={motif}
         alt="motif"
-        className="hidden absolute bottom-[-170px] left-[-40px] rotate-[120deg] -z-10 lg:block"
+        className="hidden absolute bottom-[-190px] left-[-40px] rotate-[120deg] -z-10 lg:block"
       />
       <Image
         src={shadowDesk}
