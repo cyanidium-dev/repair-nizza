@@ -6,9 +6,15 @@ import dreamMob from "../../../public/images/image/dream-img-mob.webp";
 import dreamDesk from "../../../public/images/image/dream-img-desk.webp";
 import { useTranslations } from "next-intl";
 import Container from "../Container";
+import { useEffect, useState } from "react";
 
 const DreamRepair = () => {
   const t = useTranslations();
+  const [cards, setCards] = useState([
+    { id: 1, className: "top-card" },
+    { id: 2, className: "middle-card" },
+    { id: 3, className: "bottom-card" },
+  ]);
 
   return (
     <Container>
@@ -32,16 +38,26 @@ const DreamRepair = () => {
           </p>
         </div>
         <div className="lg:mr-16 lg:shrink-0">
-          <Image
-            src={dreamMob}
-            alt="dream image"
-            className="mb-[59px] mx-auto lg:hidden"
-          />
-          <Image
-            src={dreamDesk}
-            alt="dream image"
-            className="mb-[59px] mx-auto hidden lg:block lg:mx-0 lg:mb-20"
-          />
+          <div className="pb-14 lg:pb-10">
+            <div className="relative w-[310px] h-[207px] mx-auto lg:w-[564px] lg:h-[418px]">
+              <div className="card-stack">
+                {cards.map((card) => (
+                  <div key={card.id} className={`card-item ${card.className}`}>
+                    <Image
+                      src={dreamMob}
+                      alt="dream image"
+                      className="w-[310px] h-[167px] object-cover mx-auto lg:hidden"
+                    />
+                    <Image
+                      src={dreamDesk}
+                      alt="dream image"
+                      className="w-[564px] h-[338px] object-cover mx-auto hidden lg:block"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
           <p className="hidden font-montserrat font-light text-base text-primary-black md:block md:text-center md:mb-6 lg:w-[399px] lg:text-left lg:mb-0">
             {t("dreamRepair.additionalInfo")}
           </p>
