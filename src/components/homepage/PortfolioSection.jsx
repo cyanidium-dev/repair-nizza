@@ -17,11 +17,11 @@ import "swiper/css/navigation";
 
 const PortfolioCard = () => {
   return (
-    <div className="mb-[26px] relative">
+    <div className="mb-[26px]">
       <Image
         src={portfolioMob}
         alt="portfolio image"
-        className="rounded-t-[20px] md:w-[345px] lg:w-[387px] lg:h-[247px]"
+        className="rounded-t-[20px] md:w-[345px] lg:w-[387px] lg:h-[247px] relative"
       />
       <div className="w-[310px] md:w-[345px] lg:w-[387px] rounded-b-[20px] backdrop-blur-[26px] shadow-[inset_0_4px_13px_0_rgba(255,255,255,0.25)] bg-[rgba(18,18,18,0.26)] py-7 pl-6 pr-10">
         <h3 className="font-arsenal font-normal text-base text-primary-white leading-[19px] w-[174px] uppercase mb-4 lg:text-xl lg:w-[246px]">
