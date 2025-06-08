@@ -3,10 +3,13 @@ import { useTranslations } from "next-intl";
 import Container from "../Container";
 import Image from "next/image";
 import logo from "../../../public/images/SVG/logo-svg.svg";
+import motifDesk from "../../../public/images/image/service-motif-test.png";
+import motifDesk2 from "../../../public/images/image/service-motif-desk.png";
 import motifMob from "../../../public/images/image/service-motif-mob.png";
 import motifMob2 from "../../../public/images/image/service-motif-2-mob.png";
 import bgShadow from "../../../public/images/image/service-bg-shadow.png";
 import bgShadow2 from "../../../public/images/image/service-bg-shadow-2.png";
+import bgShadowDesk from "../../../public/images/image/service-shadow-desk.png";
 import sericeImg1Mob1 from "../../../public/images/image/service-img-1-mob.webp";
 import sericeImg2Mob2 from "../../../public/images/image/service-img-2-mob.webp";
 import sericeImgMobDesk1 from "../../../public/images/image/service-img-1-desk.webp";
@@ -42,7 +45,22 @@ const OurService = () => {
   };
 
   return (
-    <Container>
+    <Container className="relative overflow-hidden">
+      <Image
+        src={motifDesk}
+        alt="motif image"
+        className="absolute top-[150px] right-[-400px] lg:block hidden"
+      />
+      <Image
+        src={motifMob}
+        alt="motif image"
+        className="absolute top-[135px] right-0 -z-20 lg:hidden"
+      />
+      <Image
+        src={bgShadow}
+        alt="motif image"
+        className="absolute top-[175px] md:top-[170px] md:rotate-[-3deg] right-0 -z-10  lg:hidden"
+      />
       <div className="pt-[94px] mb-[215px] w-[310px] md:w-[715px] lg:w-[1200px] relative md:mb-[150px] lg:mb-[136px]">
         <div className="relative mb-16 lg:flex lg:justify-between lg:mb-[99px] lg:items-start">
           <h2 className="font-arsenal font-normal text-[22px] text-primary-black uppercase w-[299px] mb-[31px] md:text-3xl md:w-[450px] md:text-center lg:text-5xl lg:w-[660px] lg:text-left">
@@ -54,16 +72,6 @@ const OurService = () => {
             width={36}
             height={56}
             className="ml-auto relative my-8 lg:my-0 lg:ml-0 lg:w-[53px] lg:h-[80px]"
-          />
-          <Image
-            src={motifMob}
-            alt="motif image"
-            className="absolute top-[55px] right-[-10px] -z-20 md:top-[75px] md:right-0 lg:top-[105px]"
-          />
-          <Image
-            src={bgShadow}
-            alt="motif image"
-            className="absolute top-[90px] right-[-10px] -z-10 md:right-0 lg:top-[110px]"
           />
           <p className="font-montserrat font-light text-sm text-primary-black text-right w-[290px] ml-auto md:text-base md:w-[450px] md:text-center lg:ml-0 lg:text-left lg:w-[333px]">
             {t("description")}
@@ -188,16 +196,6 @@ const OurService = () => {
               />
             </div>
           </div>
-          <Image
-            src={motifMob2}
-            alt="motif image"
-            className="absolute bottom-[-175px] right-0 -z-20 md:bottom-[-150px] md:right-[15px] lg:w-[700px] lg:h-[295px] lg:bottom-[-130px] lg:right-[15px] lg:rotate-[3deg]"
-          />
-          <Image
-            src={bgShadow2}
-            alt="motif image"
-            className="absolute bottom-[-185px] right-0 -z-10 md:bottom-[-188px] md:right-[16px] lg:w-[730px] lg:h-[300px] lg:bottom-[-90px] lg:right-[9px] lg:rotate-[8deg]"
-          />
         </div>
       </div>
       <div className="pb-[94px] lg:flex lg:justify-between lg:items-center">
@@ -236,6 +234,26 @@ const OurService = () => {
           </li>
         </ul>
       </div>
+      <Image
+        src={motifMob2}
+        alt="motif image"
+        className="absolute bottom-[500px] md:bottom-[360px] right-0 md:right-[-25px] md:rotate-[8deg] -z-20 lg:hidden"
+      />
+      <Image
+        src={motifDesk2}
+        alt="motif image"
+        className="absolute bottom-[280px] left-[305px] -z-20 lg:block hidden"
+      />
+      <Image
+        src={bgShadow2}
+        alt="motif image"
+        className="hiden absolute bottom-[500px] md:bottom-[350px] right-0 -z-10 lg:hidden"
+      />
+      <Image
+        src={bgShadowDesk}
+        alt="motif image"
+        className="absolute bottom-[285px] right-[110px] opacity-80 -z-10 lg:block hidden"
+      />
     </Container>
   );
 };
