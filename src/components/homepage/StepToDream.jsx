@@ -12,11 +12,22 @@ import motifDesk from "../../../public/images/image/step-motif-desk.png";
 import motifShadowMob from "../../../public/images/image/service-bg-shadow.png";
 import { useRouter } from "next/navigation";
 import { useLocale } from "next-intl";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const StepToDream = () => {
   const t = useTranslations("stepToDream");
   const router = useRouter();
   const locale = useLocale();
+  const titleRef = useRef(null);
+  const textRef = useRef(null);
+  const buttonRef = useRef(null);
+  const desktopButtonRef = useRef(null);
+
+  const isTitleInView = useInView(titleRef, { once: true });
+  const isTextInView = useInView(textRef, { once: true });
+  const isButtonInView = useInView(buttonRef, { once: true });
+  const isDesktopButtonInView = useInView(desktopButtonRef, { once: true });
 
   const handleConsultationClick = () => {
     router.push(`/${locale}/leave-request`);
@@ -57,26 +68,56 @@ const StepToDream = () => {
         />
         <div className="pt-[94px] pb-[98px] lg:flex lg:justify-between lg:pt-[164px] lg:pb-[230px]">
           <div>
-            <h2 className="font-arsenal font-normal text-[32px] text-primary-black uppercase mb-[147px] w-[286px] leading-tight md:text-center md:mx-auto lg:text-[64px] lg:w-[572px] lg:text-left lg:mb-12">
+            <motion.h2
+              ref={titleRef}
+              initial={{ x: -100, opacity: 0 }}
+              animate={
+                isTitleInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }
+              }
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="font-arsenal font-normal text-[32px] text-primary-black uppercase mb-[147px] w-[286px] leading-tight md:text-center md:mx-auto lg:text-[64px] lg:w-[572px] lg:text-left lg:mb-12"
+            >
               {t("title")}
-            </h2>
-            <button
+            </motion.h2>
+            <motion.button
+              ref={desktopButtonRef}
+              initial={{ y: 100, opacity: 0 }}
+              animate={
+                isDesktopButtonInView
+                  ? { y: 0, opacity: 1 }
+                  : { y: 100, opacity: 0 }
+              }
+              transition={{ duration: 0.7, ease: "easeOut" }}
               onClick={handleConsultationClick}
               className="hidden lg:block font-montserrat font-normal text-sm text-primary-white bg-primary-black rounded-[32px] w-[317px] h-[52px] mr-auto hover:bg-transparent hover:text-primary-black hover:border-primary-black border transition-all duration-300"
             >
               {t("button")}
-            </button>
+            </motion.button>
           </div>
-          <p className="font-montserrat font-light text-base text-[#000] mb-[264px] w-[290px] md:text-center md:mx-auto lg:mx-0 lg:text-xl lg:w-[429px] lg:text-left lg:mb-0">
+          <motion.p
+            ref={textRef}
+            initial={{ x: 100, opacity: 0 }}
+            animate={
+              isTextInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }
+            }
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="font-montserrat font-light text-base text-[#000] mb-[264px] w-[290px] md:text-center md:mx-auto lg:mx-0 lg:text-xl lg:w-[429px] lg:text-left lg:mb-0"
+          >
             {t("description")}
-          </p>
+          </motion.p>
 
-          <button
+          <motion.button
+            ref={buttonRef}
+            initial={{ y: 100, opacity: 0 }}
+            animate={
+              isButtonInView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }
+            }
+            transition={{ duration: 0.7, ease: "easeOut" }}
             onClick={handleConsultationClick}
             className="lg:hidden font-montserrat font-normal text-sm text-primary-white bg-primary-black rounded-[32px] w-[310px] h-[52px] flex justify-center items-center mx-auto hover:bg-transparent hover:text-primary-black hover:border-primary-black border transition-all duration-300"
           >
             {t("button")}
-          </button>
+          </motion.button>
         </div>
       </Container>
       <Image
