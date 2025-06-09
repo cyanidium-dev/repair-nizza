@@ -4,7 +4,6 @@ import sectionBgMob from "../../../public/images/image/portfolio-bg-mob.webp";
 import sectionBgDesk from "../../../public/images/image/portfolio-bg-desk.webp";
 import Container from "../Container";
 import { useTranslations } from "next-intl";
-import portfolioMob from "../../../public/images/image/portfolio-mob.webp";
 import Image from "next/image";
 import arrowWhite from "../../../public/images/SVG/arrow-white-portfolio.svg";
 import arrowBlack from "../../../public/images/SVG/arrow-black-portfolio.svg";
@@ -14,52 +13,61 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import { useLocale } from "next-intl";
 
-const PortfolioCard = () => {
+const PortfolioCard = ({ data }) => {
+  const locale = useLocale();
+
+  if (!data?.title || !data?.title[locale]) return null;
+
   return (
-    <div className="mb-[26px]">
-      <Image
-        src={portfolioMob}
-        alt="portfolio image"
-        className="rounded-t-[20px] md:w-[345px] lg:w-[387px] lg:h-[247px] relative"
-      />
+    <div className="relative h-[402px] lg:h-[418px]">
+      {data.mainImage?.asset?.url && (
+        <Image
+          src={data.mainImage.asset.url}
+          alt={data.title[locale]}
+          width={387}
+          height={247}
+          className="rounded-t-[20px] h-[247px] w-[310px] md:w-[345px] lg:w-[387px] object-cover"
+        />
+      )}
       <div className="w-[310px] md:w-[345px] lg:w-[387px] rounded-b-[20px] backdrop-blur-[26px] shadow-[inset_0_4px_13px_0_rgba(255,255,255,0.25)] bg-[rgba(18,18,18,0.26)] py-7 pl-6 pr-10">
         <h3 className="font-arsenal font-normal text-base text-primary-white leading-[19px] w-[174px] uppercase mb-4 lg:text-xl lg:w-[246px]">
-          Наш последний выполненный проект
+          {data.title[locale]}
         </h3>
         <p className="font-montserrat font-light text-xs lg:text-sm text-primary-white">
-          Создаём пространство, в котором хочется жить! Мы создали уникальный
-          дизайн для дома в центре Ниццы...
+          {data.subtitle[locale]}
         </p>
       </div>
-      <button className="absolute top-[217px] md:top-[245px] lg:top-[215px] right-[24px] w-[55px] h-[55px] flex items-center justify-center bg-primary-white rounded-full hover:scale-110 transition-all duration-300">
+      <button className="absolute top-[217px] md:top-[220px] right-[24px] w-[55px] h-[55px] flex items-center justify-center bg-primary-white rounded-full hover:scale-110 transition-all duration-300">
         <Image src={arrowDiagonal} alt="arrow button" />
       </button>
     </div>
   );
 };
 
-const PortfolioSection = () => {
+const PortfolioSection = ({ portfolioData }) => {
   const t = useTranslations();
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [isMobile, setIsMobile] = useState(true);
   const [swiper, setSwiper] = useState(null);
+
+  if (!portfolioData || portfolioData.length === 0) return null;
 
   useEffect(() => {
     const handleResize = () => {
-      setWindowWidth(window.innerWidth);
+      setIsMobile(window.innerWidth < 768);
       if (swiper) {
         swiper.update();
       }
     };
 
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, [swiper]);
-
-  const bgImage = windowWidth >= 768 ? sectionBgDesk.src : sectionBgMob.src;
 
   const handlePrevClick = () => {
     if (swiper) {
@@ -74,10 +82,17 @@ const PortfolioSection = () => {
   };
 
   return (
-    <div
-      style={{ backgroundImage: `url(${bgImage})` }}
-      className="bg-cover bg-center h-[866px] w-full mx-auto md:h-[724px] lg:h-[758px] pt-[72px] pb-9 lg:pb-[70px]"
-    >
+    <div className="portfolio-section-bg bg-cover bg-center h-[866px] w-full mx-auto md:h-[724px] lg:h-[758px] pt-[72px] pb-9 lg:pb-[70px]">
+      <style jsx>{`
+        .portfolio-section-bg {
+          background-image: url(${sectionBgMob.src});
+        }
+        @media (min-width: 768px) {
+          .portfolio-section-bg {
+            background-image: url(${sectionBgDesk.src});
+          }
+        }
+      `}</style>
       <Container>
         <div className="mb-12 md:flex md:justify-between md:mb-10 lg:items-center lg:mb-[68px]">
           <h2 className="font-arsenal font-normal text-4xl text-primary-white text-center mb-[19px] mx-auto uppercase md:mb-0 md:text-left lg:text-5xl lg:mx-0 md:order-1">
@@ -90,36 +105,34 @@ const PortfolioSection = () => {
             {t("portfolioSection.button")}
           </button>
         </div>
-        <Swiper
-          modules={[Navigation]}
-          spaceBetween={20}
-          onSwiper={setSwiper}
-          observer={true}
-          observeParents={true}
-          breakpoints={{
-            0: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 2,
-            },
-            1280: {
-              slidesPerView: 3,
-            },
-          }}
-          className="relative"
-        >
-          <SwiperSlide>
-            <PortfolioCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <PortfolioCard />
-          </SwiperSlide>
-          <SwiperSlide>
-            <PortfolioCard />
-          </SwiperSlide>
-        </Swiper>
-        <div className="flex justify-center gap-6 md:gap-10 lg:hidden">
+        <div className="h-[402px] lg:h-[418px]">
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={20}
+            onSwiper={setSwiper}
+            observer={true}
+            observeParents={true}
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+              },
+              768: {
+                slidesPerView: 2,
+              },
+              1280: {
+                slidesPerView: 3,
+              },
+            }}
+            className="h-full"
+          >
+            {portfolioData.map((project, index) => (
+              <SwiperSlide key={project._id || index} className="h-full">
+                <PortfolioCard data={project} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+        <div className="flex justify-center gap-6 md:gap-10 lg:hidden mt-6">
           <div
             onClick={handlePrevClick}
             className="border border-primary-white rounded-full w-[54px] h-[54px] flex items-center justify-center hover:bg-primary-white group transition-all duration-300 cursor-pointer"

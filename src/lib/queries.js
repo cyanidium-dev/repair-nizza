@@ -7,3 +7,15 @@ export const heroBlurCardQuery = `
     }
   }
 `;
+
+export const portfolioProjectsQuery = `
+  *[_type == "project"] {
+    title,
+    subtitle,
+    mainImage {
+      asset->
+    },
+    _createdAt,
+    isLatestProject
+  } | order(_createdAt desc)
+`;

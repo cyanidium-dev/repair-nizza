@@ -7,10 +7,11 @@ import OurService from "@/components/homepage/OurService";
 import PortfolioSection from "@/components/homepage/PortfolioSection";
 import StepToDream from "@/components/homepage/StepToDream";
 import { client } from "@/sanityClient";
-import { heroBlurCardQuery } from "@/lib/queries";
+import { heroBlurCardQuery, portfolioProjectsQuery } from "@/lib/queries";
 
 export default async function Home() {
   const heroBlurCardData = await client.fetch(heroBlurCardQuery);
+  const portfolioData = await client.fetch(portfolioProjectsQuery);
 
   return (
     <div>
@@ -18,7 +19,7 @@ export default async function Home() {
       <main className="overflow-x-hidden">
         <Hero heroBlurCardData={heroBlurCardData} />
         <OurService />
-        <PortfolioSection />
+        <PortfolioSection portfolioData={portfolioData} />
         <DreamRepair />
         <AboutUs />
         <StepToDream />
