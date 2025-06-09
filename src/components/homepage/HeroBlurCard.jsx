@@ -3,11 +3,19 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useLocale } from "next-intl";
+import { useRouter } from "next/navigation";
 
 const HeroBlurCard = ({ data }) => {
   const locale = useLocale();
+  const router = useRouter();
 
   if (!data?.title) return null;
+
+  const handleClick = () => {
+    if (data.slug?.current) {
+      router.push(`/${locale}/projects/${data.slug.current}`);
+    }
+  };
 
   return (
     <div className="absolute top-8 md:top-[56px] md:left-0 lg:top-[-45px] lg:left-0 h-[393px] overflow-hidden">
@@ -45,7 +53,10 @@ const HeroBlurCard = ({ data }) => {
             {data.subtitle[locale]}
           </p>
         </div>
-        <button className="w-[253px] h-9 rounded-[32px] lg:w-[303px] lg:h-[42px] lg:text-sm lg:leading-5 bg-transparent border border-primary-white text-primary-white font-raleway font-normal text-xs mx-auto mt-auto block hover:bg-primary-white hover:text-primary-black transition-all duration-300">
+        <button
+          onClick={handleClick}
+          className="w-[253px] h-9 rounded-[32px] lg:w-[303px] lg:h-[42px] lg:text-sm lg:leading-5 bg-transparent border border-primary-white text-primary-white font-raleway font-normal text-xs mx-auto mt-auto block hover:bg-primary-white hover:text-primary-black transition-all duration-300"
+        >
           {locale === "ru"
             ? "Посмотреть проект"
             : locale === "en"

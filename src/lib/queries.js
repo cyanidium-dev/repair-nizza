@@ -4,7 +4,8 @@ export const heroBlurCardQuery = `
     subtitle,
     mainImage {
       asset->
-    }
+    },
+    slug
   }
 `;
 
