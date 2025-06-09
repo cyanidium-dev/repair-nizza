@@ -3,8 +3,8 @@ import ProjectHero from "@/components/projects/ProjectHero";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-async function getProject(slug) {
-  const query = `*[_type == "project" && slug.current == $slug][0]{
+async function getProject(id) {
+  const query = `*[_type == "project" && _id == $id][0]{
     _id,
     _type,
     title,
@@ -17,7 +17,7 @@ async function getProject(slug) {
     }
   }`;
 
-  const project = await client.fetch(query, { slug });
+  const project = await client.fetch(query, { id });
   console.log("Project data from Sanity:", project);
   return project;
 }

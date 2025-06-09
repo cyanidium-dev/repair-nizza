@@ -12,8 +12,8 @@ const HeroBlurCard = ({ data }) => {
   if (!data?.title) return null;
 
   const handleClick = () => {
-    if (data.slug?.current) {
-      router.push(`/${locale}/projects/${data.slug.current}`);
+    if (data._id) {
+      router.push(`/${locale}/projects/${data._id}`);
     }
   };
 

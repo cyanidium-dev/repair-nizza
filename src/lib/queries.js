@@ -1,5 +1,6 @@
 export const heroBlurCardQuery = `
   *[_type == "project" && isLatestProject == true][0] {
+    _id,
     title,
     subtitle,
     mainImage {
@@ -11,6 +12,7 @@ export const heroBlurCardQuery = `
 
 export const portfolioProjectsQuery = `
   *[_type == "project"] {
+    _id,
     title,
     subtitle,
     mainImage {
