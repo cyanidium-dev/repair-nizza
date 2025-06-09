@@ -6,13 +6,14 @@ import dreamMob from "../../../public/images/image/dream-img-mob.webp";
 import dreamDesk from "../../../public/images/image/dream-img-desk.webp";
 import { useTranslations } from "next-intl";
 import Container from "../Container";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import motifMob1 from "../../../public/images/image/dream-motif-mob-1.png";
 import motifMob2 from "../../../public/images/image/dream-motif-mob-2.png";
 import motifDesk1 from "../../../public/images/image/dream-motif-desk-1.png";
 import motifDesk2 from "../../../public/images/image/dream-motif-desk-2.png";
 import motifShadowMob from "../../../public/images/image/service-bg-shadow.png";
 import motifShadowDesk from "../../../public/images/image/service-shadow-desk.png";
+import { motion, useInView } from "framer-motion";
 
 const DreamRepair = () => {
   const t = useTranslations();
@@ -21,6 +22,34 @@ const DreamRepair = () => {
     { id: 2, className: "middle-card" },
     { id: 3, className: "bottom-card" },
   ]);
+
+  const titleRef = useRef(null);
+  const contentRef = useRef(null);
+  const logoRef = useRef(null);
+  const cardsRef = useRef(null);
+  const mobileButtonRef = useRef(null);
+  const desktopButtonRef = useRef(null);
+  const additionalInfoRef = useRef(null);
+
+  const isTitleInView = useInView(titleRef, { once: true, margin: "-100px" });
+  const isContentInView = useInView(contentRef, {
+    once: true,
+    margin: "-100px",
+  });
+  const isLogoInView = useInView(logoRef, { once: true, margin: "-100px" });
+  const isCardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
+  const isMobileButtonInView = useInView(mobileButtonRef, {
+    once: true,
+    margin: "-100px",
+  });
+  const isDesktopButtonInView = useInView(desktopButtonRef, {
+    once: true,
+    margin: "-100px",
+  });
+  const isAdditionalInfoInView = useInView(additionalInfoRef, {
+    once: true,
+    margin: "-100px",
+  });
 
   return (
     <Container className="relative">
@@ -51,26 +80,67 @@ const DreamRepair = () => {
       />
       <div className="pt-[94px] pb-[137px] lg:flex lg:justify-between lg:flex-row-reverse lg:pt-[213px] lg:pb-[186px]">
         <div className="mb-auto">
-          <h2 className="font-arsenal font-normal text-[32px] uppercase mb-[18px] md:text-center lg:text-right lg:text-[64px] lg:mb-1 lg:leading-none lg:w-[572px]">
+          <motion.h2
+            ref={titleRef}
+            initial={{ x: 100, opacity: 0 }}
+            animate={
+              isTitleInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }
+            }
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="font-arsenal font-normal text-[32px] uppercase mb-[18px] md:text-center lg:text-right lg:text-[64px] lg:mb-1 lg:leading-none lg:w-[572px]"
+          >
             {t("dreamRepair.title")}
-          </h2>
+          </motion.h2>
           <div className="lg:flex lg:justify-between lg:items-end lg:mb-9">
-            <Image
-              src={logo}
-              alt="logo image"
-              className="w-[46px] h-[72px] ml-auto mb-[26px] lg:w-[52px] lg:h-[80px] lg:m-0 lg:mb-4"
-            />
-            <button className="hidden md:hidden lg:block w-[317px] h-[52px] rounded-[32px] bg-primary-black text-primary-white font-montserrat font-normal text-sm leading-5 hover:bg-primary-white hover:text-primary-black hover:border-primary-black border transition-all duration-300">
+            <motion.div
+              ref={logoRef}
+              initial={{ opacity: 0 }}
+              animate={isLogoInView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
+            >
+              <Image
+                src={logo}
+                alt="logo image"
+                className="w-[46px] h-[72px] ml-auto mb-[26px] lg:w-[52px] lg:h-[80px] lg:m-0 lg:mb-4"
+              />
+            </motion.div>
+            <motion.button
+              ref={desktopButtonRef}
+              initial={{ x: 100, opacity: 0 }}
+              animate={
+                isDesktopButtonInView
+                  ? { x: 0, opacity: 1 }
+                  : { x: 100, opacity: 0 }
+              }
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="hidden md:hidden lg:block w-[317px] h-[52px] rounded-[32px] bg-primary-black text-primary-white font-montserrat font-normal text-sm leading-5 hover:bg-primary-white hover:text-primary-black hover:border-primary-black border transition-all duration-300"
+            >
               {t("dreamRepair.button")}
-            </button>
+            </motion.button>
           </div>
-          <p className="font-montserrat font-light text-base mb-[50px] w-[273px] md:text-center md:w-[373px] md:mx-auto lg:text-xl lg:w-[355px] lg:text-left lg:m-0">
+          <motion.p
+            ref={contentRef}
+            initial={{ y: 100, opacity: 0 }}
+            animate={
+              isContentInView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }
+            }
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="font-montserrat font-light text-base mb-[50px] w-[273px] md:text-center md:w-[373px] md:mx-auto lg:text-xl lg:w-[355px] lg:text-left lg:m-0"
+          >
             {t("dreamRepair.description")}
-          </p>
+          </motion.p>
         </div>
         <div className="lg:mr-16 lg:shrink-0">
           <div className="pb-14 lg:pb-10">
-            <div className="relative w-[310px] h-[207px] mx-auto lg:w-[564px] lg:h-[418px]">
+            <motion.div
+              ref={cardsRef}
+              initial={{ x: -100, opacity: 0 }}
+              animate={
+                isCardsInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }
+              }
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="relative w-[310px] h-[207px] mx-auto lg:w-[564px] lg:h-[418px]"
+            >
               <div className="card-stack">
                 {cards.map((card) => (
                   <div key={card.id} className={`card-item ${card.className}`}>
@@ -87,15 +157,33 @@ const DreamRepair = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
           </div>
-          <p className="hidden font-montserrat font-light text-base text-primary-black md:block md:text-center md:mb-6 lg:w-[399px] lg:text-left lg:mb-0">
+          <motion.p
+            ref={additionalInfoRef}
+            initial={{ x: -100, opacity: 0 }}
+            animate={
+              isAdditionalInfoInView
+                ? { x: 0, opacity: 1 }
+                : { x: -100, opacity: 0 }
+            }
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="hidden font-montserrat font-light text-base text-primary-black md:block md:text-center md:mb-6 lg:w-[399px] lg:text-left lg:mb-0"
+          >
             {t("dreamRepair.additionalInfo")}
-          </p>
+          </motion.p>
         </div>
-        <button className="lg:hidden w-[310px] h-[52px] rounded-[32px] bg-primary-black text-primary-white font-montserrat font-normal text-sm leading-5 mx-auto md:flex md:justify-center md:items-center hover:bg-primary-white hover:text-primary-black hover:border-primary-black border transition-all duration-300">
+        <motion.button
+          ref={mobileButtonRef}
+          initial={{ y: 100, opacity: 0 }}
+          animate={
+            isMobileButtonInView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }
+          }
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="lg:hidden w-[310px] h-[52px] rounded-[32px] bg-primary-black text-primary-white font-montserrat font-normal text-sm leading-5 mx-auto md:flex md:justify-center md:items-center hover:bg-primary-white hover:text-primary-black hover:border-primary-black border transition-all duration-300"
+        >
           {t("dreamRepair.button")}
-        </button>
+        </motion.button>
       </div>
       <Image
         src={motifMob2}
