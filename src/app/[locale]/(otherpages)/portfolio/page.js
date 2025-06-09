@@ -6,7 +6,7 @@ const Page = () => {
   return (
     <>
       <Header />
-      <main>
+      <main className="overflow-x-hidden">
         <PortfolioComponent />
       </main>
       <Footer />

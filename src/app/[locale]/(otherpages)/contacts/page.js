@@ -6,7 +6,7 @@ const Page = () => {
   return (
     <d>
       <Header />
-      <main>
+      <main className="overflow-x-hidden overflow-y-hidden">
         <Contacts />
       </main>
       <Footer />

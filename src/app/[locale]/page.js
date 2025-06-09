@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <main>
+      <main className="overflow-x-hidden">
         <Hero />
         <OurService />
         <PortfolioSection />

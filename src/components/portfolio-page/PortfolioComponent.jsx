@@ -109,7 +109,7 @@ const PortfolioComponent = () => {
 
   return (
     <div>
-      <Container className="relative overflow-hidden">
+      <Container className="relative">
         <Image
           src={motif}
           alt="motif image"

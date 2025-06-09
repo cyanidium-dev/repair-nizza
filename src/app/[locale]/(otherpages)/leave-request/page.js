@@ -7,7 +7,7 @@ const Page = () => {
   return (
     <>
       <Header />
-      <main>
+      <main className="overflow-x-hidden overflow-y-clip">
         <HeroPath />
         <ClientFormPath />
       </main>

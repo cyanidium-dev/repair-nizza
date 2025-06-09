@@ -22,7 +22,7 @@ const HeroPath = () => {
   const t = useTranslations("leaveRequest.hero");
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative">
       <Image
         src={mainMotifMob}
         alt="leave-motif-mob-1"

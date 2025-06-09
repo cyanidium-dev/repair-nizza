@@ -45,7 +45,7 @@ const OurService = () => {
   };
 
   return (
-    <Container className="relative overflow-hidden">
+    <Container className="relative">
       <Image
         src={motifDesk}
         alt="motif image"
