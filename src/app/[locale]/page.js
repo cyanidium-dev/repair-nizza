@@ -6,12 +6,17 @@ import Hero from "@/components/homepage/Hero";
 import OurService from "@/components/homepage/OurService";
 import PortfolioSection from "@/components/homepage/PortfolioSection";
 import StepToDream from "@/components/homepage/StepToDream";
-export default function Home() {
+import { client } from "@/sanityClient";
+import { heroBlurCardQuery } from "@/lib/queries";
+
+export default async function Home() {
+  const heroBlurCardData = await client.fetch(heroBlurCardQuery);
+
   return (
     <div>
       <Header />
       <main className="overflow-x-hidden">
-        <Hero />
+        <Hero heroBlurCardData={heroBlurCardData} />
         <OurService />
         <PortfolioSection />
         <DreamRepair />

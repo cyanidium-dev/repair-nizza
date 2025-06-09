@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 import HeroBlurCard from "./HeroBlurCard";
 import Container from "../Container";
 
-const Hero = () => {
+const Hero = ({ heroBlurCardData }) => {
   const t = useTranslations("hero");
 
   return (
@@ -45,7 +45,7 @@ const Hero = () => {
               </motion.button>
             </div>
             <div className="mt-auto flex relative">
-              <HeroBlurCard />
+              <HeroBlurCard data={heroBlurCardData} />
             </div>
           </div>
         </Container>
@@ -83,7 +83,7 @@ const Hero = () => {
               </motion.button>
             </div>
             <div className="mt-auto flex relative">
-              <HeroBlurCard />
+              <HeroBlurCard data={heroBlurCardData} />
             </div>
           </div>
         </Container>
@@ -123,7 +123,7 @@ const Hero = () => {
               </div>
             </div>
             <div className="mt-auto flex relative">
-              <HeroBlurCard />
+              <HeroBlurCard data={heroBlurCardData} />
             </div>
           </div>
         </Container>
