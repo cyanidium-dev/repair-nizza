@@ -2,6 +2,7 @@
 import { useTranslations } from "next-intl";
 import Container from "../Container";
 import Image from "next/image";
+import { motion, useInView } from "framer-motion";
 import logo from "../../../public/images/SVG/logo-svg.svg";
 import motifDesk from "../../../public/images/image/service-motif-test.png";
 import motifDesk2 from "../../../public/images/image/service-motif-desk.png";
@@ -16,7 +17,33 @@ import sericeImgMobDesk1 from "../../../public/images/image/service-img-1-desk.w
 import sericeImgMobDesk2 from "../../../public/images/image/service-img-2-desk.webp";
 import plus from "../../../public/images/SVG/icon-plus.svg";
 import minus from "../../../public/images/SVG/icon-minus.svg";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+
+const Counter = ({ end, duration = 2000 }) => {
+  const [count, setCount] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    if (isVisible) {
+      let startTime = null;
+      const animate = (currentTime) => {
+        if (!startTime) startTime = currentTime;
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        setCount(Math.floor(progress * end));
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+      requestAnimationFrame(animate);
+    }
+  }, [isVisible, end, duration]);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  return <span>{count}</span>;
+};
 
 const OurService = () => {
   const t = useTranslations("ourService");
@@ -24,6 +51,15 @@ const OurService = () => {
     cosmetic: false,
     capital: false,
     fullSupport: false,
+  });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "0px" });
+  const contentRef = useRef(null);
+  const isContentInView = useInView(contentRef, { once: true, margin: "0px" });
+  const uniquenessRef = useRef(null);
+  const isUniquenessInView = useInView(uniquenessRef, {
+    once: true,
+    margin: "0px",
   });
 
   const toggleCard = (cardName) => {
@@ -46,50 +82,95 @@ const OurService = () => {
 
   return (
     <Container className="relative">
-      <Image
-        src={motifDesk}
-        alt="motif image"
-        className="absolute top-[150px] right-[-400px] lg:block hidden"
-      />
-      <Image
-        src={motifMob}
-        alt="motif image"
-        className="absolute top-[135px] right-0 -z-20 lg:hidden"
-      />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.8 }}
+      >
+        <Image
+          src={motifDesk}
+          alt="motif image"
+          className="absolute top-[150px] right-[-400px] lg:block hidden"
+        />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.8 }}
+      >
+        <Image
+          src={motifMob}
+          alt="motif image"
+          className="absolute top-[135px] right-0 -z-20 lg:hidden"
+        />
+      </motion.div>
       <Image
         src={bgShadow}
         alt="motif image"
-        className="absolute top-[175px] md:top-[170px] md:rotate-[-3deg] right-0 -z-10  lg:hidden"
+        className="absolute top-[175px] md:top-[170px] md:rotate-[-3deg] right-0 -z-10 lg:hidden"
       />
       <div className="pt-[94px] mb-[215px] w-[310px] md:w-[715px] lg:w-[1200px] relative md:mb-[150px] lg:mb-[136px]">
-        <div className="relative mb-16 lg:flex lg:justify-between lg:mb-[99px] lg:items-start">
-          <h2 className="font-arsenal font-normal text-[22px] text-primary-black uppercase w-[299px] mb-[31px] md:text-3xl md:w-[450px] md:text-center lg:text-5xl lg:w-[660px] lg:text-left">
+        <div
+          ref={ref}
+          className="relative mb-16 lg:flex lg:justify-between lg:mb-[99px] lg:items-start"
+        >
+          <motion.h2
+            initial={{ x: -100, opacity: 0 }}
+            animate={isInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="font-arsenal font-normal text-[22px] text-primary-black uppercase w-[299px] mb-[31px] md:text-3xl md:w-[450px] md:text-center lg:text-5xl lg:w-[660px] lg:text-left"
+          >
             {t("title")}
-          </h2>
-          <Image
-            src={logo}
-            alt="logo image"
-            width={36}
-            height={56}
-            className="ml-auto relative my-8 lg:my-0 lg:ml-0 lg:w-[53px] lg:h-[80px]"
-          />
-          <p className="font-montserrat font-light text-sm text-primary-black text-right w-[290px] ml-auto md:text-base md:w-[450px] md:text-center lg:ml-0 lg:text-left lg:w-[333px]">
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <Image
+              src={logo}
+              alt="logo image"
+              width={36}
+              height={56}
+              className="ml-auto relative my-8 lg:my-0 lg:ml-0 lg:w-[53px] lg:h-[80px]"
+            />
+          </motion.div>
+          <motion.p
+            initial={{ x: 100, opacity: 0 }}
+            animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="font-montserrat font-light text-sm text-primary-black text-right w-[290px] ml-auto md:text-base md:w-[450px] md:text-center lg:ml-0 lg:text-left lg:w-[333px]"
+          >
             {t("description")}
-          </p>
+          </motion.p>
         </div>
-        <div className="">
+        <div ref={contentRef} className="">
           <div className="lg:flex">
-            <Image
-              src={sericeImg1Mob1}
-              alt="service image"
-              className="mb-10 rounded-lg lg:hidden"
-            />
-            <Image
-              src={sericeImgMobDesk1}
-              alt="service image"
-              className="rounded-lg lg:block hidden lg:mr-[118px]"
-            />
-            <div>
+            <motion.div
+              initial={{ x: -100, opacity: 0 }}
+              animate={
+                isContentInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }
+              }
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              <Image
+                src={sericeImg1Mob1}
+                alt="service image"
+                className="mb-10 rounded-lg lg:hidden"
+              />
+              <Image
+                src={sericeImgMobDesk1}
+                alt="service image"
+                className="rounded-lg lg:block hidden lg:mr-[118px]"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ x: 100, opacity: 0 }}
+              animate={
+                isContentInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }
+              }
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
               <div className="mb-7 lg:mb-10">
                 <div
                   className="flex justify-between items-center mb-[22px] w-[310px] cursor-pointer lg:w-[590px] lg:mb-6"
@@ -184,33 +265,55 @@ const OurService = () => {
                 </div>
               </div>
 
-              <Image
-                src={sericeImg2Mob2}
-                alt="second service image"
-                className="rounded-lg mt-9 md:mt-0 md:ml-auto md:h-[295px] lg:hidden"
-              />
-              <Image
-                src={sericeImgMobDesk2}
-                alt="second service image"
-                className="rounded-lg  lg:block hidden mt-[62px]"
-              />
-            </div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={isContentInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ duration: 0.5, ease: "easeOut", delay: 1.2 }}
+              >
+                <Image
+                  src={sericeImg2Mob2}
+                  alt="second service image"
+                  className="rounded-lg mt-9 md:mt-0 md:ml-auto md:h-[295px] lg:hidden"
+                />
+                <Image
+                  src={sericeImgMobDesk2}
+                  alt="second service image"
+                  className="rounded-lg lg:block hidden mt-[62px]"
+                />
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </div>
-      <div className="pb-[94px] lg:flex lg:justify-between lg:items-center">
-        <div>
+      <div
+        ref={uniquenessRef}
+        className="pb-[94px] lg:flex lg:justify-between lg:items-center"
+      >
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          animate={
+            isUniquenessInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }
+          }
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           <h2 className="font-arsenal font-normal text-[32px] text-primary-black uppercase mb-6 leading-[39px] lg:text-5xl lg:leading-[72px]">
             {t("uniqueness.title")}
           </h2>
           <p className="font-montserrat font-light text-sm text-primary-black mb-12 lg:text-base lg:w-[458px]">
             {t("uniqueness.description")}
           </p>
-        </div>
-        <ul className="flex gap-8 md:justify-center">
+        </motion.div>
+        <motion.ul
+          initial={{ x: 100, opacity: 0 }}
+          animate={
+            isUniquenessInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }
+          }
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="flex gap-8 md:justify-center"
+        >
           <li className="flex flex-col lg:gap-2">
             <p className="font-arsenal font-normal text-[40px] text-primary-black leading-[72px] lg:text-5xl">
-              {t("uniqueness.stats.satisfied.value")}
+              {isUniquenessInView && <Counter end={90} />}%
             </p>
             <p className="font-montserrat font-normal text-xs text-primary-black lg:text-[13px]">
               {t("uniqueness.stats.satisfied.label")}
@@ -218,32 +321,44 @@ const OurService = () => {
           </li>
           <li className="flex flex-col lg:gap-2">
             <p className="font-arsenal font-normal text-[40px] text-primary-black leading-[72px] lg:text-5xl">
-              {t("uniqueness.stats.completed.value")}
+              {isUniquenessInView && <Counter end={200} />}+
             </p>
-            <p className="font-montserrat font-normal text-xs text-primary-black lg:text-[13px] ">
+            <p className="font-montserrat font-normal text-xs text-primary-black lg:text-[13px]">
               {t("uniqueness.stats.completed.label")}
             </p>
           </li>
           <li className="flex flex-col lg:gap-2">
             <p className="font-arsenal font-normal text-[40px] text-primary-black leading-[72px] lg:text-5xl">
-              {t("uniqueness.stats.experience.value")}
+              {isUniquenessInView && <Counter end={10} />}+
             </p>
             <p className="font-montserrat font-normal text-xs text-primary-black lg:text-[13px]">
               {t("uniqueness.stats.experience.label")}
             </p>
           </li>
-        </ul>
+        </motion.ul>
       </div>
-      <Image
-        src={motifMob2}
-        alt="motif image"
-        className="absolute bottom-[500px] md:bottom-[360px] right-0 md:right-[-25px] md:rotate-[8deg] -z-20 lg:hidden"
-      />
-      <Image
-        src={motifDesk2}
-        alt="motif image"
-        className="absolute bottom-[280px] left-[305px] -z-20 lg:block hidden"
-      />
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={isContentInView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.35, ease: "easeOut", delay: 1.4 }}
+      >
+        <Image
+          src={motifMob2}
+          alt="motif image"
+          className="absolute bottom-[500px] md:bottom-[360px] right-0 md:right-[-25px] md:rotate-[8deg] -z-20 lg:hidden"
+        />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={isContentInView ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.35, ease: "easeOut", delay: 1.4 }}
+      >
+        <Image
+          src={motifDesk2}
+          alt="motif image"
+          className="absolute bottom-[280px] left-[305px] -z-20 lg:block hidden"
+        />
+      </motion.div>
       <Image
         src={bgShadow2}
         alt="motif image"
