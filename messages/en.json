@@ -196,7 +196,8 @@
       "validation": {
         "phoneRequired": "Phone number is required",
         "phoneInvalid": "At least 8 digits"
-      }
+      },
+      "success": "Request successfully sent!"
     }
   },
   "portfolioPage": {

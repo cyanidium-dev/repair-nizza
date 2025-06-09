@@ -195,8 +195,9 @@
       "button": "Отправить заявку",
       "validation": {
         "phoneRequired": "Номер телефона обязателен",
-        "phoneInvalid": "Не менее 8 цифр"
-      }
+        "phoneInvalid": "Минимум 8 цифр"
+      },
+      "success": "Заявка успешно отправлена!"
     }
   },
   "portfolioPage": {

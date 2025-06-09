@@ -1,7 +1,6 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ClientFormPath from "@/components/leave-request-page/ClientFormPath";
-import HeroPath from "@/components/leave-request-page/HeroPath";
 
 export async function generateMetadata({ params }) {
   const { locale } = params;
@@ -25,7 +24,6 @@ const Page = () => {
     <>
       <Header />
       <main className="overflow-x-hidden overflow-y-clip">
-        <HeroPath />
         <ClientFormPath />
       </main>
       <Footer />

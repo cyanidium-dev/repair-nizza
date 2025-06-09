@@ -18,8 +18,12 @@ import shadowDesk from "../../../public/images/image/leave-request-img/leave-sha
 import mainMotifMob from "../../../public/images/image/leave-request-img/request-page-motif-mob.png";
 import mainMotifDesk from "../../../public/images/image/leave-request-img/request-page-motif-desk.png";
 
-const HeroPath = () => {
+const HeroPath = ({ onTypeSelect, selectedType }) => {
   const t = useTranslations("leaveRequest.hero");
+
+  const handleTypeClick = (type) => {
+    onTypeSelect(type);
+  };
 
   return (
     <div className="relative">
@@ -86,47 +90,80 @@ const HeroPath = () => {
               {t("repairType.description")}
             </p>
             <div className="flex flex-col gap-6 md:items-center lg:flex-row lg:gap-5">
-              <div>
-                <Image
-                  src={imgMob1}
-                  alt="leave-request-img"
-                  className="rounded-xl mb-3 lg:hidden"
-                />
-                <Image
-                  src={imgDesk1}
-                  alt="leave-request-img"
-                  className="rounded-xl mb-[18px] hidden lg:block"
-                />
+              <div
+                onClick={() => handleTypeClick("capital")}
+                className="cursor-pointer transition-all duration-300"
+              >
+                <div
+                  className={`${
+                    selectedType === "capital"
+                      ? "p-[2px] border-2 border-primary-black rounded-xl"
+                      : ""
+                  }`}
+                >
+                  <Image
+                    src={imgMob1}
+                    alt="leave-request-img"
+                    className="rounded-xl mb-3 lg:hidden"
+                  />
+                  <Image
+                    src={imgDesk1}
+                    alt="leave-request-img"
+                    className="rounded-xl mb-[18px] hidden lg:block"
+                  />
+                </div>
                 <p className="font-arsenal font-normal text-base text-center text-primary-black uppercase">
                   {t("repairType.types.capital")}
                 </p>
               </div>
-              <div>
-                <Image
-                  src={imgMob2}
-                  alt="leave-request-img"
-                  className="rounded-xl mb-3 lg:hidden"
-                />
-                <Image
-                  src={imgDesk2}
-                  alt="leave-request-img"
-                  className="rounded-xl mb-[18px] hidden lg:block"
-                />
+              <div
+                onClick={() => handleTypeClick("cosmetic")}
+                className="cursor-pointer transition-all duration-300"
+              >
+                <div
+                  className={`${
+                    selectedType === "cosmetic"
+                      ? "p-[2px] border-2 border-primary-black rounded-xl"
+                      : ""
+                  }`}
+                >
+                  <Image
+                    src={imgMob2}
+                    alt="leave-request-img"
+                    className="rounded-xl mb-3 lg:hidden"
+                  />
+                  <Image
+                    src={imgDesk2}
+                    alt="leave-request-img"
+                    className="rounded-xl mb-[18px] hidden lg:block"
+                  />
+                </div>
                 <p className="font-arsenal font-normal text-base text-center text-primary-black uppercase">
                   {t("repairType.types.cosmetic")}
                 </p>
               </div>
-              <div>
-                <Image
-                  src={imgMob3}
-                  alt="leave-request-img"
-                  className="rounded-xl mb-3 lg:hidden"
-                />
-                <Image
-                  src={imgDesk3}
-                  alt="leave-request-img"
-                  className="rounded-xl mb-[18px] hidden lg:block"
-                />
+              <div
+                onClick={() => handleTypeClick("design")}
+                className="cursor-pointer transition-all duration-300"
+              >
+                <div
+                  className={`${
+                    selectedType === "design"
+                      ? "p-[2px] border-2 border-primary-black rounded-xl"
+                      : ""
+                  }`}
+                >
+                  <Image
+                    src={imgMob3}
+                    alt="leave-request-img"
+                    className="rounded-xl mb-3 lg:hidden"
+                  />
+                  <Image
+                    src={imgDesk3}
+                    alt="leave-request-img"
+                    className="rounded-xl mb-[18px] hidden lg:block"
+                  />
+                </div>
                 <p className="font-arsenal font-normal text-base text-center text-primary-black uppercase">
                   {t("repairType.types.design")}
                 </p>
