@@ -35,7 +35,7 @@ const ProjectHero = ({ data }) => {
       </div>
 
       {/* Desktop Image */}
-      <div className="hidden md:block">
+      <div className="hidden md:block relative">
         <Image
           src={data.mainImage.asset.url}
           alt={data.title?.[locale] || "Project image"}
@@ -44,6 +44,16 @@ const ProjectHero = ({ data }) => {
           className="w-full h-[453px] object-cover rounded-t-[20px]"
           priority
         />
+        <div className="flex flex-col justify-center items-center absolute top-0 left-0 w-1/2 lg:w-[679px] h-full backdrop-blur-[16px] shadow-[inset_0_4px_13px_0_rgba(255,255,255,0.25)] bg-[rgba(18,18,18,0.26)] py-[60px] pl-10 pr-[45px]">
+          <div className="flex flex-col justify-center mx-auto">
+            <h3 className="font-arsenal font-normal text-4xl lg:text-[83px] text-primary-white mb-6 lg:leading-[100px] uppercase mx-auto">
+              {data.title?.[locale]}
+            </h3>
+            <p className="font-montserrat font-light text-base text-primary-white md:w-[290px] lg:w-[404px] leading-[19px] ">
+              {data.subtitle?.[locale]}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

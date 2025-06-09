@@ -18,11 +18,33 @@ async function getProject(slug) {
   }`;
 
   const project = await client.fetch(query, { slug });
+  console.log("Project data from Sanity:", project);
   return project;
+}
+
+export async function generateMetadata({ params }) {
+  const { id, locale } = params;
+  const project = await getProject(id);
+
+  if (!project) {
+    return {
+      title: "Project Not Found",
+      description: "The requested project could not be found",
+    };
+  }
+
+  return {
+    title: project.title?.[locale] || project.title?.en || "Project",
+    description:
+      project.subtitle?.[locale] ||
+      project.subtitle?.en ||
+      "Project description",
+  };
 }
 
 export default async function ProjectPage({ params }) {
   const { id } = params;
+  console.log("Project ID from params:", id);
   const project = await getProject(id);
 
   if (!project) {
