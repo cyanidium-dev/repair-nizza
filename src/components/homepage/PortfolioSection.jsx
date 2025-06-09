@@ -58,6 +58,8 @@ const PortfolioCard = ({ data }) => {
 
 const PortfolioSection = ({ portfolioData }) => {
   const t = useTranslations();
+  const router = useRouter();
+  const locale = useLocale();
   const [isMobile, setIsMobile] = useState(true);
   const [swiper, setSwiper] = useState(null);
 
@@ -73,6 +75,10 @@ const PortfolioSection = ({ portfolioData }) => {
   });
   const isButtonInView = useInView(buttonRef, { once: true, margin: "-100px" });
   const isCardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
+
+  const handlePortfolioClick = () => {
+    router.push(`/${locale}/portfolio`);
+  };
 
   if (!portfolioData || portfolioData.length === 0) return null;
 
@@ -147,6 +153,7 @@ const PortfolioSection = ({ portfolioData }) => {
             initial={{ opacity: 0 }}
             animate={isButtonInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+            onClick={handlePortfolioClick}
             className="w-[310px] h-[52px] rounded-[32px] bg-primary-white text-primary-black font-montserrat font-normal text-sm mx-auto leading-5 block md:mb-0 md:order-2 lg:w-[258px] hover:bg-transparent hover:text-primary-white hover:border-primary-white border transition-all duration-300"
           >
             {t("portfolioSection.button")}

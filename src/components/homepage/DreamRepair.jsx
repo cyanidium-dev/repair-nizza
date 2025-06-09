@@ -14,9 +14,13 @@ import motifDesk2 from "../../../public/images/image/dream-motif-desk-2.png";
 import motifShadowMob from "../../../public/images/image/service-bg-shadow.png";
 import motifShadowDesk from "../../../public/images/image/service-shadow-desk.png";
 import { motion, useInView } from "framer-motion";
+import { useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
 
 const DreamRepair = () => {
   const t = useTranslations();
+  const router = useRouter();
+  const locale = useLocale();
   const [cards, setCards] = useState([
     { id: 1, className: "top-card" },
     { id: 2, className: "middle-card" },
@@ -50,6 +54,10 @@ const DreamRepair = () => {
     once: true,
     margin: "-100px",
   });
+
+  const handleConsultationClick = () => {
+    router.push(`/${locale}/leave-request`);
+  };
 
   return (
     <Container className="relative">
@@ -113,6 +121,7 @@ const DreamRepair = () => {
                   : { x: 100, opacity: 0 }
               }
               transition={{ duration: 0.7, ease: "easeOut" }}
+              onClick={handleConsultationClick}
               className="hidden md:hidden lg:block w-[317px] h-[52px] rounded-[32px] bg-primary-black text-primary-white font-montserrat font-normal text-sm leading-5 hover:bg-primary-white hover:text-primary-black hover:border-primary-black border transition-all duration-300"
             >
               {t("dreamRepair.button")}
@@ -180,6 +189,7 @@ const DreamRepair = () => {
             isMobileButtonInView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }
           }
           transition={{ duration: 0.7, ease: "easeOut" }}
+          onClick={handleConsultationClick}
           className="lg:hidden w-[310px] h-[52px] rounded-[32px] bg-primary-black text-primary-white font-montserrat font-normal text-sm leading-5 mx-auto md:flex md:justify-center md:items-center hover:bg-primary-white hover:text-primary-black hover:border-primary-black border transition-all duration-300"
         >
           {t("dreamRepair.button")}

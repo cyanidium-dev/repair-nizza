@@ -10,9 +10,17 @@ import step4Mob from "../../../public/images/image/step-2-desk.png";
 import motifMob from "../../../public/images/image/step-motif-mob.png";
 import motifDesk from "../../../public/images/image/step-motif-desk.png";
 import motifShadowMob from "../../../public/images/image/service-bg-shadow.png";
+import { useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
 
 const StepToDream = () => {
   const t = useTranslations("stepToDream");
+  const router = useRouter();
+  const locale = useLocale();
+
+  const handleConsultationClick = () => {
+    router.push(`/${locale}/leave-request`);
+  };
 
   return (
     <div className="relative">
@@ -52,7 +60,10 @@ const StepToDream = () => {
             <h2 className="font-arsenal font-normal text-[32px] text-primary-black uppercase mb-[147px] w-[286px] leading-tight md:text-center md:mx-auto lg:text-[64px] lg:w-[572px] lg:text-left lg:mb-12">
               {t("title")}
             </h2>
-            <button className="hidden lg:block font-montserrat font-normal text-sm text-primary-white bg-primary-black rounded-[32px] w-[317px] h-[52px] mr-auto hover:bg-transparent hover:text-primary-black hover:border-primary-black border transition-all duration-300">
+            <button
+              onClick={handleConsultationClick}
+              className="hidden lg:block font-montserrat font-normal text-sm text-primary-white bg-primary-black rounded-[32px] w-[317px] h-[52px] mr-auto hover:bg-transparent hover:text-primary-black hover:border-primary-black border transition-all duration-300"
+            >
               {t("button")}
             </button>
           </div>
@@ -60,7 +71,10 @@ const StepToDream = () => {
             {t("description")}
           </p>
 
-          <button className="lg:hidden font-montserrat font-normal text-sm text-primary-white bg-primary-black rounded-[32px] w-[310px] h-[52px] flex justify-center items-center mx-auto hover:bg-transparent hover:text-primary-black hover:border-primary-black border transition-all duration-300">
+          <button
+            onClick={handleConsultationClick}
+            className="lg:hidden font-montserrat font-normal text-sm text-primary-white bg-primary-black rounded-[32px] w-[310px] h-[52px] flex justify-center items-center mx-auto hover:bg-transparent hover:text-primary-black hover:border-primary-black border transition-all duration-300"
+          >
             {t("button")}
           </button>
         </div>

@@ -6,9 +6,17 @@ import bgImgDesk from "../../../public/images/image/hero-img-desk.webp";
 import { useTranslations } from "next-intl";
 import HeroBlurCard from "./HeroBlurCard";
 import Container from "../Container";
+import { useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
 
 const Hero = ({ heroBlurCardData }) => {
   const t = useTranslations("hero");
+  const router = useRouter();
+  const locale = useLocale();
+
+  const handleConsultationClick = () => {
+    router.push(`/${locale}/leave-request`);
+  };
 
   return (
     <>
@@ -39,6 +47,7 @@ const Hero = ({ heroBlurCardData }) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
+                onClick={handleConsultationClick}
                 className="w-[312px] h-[52px] rounded-[32px] bg-primary-white text-primary-black font-montserrat font-medium text-sm mx-auto block hover:bg-primary-black hover:text-primary-white transition-all duration-300"
               >
                 {t("button")}
@@ -77,6 +86,7 @@ const Hero = ({ heroBlurCardData }) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
+                onClick={handleConsultationClick}
                 className="w-[312px] h-[52px] rounded-[32px] bg-primary-white text-primary-black font-montserrat font-medium text-sm mx-auto block hover:bg-primary-black hover:text-primary-white transition-all duration-300"
               >
                 {t("button")}
@@ -116,6 +126,7 @@ const Hero = ({ heroBlurCardData }) => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
+                  onClick={handleConsultationClick}
                   className="w-[317px] h-[52px] rounded-[32px] bg-primary-white text-primary-black font-montserrat font-medium text-sm ml-auto block hover:bg-primary-black hover:text-primary-white transition-all duration-300"
                 >
                   {t("button")}
