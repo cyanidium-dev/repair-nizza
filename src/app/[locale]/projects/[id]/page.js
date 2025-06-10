@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BeforeAndAfter from "@/components/projects/BeforeAndAfter";
 import TypeOfRoom from "@/components/projects/TypeOfRoom";
+import TaskAndSolution from "@/components/projects/TaskAndSolution";
 
 async function getProject(id) {
   const query = `*[_type == "project" && _id == $id][0]{
@@ -31,11 +32,24 @@ async function getProject(id) {
       image {
         asset->
       }
+    },
+    clientTaskBlock {
+      title,
+      description,
+      image {
+        asset->
+      }
+    },
+    solutionBlock {
+      title,
+      description,
+      image {
+        asset->
+      }
     }
   }`;
 
   const project = await client.fetch(query, { id });
-  console.log("Project data from Sanity:", project);
   return project;
 }
 
@@ -61,7 +75,6 @@ export async function generateMetadata({ params }) {
 
 export default async function ProjectPage({ params }) {
   const { id } = params;
-  console.log("Project ID from params:", id);
   const project = await getProject(id);
 
   if (!project) {
@@ -75,6 +88,10 @@ export default async function ProjectPage({ params }) {
         <ProjectHero data={project} />
         <BeforeAndAfter data={project.beforeAfterImages} />
         <TypeOfRoom data={project.mainBlock} />
+        <TaskAndSolution
+          task={project.clientTaskBlock}
+          solution={project.solutionBlock}
+        />
       </main>
       <Footer />
     </div>
