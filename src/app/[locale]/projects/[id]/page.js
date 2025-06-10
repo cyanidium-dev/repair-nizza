@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import BeforeAndAfter from "@/components/projects/BeforeAndAfter";
 import TypeOfRoom from "@/components/projects/TypeOfRoom";
 import TaskAndSolution from "@/components/projects/TaskAndSolution";
+import ProjectGallery from "@/components/projects/ProjectGallery";
 
 async function getProject(id) {
   const query = `*[_type == "project" && _id == $id][0]{
@@ -46,6 +47,11 @@ async function getProject(id) {
       image {
         asset->
       }
+    },
+    gallery[]{
+      _key,
+      _type,
+      asset->
     }
   }`;
 
@@ -92,6 +98,7 @@ export default async function ProjectPage({ params }) {
           task={project.clientTaskBlock}
           solution={project.solutionBlock}
         />
+        <ProjectGallery gallery={project.gallery} />
       </main>
       <Footer />
     </div>
