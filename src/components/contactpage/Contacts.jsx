@@ -11,9 +11,26 @@ import imgShadowMob from "../../../public/images/image/contacts-page-shadow-mob.
 import motifMob from "../../../public/images/image/contact-page-motif-mob.png";
 import motifDesk from "../../../public/images/image/contact-page-motif-desk.png";
 import shadowDesk from "../../../public/images/image/contact-page-shadow-desk.png";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const Contacts = () => {
   const t = useTranslations("contactPage");
+  const titleRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const contactsRef = useRef(null);
+  const imageRef = useRef(null);
+
+  const isTitleInView = useInView(titleRef, { once: true, margin: "-100px" });
+  const isDescriptionInView = useInView(descriptionRef, {
+    once: true,
+    margin: "-100px",
+  });
+  const isContactsInView = useInView(contactsRef, {
+    once: true,
+    margin: "-100px",
+  });
+  const isImageInView = useInView(imageRef, { once: true, margin: "-100px" });
 
   return (
     <Container className="relative">
@@ -29,24 +46,49 @@ const Contacts = () => {
       />
       <div className="pt-[34px] lg:pt-[54px] pb-[94px] lg:pb-[150px] lg:flex">
         <div className="mb-[110px] md:mb-[70px] lg:mr-[182px]">
-          <h1 className="font-arsenal font-normal text-[32px] md:text-4xl text-primary-black uppercase mb-4 md:text-center lg:text-left lg:text-5xl lg:mb-5">
+          <motion.h1
+            ref={titleRef}
+            initial={{ x: -100, opacity: 0 }}
+            animate={
+              isTitleInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }
+            }
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="font-arsenal font-normal text-[32px] md:text-4xl text-primary-black uppercase mb-4 md:text-center lg:text-left lg:text-5xl lg:mb-5"
+          >
             {t("title")}
-          </h1>
-          <p className="font-montserrat font-light text-xs md:text-sm lg:text-base text-primary-black leading-[15px] md:text-center lg:text-left">
+          </motion.h1>
+          <motion.p
+            ref={descriptionRef}
+            initial={{ y: 100, opacity: 0 }}
+            animate={
+              isDescriptionInView
+                ? { y: 0, opacity: 1 }
+                : { y: 100, opacity: 0 }
+            }
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="font-montserrat font-light text-xs md:text-sm lg:text-base text-primary-black leading-[15px] md:text-center lg:text-left"
+          >
             {t("description")}
-          </p>
+          </motion.p>
         </div>
         <div className="relative lg:flex lg:flex-col-reverse lg:items-center">
-          <Image
-            src={imgMob}
-            alt="interior image"
-            className="rounded-lg mb-[100px] md:hidden"
-          />
-          <Image
-            src={imgDesk}
-            alt="interior image"
-            className="hidden rounded-lg mb-[100px] lg:mb-0 md:block md:mx-auto"
-          />
+          <motion.div
+            ref={imageRef}
+            initial={{ opacity: 0 }}
+            animate={isImageInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
+            <Image
+              src={imgMob}
+              alt="interior image"
+              className="rounded-lg mb-[100px] md:hidden"
+            />
+            <Image
+              src={imgDesk}
+              alt="interior image"
+              className="hidden rounded-lg mb-[100px] lg:mb-0 md:block md:mx-auto"
+            />
+          </motion.div>
           <Image
             src={imgMotifMob}
             alt="interior image"
@@ -62,7 +104,15 @@ const Contacts = () => {
             alt="interior image"
             className="absolute top-[110px] md:top-[310px] right-[85px] md:right-[245px] -z-10 lg:top-[-40px] lg:right-[195px] lg:rotate-[-40deg] opacity-70"
           />
-          <ul className="flex flex-col gap-8 md:flex-row md:justify-between lg:w-[679px] lg:mb-[90px]">
+          <motion.ul
+            ref={contactsRef}
+            initial={{ x: 100, opacity: 0 }}
+            animate={
+              isContactsInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }
+            }
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="flex flex-col gap-8 md:flex-row md:justify-between lg:w-[679px] lg:mb-[90px]"
+          >
             <div className="flex flex-col gap-8 lg:gap-[52px]">
               <li>
                 <p className="font-montserrat font-light mb-[13px] text-sm text-primary-black uppercase">
@@ -111,7 +161,7 @@ const Contacts = () => {
                 </a>
               </li>
             </div>
-          </ul>
+          </motion.ul>
         </div>
       </div>
       <Image

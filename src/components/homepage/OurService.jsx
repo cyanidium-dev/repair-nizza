@@ -85,7 +85,7 @@ const OurService = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 0.7, ease: "easeOut", delay: 0.8 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
       >
         <Image
           src={motifDesk}
@@ -96,7 +96,7 @@ const OurService = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 0.7, ease: "easeOut", delay: 0.8 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
       >
         <Image
           src={motifMob}
@@ -125,7 +125,7 @@ const OurService = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
           >
             <Image
               src={logo}
@@ -266,9 +266,13 @@ const OurService = () => {
               </div>
 
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={isContentInView ? { opacity: 1 } : { opacity: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut", delay: 1.2 }}
+                initial={{ y: 100, opacity: 0 }}
+                animate={
+                  isContentInView
+                    ? { y: 0, opacity: 1 }
+                    : { y: 100, opacity: 0 }
+                }
+                transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
               >
                 <Image
                   src={sericeImg2Mob2}
@@ -340,7 +344,7 @@ const OurService = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={isContentInView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 0.35, ease: "easeOut", delay: 1.4 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
       >
         <Image
           src={motifMob2}
@@ -351,7 +355,7 @@ const OurService = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={isContentInView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ duration: 0.35, ease: "easeOut", delay: 1.4 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
       >
         <Image
           src={motifDesk2}

@@ -81,11 +81,11 @@ const StepToDream = () => {
             </motion.h2>
             <motion.button
               ref={desktopButtonRef}
-              initial={{ y: 100, opacity: 0 }}
+              initial={{ x: -100, opacity: 0 }}
               animate={
                 isDesktopButtonInView
-                  ? { y: 0, opacity: 1 }
-                  : { y: 100, opacity: 0 }
+                  ? { x: 0, opacity: 1 }
+                  : { x: -100, opacity: 0 }
               }
               transition={{ duration: 0.7, ease: "easeOut" }}
               onClick={handleConsultationClick}
@@ -108,9 +108,9 @@ const StepToDream = () => {
 
           <motion.button
             ref={buttonRef}
-            initial={{ y: 100, opacity: 0 }}
+            initial={{ x: -100, opacity: 0 }}
             animate={
-              isButtonInView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }
+              isButtonInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }
             }
             transition={{ duration: 0.7, ease: "easeOut" }}
             onClick={handleConsultationClick}

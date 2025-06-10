@@ -30,7 +30,7 @@ const Hero = ({ heroBlurCardData }) => {
               <motion.h1
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
                 className="font-arsenal font-normal text-4xl text-primary-white text-center mb-5 mx-auto"
               >
                 {t("title")}
@@ -38,7 +38,7 @@ const Hero = ({ heroBlurCardData }) => {
               <motion.p
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+                transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
                 className="font-montserrat font-normal text-base text-primary-white text-center w-[262px] mx-auto mb-10"
               >
                 {t("subtitle")}
@@ -46,7 +46,7 @@ const Hero = ({ heroBlurCardData }) => {
               <motion.button
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
+                transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
                 onClick={handleConsultationClick}
                 className="w-[312px] h-[52px] rounded-[32px] bg-primary-white text-primary-black font-montserrat font-medium text-sm mx-auto block hover:bg-primary-black hover:text-primary-white transition-all duration-300"
               >
@@ -69,7 +69,7 @@ const Hero = ({ heroBlurCardData }) => {
               <motion.h1
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
                 className="font-arsenal font-normal text-5xl text-primary-white text-center mb-5 mx-auto"
               >
                 {t("title")}
@@ -77,7 +77,7 @@ const Hero = ({ heroBlurCardData }) => {
               <motion.p
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+                transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
                 className="font-montserrat font-normal text-lg text-primary-white text-center w-[262px] mx-auto mb-10"
               >
                 {t("subtitle")}
@@ -85,7 +85,7 @@ const Hero = ({ heroBlurCardData }) => {
               <motion.button
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.6 }}
+                transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
                 onClick={handleConsultationClick}
                 className="w-[312px] h-[52px] rounded-[32px] bg-primary-white text-primary-black font-montserrat font-medium text-sm mx-auto block hover:bg-primary-black hover:text-primary-white transition-all duration-300"
               >
@@ -125,7 +125,7 @@ const Hero = ({ heroBlurCardData }) => {
                 <motion.button
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
+                  transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
                   onClick={handleConsultationClick}
                   className="w-[317px] h-[52px] rounded-[32px] bg-primary-white text-primary-black font-montserrat font-medium text-sm ml-auto block hover:bg-primary-black hover:text-primary-white transition-all duration-300"
                 >
