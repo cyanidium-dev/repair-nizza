@@ -204,8 +204,9 @@
     "title": "Our Portfolio",
     "filters": {
       "minimalism": "Minimalism",
-      "neoclassic": "Neoclassical",
+      "neoclassic": "Neoclassic",
       "modern": "Modern"
-    }
+    },
+    "noProjects": "We will add our projects here soon"
   }
 }

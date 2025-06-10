@@ -1,6 +1,21 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import PortfolioComponent from "@/components/portfolio-page/PortfolioComponent";
+import { client } from "@/sanityClient";
+
+async function getProjects() {
+  const query = `*[_type == "project"] {
+    _id,
+    title,
+    subtitle,
+    mainImage {
+      asset->
+    },
+    slug
+  }`;
+
+  return client.fetch(query);
+}
 
 export async function generateMetadata({ params }) {
   const { locale } = params;
@@ -19,12 +34,14 @@ export async function generateMetadata({ params }) {
   };
 }
 
-const Page = () => {
+const Page = async () => {
+  const projects = await getProjects();
+
   return (
     <>
       <Header />
       <main className="overflow-x-hidden">
-        <PortfolioComponent />
+        <PortfolioComponent projects={projects} />
       </main>
       <Footer />
     </>
