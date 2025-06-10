@@ -3,6 +3,7 @@ import ProjectHero from "@/components/projects/ProjectHero";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BeforeAndAfter from "@/components/projects/BeforeAndAfter";
+import TypeOfRoom from "@/components/projects/TypeOfRoom";
 
 async function getProject(id) {
   const query = `*[_type == "project" && _id == $id][0]{
@@ -21,6 +22,13 @@ async function getProject(id) {
         asset->
       },
       after {
+        asset->
+      }
+    },
+    mainBlock {
+      title,
+      description,
+      image {
         asset->
       }
     }
@@ -66,6 +74,7 @@ export default async function ProjectPage({ params }) {
       <main>
         <ProjectHero data={project} />
         <BeforeAndAfter data={project.beforeAfterImages} />
+        <TypeOfRoom data={project.mainBlock} />
       </main>
       <Footer />
     </div>
