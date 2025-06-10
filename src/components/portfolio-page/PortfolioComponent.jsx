@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useRef, useEffect } from "react";
 import Container from "../Container";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -11,6 +11,22 @@ import arrowBlack from "../../../public/images/SVG/arrow-black-portfolio.svg";
 import arrowDiagonal from "../../../public/images/SVG/arrow-diagonal-portfolio.svg";
 import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
+
+const useMediaQuery = (query) => {
+  const [matches, setMatches] = useState(false);
+
+  React.useEffect(() => {
+    const media = window.matchMedia(query);
+    if (media.matches !== matches) {
+      setMatches(media.matches);
+    }
+    const listener = () => setMatches(media.matches);
+    media.addEventListener("change", listener);
+    return () => media.removeEventListener("change", listener);
+  }, [matches, query]);
+
+  return matches;
+};
 
 const PortfolioCard = ({ data }) => {
   const router = useRouter();
@@ -23,9 +39,9 @@ const PortfolioCard = ({ data }) => {
   if (!data?.title || !data?.title[locale]) return null;
 
   return (
-    <div className="relative w-[310px] md:w-[310px] lg:w-[387px]">
+    <div className="relative">
       {data.mainImage?.asset?.url && (
-        <div className="relative w-[310px] h-[402px]">
+        <div className="relative w-[310px] h-[402px] lg:w-[590px] lg:h-[309px]">
           <Image
             src={data.mainImage.asset.url}
             alt={data.title[locale]}
@@ -34,17 +50,17 @@ const PortfolioCard = ({ data }) => {
           />
         </div>
       )}
-      <div className="absolute bottom-0 left-0 w-[310px] rounded-b-[20px] backdrop-blur-[26px] shadow-[inset_0_4px_13px_0_rgba(255,255,255,0.25)] bg-[rgba(18,18,18,0.26)] pt-4 pb-5 pr-10 pl-[25px]">
-        <h3 className="font-arsenal font-normal text-base text-primary-white leading-[19px] w-[174px] uppercase mb-3 lg:text-xl lg:w-[246px]">
+      <div className="absolute bottom-0 left-0 w-[310px] lg:w-[590px] rounded-b-[20px] backdrop-blur-[26px] shadow-[inset_0_4px_13px_0_rgba(255,255,255,0.25)] bg-[rgba(18,18,18,0.26)] pt-4 pb-5 pr-10 pl-[25px] lg:pt-9 lg:pb-[34px] lg:pl-[28px] lg:pr-[133px]">
+        <h3 className="font-arsenal font-normal text-base text-primary-white leading-[19px] w-[174px] uppercase mb-3 lg:text-3xl lg:leading-[36px] lg:mb-4 lg:w-full">
           {data.title[locale]}
         </h3>
-        <p className="font-montserrat font-light text-xs lg:text-sm text-primary-white">
+        <p className="font-montserrat font-light text-xs lg:text-base lg:leading-[19px] text-primary-white lg:w-[404px]">
           {data.subtitle[locale]}
         </p>
       </div>
       <button
         onClick={handleProjectClick}
-        className="absolute top-[260px] right-[30px] w-[55px] h-[55px] flex items-center justify-center bg-primary-white rounded-full hover:scale-110 transition-all duration-300"
+        className="absolute top-[260px] lg:top-[180px] right-[30px] lg:right-[25px] w-[55px] h-[55px] flex items-center justify-center bg-primary-white rounded-full hover:scale-110 transition-all duration-300"
       >
         <Image src={arrowDiagonal} alt="arrow button" />
       </button>
@@ -56,7 +72,9 @@ const PortfolioComponent = ({ projects }) => {
   const t = useTranslations("portfolioPage");
   const [currentPage, setCurrentPage] = useState(0);
   const [activeFilter, setActiveFilter] = useState("all");
-  const itemsPerPage = 4;
+  const isDesktop = useMediaQuery("(min-width: 1280px)");
+  const itemsPerPage = isDesktop ? 6 : 4;
+  const portfolioRef = useRef(null);
 
   const filteredProjects = useMemo(() => {
     if (!projects) return [];
@@ -64,12 +82,17 @@ const PortfolioComponent = ({ projects }) => {
     return projects.filter((project) => project.style === activeFilter);
   }, [projects, activeFilter]);
 
+  const scrollToTop = () => {
+    portfolioRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const handlePrevClick = () => {
     setCurrentPage((prev) =>
       prev > 0
         ? prev - 1
         : Math.ceil(filteredProjects.length / itemsPerPage) - 1
     );
+    scrollToTop();
   };
 
   const handleNextClick = () => {
@@ -78,6 +101,12 @@ const PortfolioComponent = ({ projects }) => {
         ? prev + 1
         : 0
     );
+    scrollToTop();
+  };
+
+  const handlePageClick = (page) => {
+    setCurrentPage(page);
+    scrollToTop();
   };
 
   const currentItems = filteredProjects.slice(
@@ -88,7 +117,7 @@ const PortfolioComponent = ({ projects }) => {
   const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
 
   return (
-    <div>
+    <div ref={portfolioRef}>
       <Container className="relative">
         <Image
           src={motif}
@@ -109,6 +138,7 @@ const PortfolioComponent = ({ projects }) => {
               onClick={() => {
                 setActiveFilter("all");
                 setCurrentPage(0);
+                scrollToTop();
               }}
               className={`w-[310px] md:w-[234px] lg:w-[234px] h-[34px] lg:h-[52px] rounded-[40px] font-arsenal font-normal text-xs md:text-sm lg:text-xl leading-[14px] lg:leading-6 transition-all duration-300 relative z-10 ${
                 activeFilter === "all"
@@ -122,6 +152,7 @@ const PortfolioComponent = ({ projects }) => {
               onClick={() => {
                 setActiveFilter("neoclassic");
                 setCurrentPage(0);
+                scrollToTop();
               }}
               className={`w-[310px] md:w-[234px] lg:w-[186px] h-[34px] lg:h-[52px] rounded-[40px] font-arsenal font-normal text-xs md:text-sm lg:text-xl leading-[14px] lg:leading-6 transition-all duration-300 relative z-10 ${
                 activeFilter === "neoclassic"
@@ -135,6 +166,7 @@ const PortfolioComponent = ({ projects }) => {
               onClick={() => {
                 setActiveFilter("modern");
                 setCurrentPage(0);
+                scrollToTop();
               }}
               className={`w-[310px] md:w-[234px] lg:w-[186px] h-[34px] lg:h-[52px] rounded-[40px] font-arsenal font-normal text-xs md:text-sm lg:text-xl leading-[14px] lg:leading-6 transition-all duration-300 relative z-10 ${
                 activeFilter === "modern"
@@ -146,7 +178,7 @@ const PortfolioComponent = ({ projects }) => {
             </button>
           </div>
 
-          <div className="flex flex-col gap-[26px] mb-10 md:flex-row md:flex-wrap md:justify-center md:gap-[26px]">
+          <div className="flex flex-col gap-[26px] mb-10 md:flex-row md:flex-wrap md:justify-center md:gap-[26px] lg:gap-5">
             {filteredProjects.length === 0 ? (
               <div className="w-full text-center font-arsenal text-xl md:text-2xl lg:text-3xl text-primary-black relative z-10">
                 {t("noProjects")}
@@ -187,7 +219,7 @@ const PortfolioComponent = ({ projects }) => {
                         ? "border border-primary-black rounded-full w-[30px] h-[30px] flex items-center justify-center"
                         : ""
                     }`}
-                    onClick={() => setCurrentPage(i)}
+                    onClick={() => handlePageClick(i)}
                   >
                     {i + 1}
                   </span>
@@ -207,7 +239,7 @@ const PortfolioComponent = ({ projects }) => {
                   <Image
                     src={arrowWhite}
                     alt="arrow button"
-                    className="hidden group-hover:block transition-transform duration-300"
+                    className="hidden group-hover:block transition-transform duration-300 rotate-180"
                   />
                 </div>
               </div>
