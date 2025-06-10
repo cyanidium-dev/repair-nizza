@@ -21,9 +21,9 @@ export async function generateMetadata({ params }) {
 
 const Page = () => {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="overflow-x-hidden overflow-y-hidden">
+      <main className="flex-grow overflow-x-hidden overflow-y-hidden">
         <Contacts />
       </main>
       <Footer />

@@ -42,9 +42,9 @@ export default async function LocaleLayout({ children, params: { locale } }) {
           rel="stylesheet"
         />
       </head>
-      <body className="font-montserrat bg-primary-white text-primary-black">
+      <body className="font-montserrat bg-primary-white text-primary-black min-h-screen flex flex-col">
         <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
+          <div className="flex-grow">{children}</div>
         </NextIntlClientProvider>
       </body>
     </html>

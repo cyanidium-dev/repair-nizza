@@ -31,9 +31,9 @@ export default async function Home() {
   const portfolioData = await client.fetch(portfolioProjectsQuery);
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="overflow-x-hidden">
+      <main className="flex-grow overflow-x-hidden">
         <Hero heroBlurCardData={heroBlurCardData} />
         <OurService />
         <PortfolioSection portfolioData={portfolioData} />

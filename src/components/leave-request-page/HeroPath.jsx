@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import Container from "../Container";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import imgMob1 from "../../../public/images/image/leave-request-img/leave-request-mob-1.webp";
 import imgMob2 from "../../../public/images/image/leave-request-img/leave-request-mob-2.webp";
 import imgMob3 from "../../../public/images/image/leave-request-img/leave-request-mob-3.webp";
@@ -20,6 +22,25 @@ import mainMotifDesk from "../../../public/images/image/leave-request-img/reques
 
 const HeroPath = ({ onTypeSelect, selectedType }) => {
   const t = useTranslations("leaveRequest.hero");
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const image1Ref = useRef(null);
+  const image2Ref = useRef(null);
+  const image3Ref = useRef(null);
+
+  const isTitleInView = useInView(titleRef, { once: true, margin: "-100px" });
+  const isSubtitleInView = useInView(subtitleRef, {
+    once: true,
+    margin: "-100px",
+  });
+  const isDescriptionInView = useInView(descriptionRef, {
+    once: true,
+    margin: "-100px",
+  });
+  const isImage1InView = useInView(image1Ref, { once: true, margin: "-100px" });
+  const isImage2InView = useInView(image2Ref, { once: true, margin: "-100px" });
+  const isImage3InView = useInView(image3Ref, { once: true, margin: "-100px" });
 
   const handleTypeClick = (type) => {
     onTypeSelect(type);
@@ -39,9 +60,17 @@ const HeroPath = ({ onTypeSelect, selectedType }) => {
       />
       <Container>
         <div className="pt-[30px] pb-[94px] lg:pt-[71px] lg:pb-[70px]">
-          <h1 className="font-arsenal font-normal text-[32px] text-center leading-[38px] text-primary-black uppercase mb-[264px] mx-auto relative lg:text-5xl lg:w-[539px] lg:text-left lg:mb-[134px]">
+          <motion.h1
+            ref={titleRef}
+            initial={{ x: -100, opacity: 0 }}
+            animate={
+              isTitleInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }
+            }
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="font-arsenal font-normal text-[32px] text-center leading-[38px] text-primary-black uppercase mb-[264px] mx-auto relative lg:text-5xl lg:w-[539px] lg:text-left lg:mb-[134px]"
+          >
             {t("title")}
-          </h1>
+          </motion.h1>
           <Image
             src={motifMob1}
             alt="leave-motif-mob-1"
@@ -83,14 +112,40 @@ const HeroPath = ({ onTypeSelect, selectedType }) => {
             className="absolute bottom-[190px] right-0 -z-10 hidden lg:block"
           />
           <div>
-            <h2 className="font-arsenal font-normal text-[32px] leading-[39px] text-primary-black uppercase mb-6 md:text-center lg:text-left lg:text-4xl lg:leading-[43px] lg:mb-5">
+            <motion.h2
+              ref={subtitleRef}
+              initial={{ x: 100, opacity: 0 }}
+              animate={
+                isSubtitleInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }
+              }
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="font-arsenal font-normal text-[32px] leading-[39px] text-primary-black uppercase mb-6 md:text-center lg:text-left lg:text-4xl lg:leading-[43px] lg:mb-5"
+            >
               {t("repairType.title")}
-            </h2>
-            <p className="font-montserrat font-light text-sm text-primary-black mb-10 md:text-center lg:text-left lg:text-base lg:leading-[19px] lg:w-[479px] lg:mb-16">
+            </motion.h2>
+            <motion.p
+              ref={descriptionRef}
+              initial={{ y: 100, opacity: 0 }}
+              animate={
+                isDescriptionInView
+                  ? { y: 0, opacity: 1 }
+                  : { y: 100, opacity: 0 }
+              }
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="font-montserrat font-light text-sm text-primary-black mb-10 md:text-center lg:text-left lg:text-base lg:leading-[19px] lg:w-[479px] lg:mb-16"
+            >
               {t("repairType.description")}
-            </p>
+            </motion.p>
             <div className="flex flex-col gap-6 md:items-center lg:flex-row lg:gap-5">
-              <div
+              <motion.div
+                ref={image1Ref}
+                initial={{ x: -100, opacity: 0 }}
+                animate={
+                  isImage1InView
+                    ? { x: 0, opacity: 1 }
+                    : { x: -100, opacity: 0 }
+                }
+                transition={{ duration: 0.7, ease: "easeOut" }}
                 onClick={() => handleTypeClick("capital")}
                 className="cursor-pointer transition-all duration-300"
               >
@@ -115,8 +170,14 @@ const HeroPath = ({ onTypeSelect, selectedType }) => {
                 <p className="font-arsenal font-normal text-base text-center text-primary-black uppercase">
                   {t("repairType.types.capital")}
                 </p>
-              </div>
-              <div
+              </motion.div>
+              <motion.div
+                ref={image2Ref}
+                initial={{ y: 100, opacity: 0 }}
+                animate={
+                  isImage2InView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }
+                }
+                transition={{ duration: 0.7, ease: "easeOut" }}
                 onClick={() => handleTypeClick("cosmetic")}
                 className="cursor-pointer transition-all duration-300"
               >
@@ -141,8 +202,14 @@ const HeroPath = ({ onTypeSelect, selectedType }) => {
                 <p className="font-arsenal font-normal text-base text-center text-primary-black uppercase">
                   {t("repairType.types.cosmetic")}
                 </p>
-              </div>
-              <div
+              </motion.div>
+              <motion.div
+                ref={image3Ref}
+                initial={{ x: 100, opacity: 0 }}
+                animate={
+                  isImage3InView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }
+                }
+                transition={{ duration: 0.7, ease: "easeOut" }}
                 onClick={() => handleTypeClick("design")}
                 className="cursor-pointer transition-all duration-300"
               >
@@ -167,7 +234,7 @@ const HeroPath = ({ onTypeSelect, selectedType }) => {
                 <p className="font-arsenal font-normal text-base text-center text-primary-black uppercase">
                   {t("repairType.types.design")}
                 </p>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>

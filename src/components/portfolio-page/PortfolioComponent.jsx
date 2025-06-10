@@ -11,6 +11,7 @@ import arrowBlack from "../../../public/images/SVG/arrow-black-portfolio.svg";
 import arrowDiagonal from "../../../public/images/SVG/arrow-diagonal-portfolio.svg";
 import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
+import { motion, useInView } from "framer-motion";
 
 const useMediaQuery = (query) => {
   const [matches, setMatches] = useState(false);
@@ -76,6 +77,17 @@ const PortfolioComponent = ({ projects }) => {
   const itemsPerPage = isDesktop ? 6 : 4;
   const portfolioRef = useRef(null);
 
+  const titleRef = useRef(null);
+  const filtersRef = useRef(null);
+  const cardsRef = useRef(null);
+
+  const isTitleInView = useInView(titleRef, { once: true, margin: "-100px" });
+  const isFiltersInView = useInView(filtersRef, {
+    once: true,
+    margin: "-100px",
+  });
+  const isCardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
+
   const filteredProjects = useMemo(() => {
     if (!projects) return [];
     if (activeFilter === "all") return projects;
@@ -130,10 +142,26 @@ const PortfolioComponent = ({ projects }) => {
           className="hidden lg:block absolute top-0 right-0"
         />
         <div className="pt-[34px] pb-[94px]">
-          <h1 className="font-arsenal font-normal text-primary-black uppercase text-[22px] mb-6 md:text-3xl md:text-center lg:text-5xl lg:text-left">
+          <motion.h1
+            ref={titleRef}
+            initial={{ x: -100, opacity: 0 }}
+            animate={
+              isTitleInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }
+            }
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="font-arsenal font-normal text-primary-black uppercase text-[22px] mb-6 md:text-3xl md:text-center lg:text-5xl lg:text-left"
+          >
             {t("title")}
-          </h1>
-          <div className="flex flex-col gap-2 mb-10 md:flex-row md:justify-center lg:gap-5 lg:justify-start lg:mb-[50px]">
+          </motion.h1>
+          <motion.div
+            ref={filtersRef}
+            initial={{ x: 100, opacity: 0 }}
+            animate={
+              isFiltersInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }
+            }
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="flex flex-col gap-2 mb-10 md:flex-row md:justify-center lg:gap-5 lg:justify-start lg:mb-[50px]"
+          >
             <button
               onClick={() => {
                 setActiveFilter("all");
@@ -176,19 +204,42 @@ const PortfolioComponent = ({ projects }) => {
             >
               {t("filters.modern")}
             </button>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col gap-[26px] mb-10 md:flex-row md:flex-wrap md:justify-center md:gap-[26px] lg:gap-5">
+          <motion.div
+            ref={cardsRef}
+            initial={{ y: 100, opacity: 0 }}
+            animate={
+              isCardsInView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }
+            }
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="flex flex-col gap-[26px] mb-10 md:flex-row md:flex-wrap md:justify-center md:gap-[26px] lg:gap-5"
+          >
             {filteredProjects.length === 0 ? (
               <div className="w-full text-center font-arsenal text-xl md:text-2xl lg:text-3xl text-primary-black relative z-10">
                 {t("noProjects")}
               </div>
             ) : (
-              currentItems.map((project) => (
-                <PortfolioCard key={project._id} data={project} />
+              currentItems.map((project, index) => (
+                <motion.div
+                  key={project._id}
+                  initial={{ y: 100, opacity: 0 }}
+                  animate={
+                    isCardsInView
+                      ? { y: 0, opacity: 1 }
+                      : { y: 100, opacity: 0 }
+                  }
+                  transition={{
+                    duration: 0.7,
+                    ease: "easeOut",
+                    delay: index * 0.1,
+                  }}
+                >
+                  <PortfolioCard data={project} />
+                </motion.div>
               ))
             )}
-          </div>
+          </motion.div>
 
           {filteredProjects.length > 0 && (
             <div className="flex justify-center items-center gap-6 md:gap-10">

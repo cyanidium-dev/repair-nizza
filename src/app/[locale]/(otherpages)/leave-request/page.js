@@ -21,13 +21,13 @@ export async function generateMetadata({ params }) {
 
 const Page = () => {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="overflow-x-hidden overflow-y-clip">
+      <main className="flex-grow overflow-x-hidden overflow-y-clip">
         <ClientFormPath />
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 

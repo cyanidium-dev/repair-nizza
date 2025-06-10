@@ -8,9 +8,16 @@ import mainMotif from "../../../public/images/image/leave-request-img/request-pa
 import shadowDesk from "../../../public/images/image/leave-request-img/leave-shadow-desk.png";
 import mainShadowDesk from "../../../public/images/image/leave-request-img/request-page-shadow.png";
 import Container from "../Container";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const MainForm = () => {
   const t = useTranslations("leaveRequest.mainForm");
+  const formRef = useRef(null);
+  const buttonRef = useRef(null);
+
+  const isFormInView = useInView(formRef, { once: true, margin: "-100px" });
+  const isButtonInView = useInView(buttonRef, { once: true, margin: "-100px" });
 
   return (
     <div className="relative">
@@ -26,7 +33,15 @@ const MainForm = () => {
       />
       <Container>
         <div className="pb-[94px] lg:pb-[150px]">
-          <div className="p-6 border border-primary-black rounded-xl w-[310px] md:w-[571px] md:mx-auto lg:w-[1200px]">
+          <motion.div
+            ref={formRef}
+            initial={{ y: 100, opacity: 0 }}
+            animate={
+              isFormInView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }
+            }
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="p-6 border border-primary-black rounded-xl w-[310px] md:w-[571px] md:mx-auto lg:w-[1200px]"
+          >
             <h2 className="font-arsenal text-[28px] font-normal uppercase leading-[37px] mb-8 md:text-center lg:text-[32px] lg:leading-[24px] lg:text-left">
               {t("title")}
             </h2>
@@ -84,13 +99,19 @@ const MainForm = () => {
                 />
               </div>
             </div>
-          </div>
-          <button
+          </motion.div>
+          <motion.button
+            ref={buttonRef}
+            initial={{ x: -100, opacity: 0 }}
+            animate={
+              isButtonInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }
+            }
+            transition={{ duration: 0.7, ease: "easeOut" }}
             type="submit"
             className="w-[262px] h-[47px] lg:w-[391px] lg:h-[52px] mt-8 lg:mt-9 rounded-[32px] flex justify-center items-center mx-auto font-montserrat font-light text-sm bg-primary-black text-primary-white hover:bg-primary-white hover:text-primary-black hover:border-primary-black hover:border transition-colors duration-300"
           >
             {t("button")}
-          </button>
+          </motion.button>
         </div>
       </Container>
       <Image

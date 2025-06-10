@@ -38,13 +38,13 @@ const Page = async () => {
   const projects = await getProjects();
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="overflow-x-hidden">
+      <main className="flex-grow overflow-x-hidden">
         <PortfolioComponent projects={projects} />
       </main>
       <Footer />
-    </>
+    </div>
   );
 };
 
