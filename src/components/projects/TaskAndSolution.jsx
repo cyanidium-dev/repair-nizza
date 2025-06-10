@@ -20,7 +20,7 @@ const TaskAndSolution = ({ task, solution }) => {
   };
 
   return (
-    <Container className="pb-[94px] lg:pb-[150px]">
+    <Container className="pb-[94px] lg:pb-[150px] relative z-10">
       <div className="flex flex-col gap-10 md:flex-row md:justify-between md:gap-8 lg:gap-5">
         {/* Task Card */}
         <div className="relative w-full md:w-[310px] h-[402px] md:h-[400px] lg:w-[590px] lg:h-[583px] rounded-[20px] overflow-hidden group">

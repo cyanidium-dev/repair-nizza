@@ -10,6 +10,7 @@ import motifMob from "../../../public/images/image/project-page/ba-motif-mob.png
 import motifDesk from "../../../public/images/image/project-page/ba-motif-desk.png";
 import shadowMob from "../../../public/images/image/project-page/ba-shadow-mob.png";
 import shadowDesk from "../../../public/images/image/project-page/ba-shadow-desk.png";
+import treeDesk from "../../../public/images/image/project-page/plan-tree-desk.png";
 
 const BeforeAndAfter = ({ data }) => {
   const t = useTranslations("projectPage");
@@ -17,141 +18,148 @@ const BeforeAndAfter = ({ data }) => {
   if (!data) return null;
 
   return (
-    <Container className="pt-[136px] pb-[94px] lg:py-[150px] relative z-10">
+    <div className="relative">
       <Image
-        src={motifMob}
+        src={treeDesk}
         alt="motif"
-        className="absolute top-[10px] right-0 md:hidden -z-10"
+        className="absolute bottom-[-140px] right-0 hidden lg:block"
       />
-      <Image
-        src={motifDesk}
-        alt="motif"
-        className="absolute top-0 right-[50px] lg:right-[255px] md:block hidden -z-10"
-      />
-      <Image
-        src={shadowMob}
-        alt="motif"
-        className="absolute top-[-50px] right-0 md:hidden -z-10"
-      />
-      <Image
-        src={shadowDesk}
-        alt="motif"
-        className="absolute top-[40px] lg:top-[-10px] right-0 md:block hidden -z-10"
-      />
-      <div className="flex flex-col gap-3 md:gap-6 lg:gap-5">
-        {/* Mobile Version */}
-        <div className="block md:hidden">
-          <h2 className="font-arsenal font-normal text-[22px] text-primary-black mb-10 text-center">
-            {t("beforeAfter.title")}
-          </h2>
-          <div className="flex flex-col gap-3 relative">
-            <div className="relative w-[310px] h-[355px]">
-              {data.before?.asset?.url && (
-                <Image
-                  src={data.before.asset.url}
-                  alt={t("beforeAfter.before")}
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="310px"
-                />
-              )}
+      <Container className="pt-[136px] pb-[94px] lg:py-[150px] relative z-10">
+        <Image
+          src={motifMob}
+          alt="motif"
+          className="absolute top-[10px] right-0 md:hidden -z-10"
+        />
+        <Image
+          src={motifDesk}
+          alt="motif"
+          className="absolute top-0 right-[50px] lg:right-[255px] md:block hidden -z-10"
+        />
+        <Image
+          src={shadowMob}
+          alt="motif"
+          className="absolute top-[-50px] right-0 md:hidden -z-10"
+        />
+        <Image
+          src={shadowDesk}
+          alt="motif"
+          className="absolute top-[40px] lg:top-[-10px] right-0 md:block hidden -z-10"
+        />
+        <div className="flex flex-col gap-3 md:gap-6 lg:gap-5">
+          {/* Mobile Version */}
+          <div className="block md:hidden">
+            <h2 className="font-arsenal font-normal text-[22px] text-primary-black mb-10 text-center">
+              {t("beforeAfter.title")}
+            </h2>
+            <div className="flex flex-col gap-3 relative">
+              <div className="relative w-[310px] h-[355px]">
+                {data.before?.asset?.url && (
+                  <Image
+                    src={data.before.asset.url}
+                    alt={t("beforeAfter.before")}
+                    fill
+                    className="object-cover rounded-lg"
+                    sizes="310px"
+                  />
+                )}
+              </div>
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                <Image src={mobileIcon} alt="" width={64} height={64} />
+              </div>
+              <div className="relative w-[310px] h-[355px]">
+                {data.after?.asset?.url && (
+                  <Image
+                    src={data.after.asset.url}
+                    alt={t("beforeAfter.after")}
+                    fill
+                    className="object-cover rounded-lg"
+                    sizes="310px"
+                  />
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Tablet Version */}
+          <div className="hidden md:flex lg:hidden justify-center gap-4 relative">
+            <div className="flex flex-col items-center">
+              <h3 className="font-arsenal text-2xl text-primary-black mb-6">
+                {t("beforeAfter.before")}
+              </h3>
+              <div className="relative w-[310px] h-[355px]">
+                {data.before?.asset?.url && (
+                  <Image
+                    src={data.before.asset.url}
+                    alt={t("beforeAfter.before")}
+                    fill
+                    className="object-cover rounded-lg"
+                    sizes="310px"
+                  />
+                )}
+              </div>
             </div>
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-              <Image src={mobileIcon} alt="" width={64} height={64} />
+              <Image src={desktopIcon} alt="" width={60} height={60} />
             </div>
-            <div className="relative w-[310px] h-[355px]">
-              {data.after?.asset?.url && (
-                <Image
-                  src={data.after.asset.url}
-                  alt={t("beforeAfter.after")}
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="310px"
-                />
-              )}
+            <div className="flex flex-col items-center">
+              <h3 className="font-arsenal text-2xl text-primary-black mb-6">
+                {t("beforeAfter.after")}
+              </h3>
+              <div className="relative w-[310px] h-[355px]">
+                {data.after?.asset?.url && (
+                  <Image
+                    src={data.after.asset.url}
+                    alt={t("beforeAfter.after")}
+                    fill
+                    className="object-cover rounded-lg"
+                    sizes="310px"
+                  />
+                )}
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Tablet Version */}
-        <div className="hidden md:flex lg:hidden justify-center gap-4 relative">
-          <div className="flex flex-col items-center">
-            <h3 className="font-arsenal text-2xl text-primary-black mb-6">
-              {t("beforeAfter.before")}
-            </h3>
-            <div className="relative w-[310px] h-[355px]">
-              {data.before?.asset?.url && (
-                <Image
-                  src={data.before.asset.url}
-                  alt={t("beforeAfter.before")}
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="310px"
-                />
-              )}
+          {/* Desktop Version */}
+          <div className="hidden lg:flex justify-center gap-5 relative">
+            <div className="flex flex-col items-center">
+              <h3 className="font-arsenal text-3xl text-primary-black mb-[10px]">
+                {t("beforeAfter.before")}
+              </h3>
+              <div className="relative w-[590px] h-[618px]">
+                {data.before?.asset?.url && (
+                  <Image
+                    src={data.before.asset.url}
+                    alt={t("beforeAfter.before")}
+                    fill
+                    className="object-cover rounded-lg"
+                    sizes="590px"
+                  />
+                )}
+              </div>
             </div>
-          </div>
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-            <Image src={desktopIcon} alt="" width={60} height={60} />
-          </div>
-          <div className="flex flex-col items-center">
-            <h3 className="font-arsenal text-2xl text-primary-black mb-6">
-              {t("beforeAfter.after")}
-            </h3>
-            <div className="relative w-[310px] h-[355px]">
-              {data.after?.asset?.url && (
-                <Image
-                  src={data.after.asset.url}
-                  alt={t("beforeAfter.after")}
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="310px"
-                />
-              )}
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+              <Image src={desktopIcon} alt="" width={72} height={72} />
             </div>
-          </div>
-        </div>
-
-        {/* Desktop Version */}
-        <div className="hidden lg:flex justify-center gap-5 relative">
-          <div className="flex flex-col items-center">
-            <h3 className="font-arsenal text-3xl text-primary-black mb-[10px]">
-              {t("beforeAfter.before")}
-            </h3>
-            <div className="relative w-[590px] h-[618px]">
-              {data.before?.asset?.url && (
-                <Image
-                  src={data.before.asset.url}
-                  alt={t("beforeAfter.before")}
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="590px"
-                />
-              )}
-            </div>
-          </div>
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-            <Image src={desktopIcon} alt="" width={72} height={72} />
-          </div>
-          <div className="flex flex-col items-center">
-            <h3 className="font-arsenal text-3xl text-primary-black mb-[10px]">
-              {t("beforeAfter.after")}
-            </h3>
-            <div className="relative w-[590px] h-[618px]">
-              {data.after?.asset?.url && (
-                <Image
-                  src={data.after.asset.url}
-                  alt={t("beforeAfter.after")}
-                  fill
-                  className="object-cover rounded-lg"
-                  sizes="590px"
-                />
-              )}
+            <div className="flex flex-col items-center">
+              <h3 className="font-arsenal text-3xl text-primary-black mb-[10px]">
+                {t("beforeAfter.after")}
+              </h3>
+              <div className="relative w-[590px] h-[618px]">
+                {data.after?.asset?.url && (
+                  <Image
+                    src={data.after.asset.url}
+                    alt={t("beforeAfter.after")}
+                    fill
+                    className="object-cover rounded-lg"
+                    sizes="590px"
+                  />
+                )}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </div>
   );
 };
 

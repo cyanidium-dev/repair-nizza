@@ -5,6 +5,11 @@ import Image from "next/image";
 import Container from "../Container";
 import { useTranslations, useLocale } from "next-intl";
 import Logo from "../../../public/images/SVG/logo-svg.svg";
+import motifMob from "../../../public/images/image/project-page/plan-motif-mob.png";
+import motifDesk from "../../../public/images/image/project-page/plan-motif-desk.png";
+import shadowMob from "../../../public/images/image/project-page/plan-shadow-mob.png";
+import shadowDesk from "../../../public/images/image/project-page/plan-shadow-desk.png";
+import treeMob from "../../../public/images/image/project-page/plan-tree-mob.png";
 
 const TypeOfRoom = ({ data }) => {
   const t = useTranslations("projectPage");
@@ -21,7 +26,32 @@ const TypeOfRoom = ({ data }) => {
   };
 
   return (
-    <Container className="pb-[94px] lg:pb-[150px]">
+    <Container className="pb-[94px] lg:pb-[150px] relative z-20 lg:overflow-y-hidden">
+      <Image
+        src={motifMob}
+        alt="motif"
+        className="absolute top-[290px] right-0 md:hidden -z-10"
+      />
+      <Image
+        src={motifDesk}
+        alt="motif"
+        className="absolute top-[-155px] left-[260px] lg:left-0 lg:top-[200px] md:block hidden -z-10"
+      />
+      <Image
+        src={shadowMob}
+        alt="motif"
+        className="absolute top-[270px] right-0 md:hidden -z-10"
+      />
+      <Image
+        src={shadowDesk}
+        alt="motif"
+        className="absolute top-[-120px] right-0 md:block lg:top-[220px] lg:right-[305px] hidden -z-10"
+      />
+      <Image
+        src={treeMob}
+        alt="motif"
+        className="absolute top-[350px] left-0 md:hidden"
+      />
       {/* Mobile Version */}
       <div className="block md:hidden">
         <div className="flex flex-col gap-6">
