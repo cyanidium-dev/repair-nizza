@@ -23,12 +23,12 @@ const Footer = () => {
       <Image
         src={motifMob}
         alt="motif"
-        className="absolute bottom-[305px] md:bottom-0 right-0 lg:hidden"
+        className="absolute bottom-[305px] md:bottom-0 right-0 lg:hi"
       />
       <Image
         src={shadowMob}
         alt="motif"
-        className="absolute bottom-[465px] md:bottom-[70px] right-0 lg:hidden"
+        className="absolute bottom-[465px] md:bottom-[70px] right-0 lg:hi"
       />
       <Container className="relative z-10">
         <Image
@@ -128,7 +128,7 @@ const Footer = () => {
               <ul className="flex flex-col gap-4 mb-16 md:items-center lg:items-start lg:mb-0">
                 <li className="hover:scale-105 transition-all duration-300">
                   <Link
-                    href="/data"
+                    href="/"
                     className="font-montserrat font-normal text-xs text-primary-white uppercase"
                   >
                     {t("legal.data")}
@@ -136,7 +136,7 @@ const Footer = () => {
                 </li>
                 <li className="hover:scale-105 transition-all duration-300">
                   <Link
-                    href="/contract"
+                    href="/"
                     className="font-montserrat font-normal text-xs text-primary-white uppercase"
                   >
                     {t("legal.contract")}
@@ -144,7 +144,7 @@ const Footer = () => {
                 </li>
                 <li className="hover:scale-105 transition-all duration-300">
                   <Link
-                    href="/offer"
+                    href="/"
                     className="font-montserrat font-normal text-xs text-primary-white uppercase"
                   >
                     {t("legal.offer")}
@@ -152,7 +152,7 @@ const Footer = () => {
                 </li>
                 <li className="hover:scale-105 transition-all duration-300">
                   <Link
-                    href="/privacy"
+                    href="/"
                     className="font-montserrat font-normal text-xs text-primary-white uppercase"
                   >
                     {t("legal.privacy")}

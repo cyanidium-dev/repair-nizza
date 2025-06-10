@@ -6,6 +6,10 @@ import Container from "../Container";
 import { useTranslations } from "next-intl";
 import mobileIcon from "../../../public/images/SVG/before-after-mob.svg";
 import desktopIcon from "../../../public/images/SVG/before-after-desk.svg";
+import motifMob from "../../../public/images/image/project-page/ba-motif-mob.png";
+import motifDesk from "../../../public/images/image/project-page/ba-motif-desk.png";
+import shadowMob from "../../../public/images/image/project-page/ba-shadow-mob.png";
+import shadowDesk from "../../../public/images/image/project-page/ba-shadow-desk.png";
 
 const BeforeAndAfter = ({ data }) => {
   const t = useTranslations("projectPage");
@@ -13,7 +17,27 @@ const BeforeAndAfter = ({ data }) => {
   if (!data) return null;
 
   return (
-    <Container className="pt-[136px] pb-[94px] lg:py-[150px]">
+    <Container className="pt-[136px] pb-[94px] lg:py-[150px] relative z-10">
+      <Image
+        src={motifMob}
+        alt="motif"
+        className="absolute top-[10px] right-0 md:hidden -z-10"
+      />
+      <Image
+        src={motifDesk}
+        alt="motif"
+        className="absolute top-0 right-[50px] lg:right-[255px] md:block hidden -z-10"
+      />
+      <Image
+        src={shadowMob}
+        alt="motif"
+        className="absolute top-[-50px] right-0 md:hidden -z-10"
+      />
+      <Image
+        src={shadowDesk}
+        alt="motif"
+        className="absolute top-[40px] lg:top-[-10px] right-0 md:block hidden -z-10"
+      />
       <div className="flex flex-col gap-3 md:gap-6 lg:gap-5">
         {/* Mobile Version */}
         <div className="block md:hidden">

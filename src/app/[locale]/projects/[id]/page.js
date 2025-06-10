@@ -101,7 +101,7 @@ export default async function ProjectPage({ params }) {
   return (
     <div>
       <Header />
-      <main>
+      <main className="overflow-hidden">
         <ProjectHero data={project} />
         <BeforeAndAfter data={project.beforeAfterImages} />
         <TypeOfRoom data={project.mainBlock} />
