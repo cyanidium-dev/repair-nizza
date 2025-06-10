@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Container from "../Container";
 import { useTranslations, useLocale } from "next-intl";
+import tree from "../../../public/images/image/project-page/review-tree.png";
 
 const ClientReview = ({ data }) => {
   const t = useTranslations("projectPage");
@@ -12,7 +13,7 @@ const ClientReview = ({ data }) => {
   if (!data) return null;
 
   return (
-    <Container className="pb-[160px] lg:pb-[150px]">
+    <Container className="pb-[160px] lg:pb-[150px] relative z-10">
       <h2 className="font-arsenal font-normal text-right text-[32px] leading-[39px] md:text-[32px] lg:text-[48px] lg:leading-[58px] text-primary-black uppercase mb-10 lg:mb-9">
         {t("clientReviewTitle")}
       </h2>
@@ -51,6 +52,16 @@ const ClientReview = ({ data }) => {
           </div>
         </div>
       </div>
+      <Image
+        src={tree}
+        alt="tree"
+        className="absolute bottom-0 right-0 -z-10 lg:hidden"
+      />
+      <Image
+        src={tree}
+        alt="tree"
+        className="absolute top-[-93px] left-[270px] -z-10 rotate-180 lg:block hidden"
+      />
     </Container>
   );
 };
