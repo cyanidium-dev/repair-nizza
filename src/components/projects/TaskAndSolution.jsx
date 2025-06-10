@@ -4,6 +4,10 @@ import React from "react";
 import Image from "next/image";
 import Container from "../Container";
 import { useTranslations, useLocale } from "next-intl";
+import motifMob from "../../../public/images/image/project-page/task-motif-mob.png";
+import motifDesk from "../../../public/images/image/project-page/task-motif-desk.png";
+import shadowMob from "../../../public/images/image/project-page/task-shadow-mob.png";
+import shadowDesk from "../../../public/images/image/project-page/task-shadow-desk.png";
 
 const TaskAndSolution = ({ task, solution }) => {
   const t = useTranslations("projectPage");
@@ -64,6 +68,26 @@ const TaskAndSolution = ({ task, solution }) => {
           </div>
         </div>
       </div>
+      <Image
+        src={motifMob}
+        alt="motif"
+        className="absolute bottom-[-85px] left-0 md:hidden"
+      />
+      <Image
+        src={motifDesk}
+        alt="motif"
+        className="absolute bottom-[-270px] lg:bottom-[-260px] right-0 md:block hidden"
+      />
+      <Image
+        src={shadowMob}
+        alt="motif"
+        className="absolute bottom-[-345px] left-0 md:hidden"
+      />
+      <Image
+        src={shadowDesk}
+        alt="motif"
+        className="absolute bottom-[-500px] right-0 md:block hidden"
+      />
     </Container>
   );
 };

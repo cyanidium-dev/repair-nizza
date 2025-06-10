@@ -36,7 +36,7 @@ const ProjectGallery = ({ gallery }) => {
   };
 
   return (
-    <Container className="pb-[67px] lg:pb-[150px]">
+    <Container className="pb-[67px] lg:pb-[150px] relative z-10">
       <h2 className="font-arsenal font-normal text-[32px] leading-[39px] md:text-[32px] lg:text-5xl lg:leading-[58px] text-primary-black uppercase mb-10 lg:mb-9">
         {t("galleryTitle")}
       </h2>

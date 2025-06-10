@@ -23,12 +23,12 @@ const Footer = () => {
       <Image
         src={motifMob}
         alt="motif"
-        className="absolute bottom-[305px] md:bottom-0 right-0 lg:hi"
+        className="absolute bottom-[305px] md:bottom-0 right-0 lg:hidden"
       />
       <Image
         src={shadowMob}
         alt="motif"
-        className="absolute bottom-[465px] md:bottom-[70px] right-0 lg:hi"
+        className="absolute bottom-[465px] md:bottom-[70px] right-0 lg:hidden"
       />
       <Container className="relative z-10">
         <Image
