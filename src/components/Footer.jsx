@@ -9,14 +9,39 @@ import instagram from "../../public/images/SVG/instagram.svg";
 import telegram from "../../public/images/SVG/telegram.svg";
 import tikTok from "../../public/images/SVG/tik-tok.svg";
 import icon from "../../public/images/SVG/footer-icon.svg";
+import motifMob from "../../public/images/image/footer-motif-mob.png";
+import shadowMob from "../../public/images/image/footer-shadow-mob.png";
+import shadowDesk from "../../public/images/image/footer-shadow-desk.png";
+import motifDesk from "../../public/images/image/footer-motif-desk.png";
 
 const Footer = () => {
   const t = useTranslations("footer");
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary-black">
-      <Container>
+    <footer className="bg-primary-black overflow-hidden relative">
+      <Image
+        src={motifMob}
+        alt="motif"
+        className="absolute bottom-[305px] md:bottom-0 right-0 lg:hidden"
+      />
+      <Image
+        src={shadowMob}
+        alt="motif"
+        className="absolute bottom-[465px] md:bottom-[70px] right-0 lg:hidden"
+      />
+      <Container className="relative z-10">
+        <Image
+          src={motifDesk}
+          alt="motif"
+          className="absolute bottom-0 md:bottom-0 left-[290px] lg:block hidden -z-10"
+        />
+
+        <Image
+          src={shadowDesk}
+          alt="motif"
+          className="absolute bottom-[90px] left-[150px] lg:block hidden -z-10"
+        />
         <div className="pt-20 pb-[30px] md:flex md:flex-wrap md:gap-14 lg:gap-0">
           <div className="flex flex-col gap-3 mb-10 md:mb-0 lg:mr-[334px]">
             <Link
