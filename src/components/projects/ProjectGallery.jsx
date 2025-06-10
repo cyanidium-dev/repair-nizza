@@ -8,6 +8,8 @@ import galleryIconBtnMob from "../../../public/images/SVG/gallery-icon-btn-mob.s
 import galleryIconBtnDesk from "../../../public/images/SVG/gallery-icon-btn-desk.svg";
 import treeMob from "../../../public/images/image/project-page/gallery-tree-mob.png";
 import treeDesk from "../../../public/images/image/project-page/gallery-tree-desk.png";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const ProjectGallery = ({ gallery }) => {
   const t = useTranslations("projectPage");
@@ -15,6 +17,11 @@ const ProjectGallery = ({ gallery }) => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [direction, setDirection] = useState("next");
   const imagesPerPage = 1;
+
+  const titleRef = useRef(null);
+  const blockRef = useRef(null);
+  const isTitleInView = useInView(titleRef, { once: true, margin: "-100px" });
+  const isBlockInView = useInView(blockRef, { once: true, margin: "-100px" });
 
   if (!gallery || gallery.length === 0) return null;
 
@@ -40,10 +47,22 @@ const ProjectGallery = ({ gallery }) => {
   return (
     <div className="relative">
       <Container className="pb-[67px] lg:pb-[150px] relative z-10">
-        <h2 className="font-arsenal font-normal text-[32px] leading-[39px] md:text-[32px] lg:text-5xl lg:leading-[58px] text-primary-black uppercase mb-10 lg:mb-9">
+        <motion.h2
+          ref={titleRef}
+          initial={{ y: 60, opacity: 0 }}
+          animate={isTitleInView ? { y: 0, opacity: 1 } : {}}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="font-arsenal font-normal text-[32px] leading-[39px] md:text-[32px] lg:text-5xl lg:leading-[58px] text-primary-black uppercase mb-10 lg:mb-9"
+        >
           {t("galleryTitle")}
-        </h2>
-        <div className="relative w-full h-[160px] md:h-[400px] lg:h-[620px] rounded-[20px] overflow-hidden">
+        </motion.h2>
+        <motion.div
+          ref={blockRef}
+          initial={{ y: 60, opacity: 0 }}
+          animate={isBlockInView ? { y: 0, opacity: 1 } : {}}
+          transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
+          className="relative w-full h-[160px] md:h-[400px] lg:h-[620px] rounded-[20px] overflow-hidden"
+        >
           {currentImage?.asset?.url && (
             <div className="relative w-full h-full">
               <Image
@@ -87,7 +106,7 @@ const ProjectGallery = ({ gallery }) => {
               />
             </button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Mobile Navigation Buttons */}
         <div className="md:hidden flex items-center justify-center gap-3 mt-8">

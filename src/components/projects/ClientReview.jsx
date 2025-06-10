@@ -5,19 +5,38 @@ import Image from "next/image";
 import Container from "../Container";
 import { useTranslations, useLocale } from "next-intl";
 import tree from "../../../public/images/image/project-page/review-tree.png";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const ClientReview = ({ data }) => {
   const t = useTranslations("projectPage");
   const locale = useLocale();
 
+  const titleRef = useRef(null);
+  const blockRef = useRef(null);
+  const isTitleInView = useInView(titleRef, { once: true, margin: "-100px" });
+  const isBlockInView = useInView(blockRef, { once: true, margin: "-100px" });
+
   if (!data) return null;
 
   return (
     <Container className="pb-[160px] lg:pb-[150px] relative z-10">
-      <h2 className="font-arsenal font-normal text-right text-[32px] leading-[39px] md:text-[32px] lg:text-[48px] lg:leading-[58px] text-primary-black uppercase mb-10 lg:mb-9">
+      <motion.h2
+        ref={titleRef}
+        initial={{ y: 60, opacity: 0 }}
+        animate={isTitleInView ? { y: 0, opacity: 1 } : {}}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="font-arsenal font-normal text-right text-[32px] leading-[39px] md:text-[32px] lg:text-[48px] lg:leading-[58px] text-primary-black uppercase mb-10 lg:mb-9"
+      >
         {t("clientReviewTitle")}
-      </h2>
-      <div className="relative w-full h-[402px] md:h-[400px] lg:h-[318px] rounded-[20px] lg:rounded-[12px] overflow-hidden">
+      </motion.h2>
+      <motion.div
+        ref={blockRef}
+        initial={{ y: 60, opacity: 0 }}
+        animate={isBlockInView ? { y: 0, opacity: 1 } : {}}
+        transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
+        className="relative w-full h-[402px] md:h-[400px] lg:h-[318px] rounded-[20px] lg:rounded-[12px] overflow-hidden"
+      >
         {data.roomPhoto?.asset?.url && (
           <Image
             src={data.roomPhoto.asset.url}
@@ -51,7 +70,7 @@ const ClientReview = ({ data }) => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
       <Image
         src={tree}
         alt="tree"
