@@ -208,5 +208,12 @@
       "modern": "Moderne"
     },
     "noProjects": "Nous ajouterons bientôt nos projets ici"
+  },
+  "projectPage": {
+    "beforeAfter": {
+      "title": "AVANT/APRÈS",
+      "before": "AVANT",
+      "after": "APRÈS"
+    }
   }
 }
