@@ -6,6 +6,7 @@ import BeforeAndAfter from "@/components/projects/BeforeAndAfter";
 import TypeOfRoom from "@/components/projects/TypeOfRoom";
 import TaskAndSolution from "@/components/projects/TaskAndSolution";
 import ProjectGallery from "@/components/projects/ProjectGallery";
+import ClientReview from "@/components/projects/ClientReview";
 
 async function getProject(id) {
   const query = `*[_type == "project" && _id == $id][0]{
@@ -52,6 +53,16 @@ async function getProject(id) {
       _key,
       _type,
       asset->
+    },
+    testimonial {
+      clientName,
+      text,
+      clientPhoto {
+        asset->
+      },
+      roomPhoto {
+        asset->
+      }
     }
   }`;
 
@@ -99,6 +110,7 @@ export default async function ProjectPage({ params }) {
           solution={project.solutionBlock}
         />
         <ProjectGallery gallery={project.gallery} />
+        <ClientReview data={project.testimonial} />
       </main>
       <Footer />
     </div>

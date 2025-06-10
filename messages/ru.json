@@ -215,6 +215,7 @@
       "before": "ДО",
       "after": "ПОСЛЕ"
     },
-    "galleryTitle": "Галерея интерьера"
+    "galleryTitle": "Галерея интерьера",
+    "clientReviewTitle": "Отзыв клиента"
   }
 }

@@ -215,6 +215,7 @@
       "before": "AVANT",
       "after": "APRÈS"
     },
-    "galleryTitle": "Galerie d'intérieur"
+    "galleryTitle": "Galerie d'intérieur",
+    "clientReviewTitle": "Avis du client"
   }
 }
