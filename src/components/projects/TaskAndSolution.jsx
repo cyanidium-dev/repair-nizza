@@ -8,6 +8,8 @@ import motifMob from "../../../public/images/image/project-page/task-motif-mob.p
 import motifDesk from "../../../public/images/image/project-page/task-motif-desk.png";
 import shadowMob from "../../../public/images/image/project-page/task-shadow-mob.png";
 import shadowDesk from "../../../public/images/image/project-page/task-shadow-desk.png";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const TaskAndSolution = ({ task, solution }) => {
   const t = useTranslations("projectPage");
@@ -23,11 +25,28 @@ const TaskAndSolution = ({ task, solution }) => {
       .join(" ");
   };
 
+  const taskCardRef = useRef(null);
+  const solutionCardRef = useRef(null);
+  const isTaskCardInView = useInView(taskCardRef, {
+    once: true,
+    margin: "-100px",
+  });
+  const isSolutionCardInView = useInView(solutionCardRef, {
+    once: true,
+    margin: "-100px",
+  });
+
   return (
     <Container className="pb-[94px] lg:pb-[150px] relative z-10">
       <div className="flex flex-col gap-10 md:flex-row md:justify-between md:gap-8 lg:gap-5">
         {/* Task Card */}
-        <div className="relative w-full md:w-[310px] h-[402px] md:h-[400px] lg:w-[590px] lg:h-[583px] rounded-[20px] overflow-hidden group">
+        <motion.div
+          ref={taskCardRef}
+          initial={{ x: -100, opacity: 0 }}
+          animate={isTaskCardInView ? { x: 0, opacity: 1 } : {}}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="relative w-full md:w-[310px] h-[402px] md:h-[400px] lg:w-[590px] lg:h-[583px] rounded-[20px] overflow-hidden group"
+        >
           {task.image?.asset?.url && (
             <Image
               src={task.image.asset.url}
@@ -45,10 +64,16 @@ const TaskAndSolution = ({ task, solution }) => {
               {getDescription(task.description)}
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Solution Card */}
-        <div className="relative w-full md:w-[310px] h-[402px] md:h-[400px] lg:w-[590px] lg:h-[583px] rounded-[20px] overflow-hidden group">
+        <motion.div
+          ref={solutionCardRef}
+          initial={{ x: 100, opacity: 0 }}
+          animate={isSolutionCardInView ? { x: 0, opacity: 1 } : {}}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="relative w-full md:w-[310px] h-[402px] md:h-[400px] lg:w-[590px] lg:h-[583px] rounded-[20px] overflow-hidden group"
+        >
           {solution.image?.asset?.url && (
             <Image
               src={solution.image.asset.url}
@@ -66,7 +91,7 @@ const TaskAndSolution = ({ task, solution }) => {
               {getDescription(solution.description)}
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
       <Image
         src={motifMob}
