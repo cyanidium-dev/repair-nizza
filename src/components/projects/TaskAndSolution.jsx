@@ -37,7 +37,7 @@ const TaskAndSolution = ({ task, solution }) => {
   });
 
   return (
-    <Container className="pb-[94px] lg:pb-[150px] relative z-10">
+    <Container className="pb-[94px] lg:pb-[150px] relative z-20">
       <div className="flex flex-col gap-10 md:flex-row md:justify-between md:gap-8 lg:gap-5">
         {/* Task Card */}
         <motion.div
@@ -96,22 +96,22 @@ const TaskAndSolution = ({ task, solution }) => {
       <Image
         src={motifMob}
         alt="motif"
-        className="absolute bottom-[-85px] left-0 md:hidden"
+        className="absolute bottom-[-85px] left-[-10px] md:hidden"
       />
       <Image
         src={motifDesk}
         alt="motif"
-        className="absolute bottom-[-270px] lg:bottom-[-260px] right-0 md:block hidden"
+        className="absolute bottom-[-270px] lg:bottom-[-260px] right-[-300px] md:block hidden"
       />
       <Image
         src={shadowMob}
         alt="motif"
-        className="absolute bottom-[-345px] left-0 md:hidden"
+        className="absolute bottom-[-345px] left-[-10px] md:hidden"
       />
       <Image
         src={shadowDesk}
         alt="motif"
-        className="absolute bottom-[-500px] right-0 md:block hidden"
+        className="absolute bottom-[-505px] right-[-280px] md:block hidden"
       />
     </Container>
   );

@@ -46,7 +46,7 @@ const ProjectGallery = ({ gallery }) => {
 
   return (
     <div className="relative">
-      <Container className="pb-[67px] lg:pb-[150px] relative z-10">
+      <Container className="pb-[67px] lg:pb-[150px] relative z-20">
         <motion.h2
           ref={titleRef}
           initial={{ y: 60, opacity: 0 }}

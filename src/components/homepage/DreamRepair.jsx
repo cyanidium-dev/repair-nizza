@@ -208,7 +208,7 @@ const DreamRepair = () => {
       <Image
         src={motifShadowMob}
         alt="motif image"
-        className="absolute bottom-[75px] right-0 -z-20 lg:bottom-[190px] lg:right-[-90px]"
+        className="absolute bottom-[150px] rotate-[135deg] md:rotate-[185deg] lg:rotate-0 right-0 -z-20 lg:bottom-[190px] lg:right-[-90px]"
       />
       <Image
         src={motifShadowMob}

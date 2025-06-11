@@ -134,12 +134,12 @@ const PortfolioComponent = ({ projects }) => {
         <Image
           src={motif}
           alt="motif image"
-          className="hidden lg:block absolute top-[-60px] right-0"
+          className="hidden lg:block absolute top-[-60px] right-[-300px]"
         />
         <Image
           src={shadow}
           alt="shadow image"
-          className="hidden lg:block absolute top-0 right-0"
+          className="hidden lg:block absolute top-0 right-[-290px] opacity-90"
         />
         <div className="pt-[34px] pb-[94px]">
           <motion.h1

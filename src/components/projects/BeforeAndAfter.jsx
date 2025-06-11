@@ -79,7 +79,7 @@ const BeforeAndAfter = ({ data }) => {
         <Image
           src={motifMob}
           alt="motif"
-          className="absolute top-[10px] right-0 md:hidden -z-10"
+          className="absolute top-[40px] right-0 md:hidden -z-10"
         />
         <Image
           src={motifDesk}
@@ -89,7 +89,7 @@ const BeforeAndAfter = ({ data }) => {
         <Image
           src={shadowMob}
           alt="motif"
-          className="absolute top-[-50px] right-0 md:hidden -z-10"
+          className="absolute top-[-40px] right-0 md:hidden -z-10"
         />
         <Image
           src={shadowDesk}
