@@ -31,7 +31,7 @@ const Hero = ({ heroBlurCardData }) => {
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
-                className="font-arsenal font-normal text-4xl text-primary-white text-center mb-5 mx-auto"
+                className="font-arsenal font-normal text-4xl text-primary-white text-center mb-5 mx-auto uppercase"
               >
                 {t("title")}
               </motion.h1>
@@ -70,7 +70,7 @@ const Hero = ({ heroBlurCardData }) => {
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
-                className="font-arsenal font-normal text-5xl text-primary-white text-center mb-5 mx-auto"
+                className="font-arsenal font-normal text-5xl text-primary-white text-center mb-5 mx-auto uppercase"
               >
                 {t("title")}
               </motion.h1>
@@ -118,7 +118,7 @@ const Hero = ({ heroBlurCardData }) => {
                   initial={{ x: 100, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ duration: 0.7, ease: "easeOut" }}
-                  className="font-arsenal font-normal text-[83px] w-[772px] text-primary-white text-right mb-9 mx-auto leading-[100px]"
+                  className="font-arsenal font-normal text-[83px] w-[772px] text-primary-white text-right mb-9 mx-auto leading-[100px] uppercase"
                 >
                   {t("title")}
                 </motion.h1>

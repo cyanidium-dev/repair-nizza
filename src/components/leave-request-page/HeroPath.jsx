@@ -150,24 +150,30 @@ const HeroPath = ({ onTypeSelect, selectedType }) => {
                 className="cursor-pointer transition-all duration-300"
               >
                 <div
-                  className={`${
+                  style={
                     selectedType === "capital"
-                      ? "p-[2px] border-2 border-primary-black rounded-xl"
-                      : ""
-                  }`}
+                      ? {
+                          background:
+                            "linear-gradient(45deg, #7E7464, #2B6638)",
+                          padding: "3px",
+                          borderRadius: "12px",
+                          display: "inline-block",
+                        }
+                      : {}
+                  }
                 >
                   <Image
                     src={imgMob1}
                     alt="leave-request-img"
-                    className="rounded-xl mb-3 lg:hidden"
+                    className="rounded-xl lg:hidden"
                   />
                   <Image
                     src={imgDesk1}
                     alt="leave-request-img"
-                    className="rounded-xl mb-[18px] hidden lg:block"
+                    className="rounded-xl hidden lg:block"
                   />
                 </div>
-                <p className="font-arsenal font-normal text-base text-center text-primary-black uppercase">
+                <p className="font-arsenal font-normal text-base text-center mt-3 lg:mt-[18px] text-primary-black uppercase">
                   {t("repairType.types.capital")}
                 </p>
               </motion.div>
@@ -182,24 +188,30 @@ const HeroPath = ({ onTypeSelect, selectedType }) => {
                 className="cursor-pointer transition-all duration-300"
               >
                 <div
-                  className={`${
+                  style={
                     selectedType === "cosmetic"
-                      ? "p-[2px] border-2 border-primary-black rounded-xl"
-                      : ""
-                  }`}
+                      ? {
+                          background:
+                            "linear-gradient(45deg, #7E7464, #2B6638)",
+                          padding: "3px",
+                          borderRadius: "12px",
+                          display: "inline-block",
+                        }
+                      : {}
+                  }
                 >
                   <Image
                     src={imgMob2}
                     alt="leave-request-img"
-                    className="rounded-xl mb-3 lg:hidden"
+                    className="rounded-xl lg:hidden"
                   />
                   <Image
                     src={imgDesk2}
                     alt="leave-request-img"
-                    className="rounded-xl mb-[18px] hidden lg:block"
+                    className="rounded-xl hidden lg:block"
                   />
                 </div>
-                <p className="font-arsenal font-normal text-base text-center text-primary-black uppercase">
+                <p className="font-arsenal font-normal text-base text-center mt-3 lg:mt-[18px] text-primary-black uppercase">
                   {t("repairType.types.cosmetic")}
                 </p>
               </motion.div>
@@ -214,24 +226,30 @@ const HeroPath = ({ onTypeSelect, selectedType }) => {
                 className="cursor-pointer transition-all duration-300"
               >
                 <div
-                  className={`${
+                  style={
                     selectedType === "design"
-                      ? "p-[2px] border-2 border-primary-black rounded-xl"
-                      : ""
-                  }`}
+                      ? {
+                          background:
+                            "linear-gradient(45deg, #7E7464, #2B6638)",
+                          padding: "3px",
+                          borderRadius: "12px",
+                          display: "inline-block",
+                        }
+                      : {}
+                  }
                 >
                   <Image
                     src={imgMob3}
                     alt="leave-request-img"
-                    className="rounded-xl mb-3 lg:hidden"
+                    className="rounded-xl lg:hidden"
                   />
                   <Image
                     src={imgDesk3}
                     alt="leave-request-img"
-                    className="rounded-xl mb-[18px] hidden lg:block"
+                    className="rounded-xl hidden lg:block"
                   />
                 </div>
-                <p className="font-arsenal font-normal text-base text-center text-primary-black uppercase">
+                <p className="font-arsenal font-normal text-base text-center mt-3 lg:mt-[18px] text-primary-black uppercase">
                   {t("repairType.types.design")}
                 </p>
               </motion.div>
