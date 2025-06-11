@@ -90,7 +90,7 @@ const OurService = () => {
         <Image
           src={motifDesk}
           alt="motif image"
-          className="absolute top-[150px] right-[-400px] lg:block hidden"
+          className="absolute lg:top-[150px] md:top-[175px] lg:right-[-400px] md:right-[-140px] md:block hidden"
         />
       </motion.div>
       <motion.div
@@ -101,7 +101,7 @@ const OurService = () => {
         <Image
           src={motifMob}
           alt="motif image"
-          className="absolute top-[135px] right-0 -z-20 lg:hidden"
+          className="absolute top-[180px] right-0 -z-20 md:hidden"
         />
       </motion.div>
       <Image
@@ -349,7 +349,7 @@ const OurService = () => {
         <Image
           src={motifMob2}
           alt="motif image"
-          className="absolute bottom-[500px] md:bottom-[360px] right-0 md:right-[-25px] md:rotate-[8deg] -z-20 lg:hidden"
+          className="absolute bottom-[580px] md:bottom-[360px] right-[30px] md:right-[20px] md:rotate-[8deg] -z-20 lg:hidden"
         />
       </motion.div>
       <motion.div
@@ -366,7 +366,7 @@ const OurService = () => {
       <Image
         src={bgShadow2}
         alt="motif image"
-        className="hiden absolute bottom-[500px] md:bottom-[350px] right-0 -z-10 lg:hidden"
+        className="hiden absolute bottom-[550px] md:bottom-[400px] right-0 md:left-[70px] md:opacity-90 -z-10 lg:hidden"
       />
       <Image
         src={bgShadowDesk}
