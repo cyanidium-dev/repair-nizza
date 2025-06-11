@@ -64,7 +64,7 @@ const DreamRepair = () => {
       <Image
         src={motifMob1}
         alt="motif image"
-        className="absolute top-[75px] right-0 -z-20 md:top-[95px] lg:hidden"
+        className="absolute top-[130px] right-0 -z-20 md:top-[50px] lg:hidden"
       />
       <Image
         src={motifDesk1}
@@ -74,7 +74,7 @@ const DreamRepair = () => {
       <Image
         src={motifShadowMob}
         alt="motif image"
-        className="absolute top-[140px] right-0 -z-20 lg:hidden"
+        className="absolute top-[140px] md:right-[350px] md:rotate-[90deg] opacity-80 right-0 -z-20 lg:hidden"
       />
       <Image
         src={motifShadowDesk}
@@ -198,22 +198,22 @@ const DreamRepair = () => {
       <Image
         src={motifMob2}
         alt="motif image"
-        className="absolute bottom-[90px] md:bottom-[120px] right-0 -z-20 lg:hidden"
+        className="absolute bottom-[10px] md:bottom-[120px] right-0 -z-20 md:hidden"
       />
       <Image
         src={motifDesk2}
         alt="motif image"
-        className="absolute bottom-[110px] right-0 -z-20 lg:block hidden"
+        className="absolute bottom-[-110px] md:right-[-50px] lg:right-[-150px] -z-20 md:block hidden"
       />
       <Image
         src={motifShadowMob}
         alt="motif image"
-        className="absolute bottom-[75px] right-0 -z-20 lg:bottom-[190px]"
+        className="absolute bottom-[75px] right-0 -z-20 lg:bottom-[190px] lg:right-[-90px]"
       />
       <Image
         src={motifShadowMob}
         alt="motif image"
-        className="absolute bottom-[120px] right-[200px] -z-20 lg:block hidden"
+        className="absolute bottom-0 right-[400px] opacity-80 rotate-[65deg] -z-20 md:block hidden"
       />
     </Container>
   );
