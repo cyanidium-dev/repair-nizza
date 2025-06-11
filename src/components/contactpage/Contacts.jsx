@@ -37,7 +37,7 @@ const Contacts = () => {
       <Image
         src={motifMob}
         alt="motif image"
-        className="absolute top-[110px] md:top-[60px] right-0 -z-10 lg:hidden"
+        className="absolute top-[130px] md:top-[60px] right-0 -z-10 lg:hidden"
       />
       <Image
         src={imgShadowMob}
