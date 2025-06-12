@@ -117,7 +117,7 @@ const MainForm = () => {
       <Image
         src={motif}
         alt="motif"
-        className="hidden absolute bottom-[-190px] left-[-40px] rotate-[120deg] -z-10 lg:block"
+        className="hidden absolute bottom-[-190px] left-[-40px] rotate-[120deg] lg:block"
       />
       <Image
         src={shadowDesk}

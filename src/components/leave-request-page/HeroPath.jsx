@@ -74,12 +74,12 @@ const HeroPath = ({ onTypeSelect, selectedType }) => {
           <Image
             src={motifMob1}
             alt="leave-motif-mob-1"
-            className="absolute top-[90px] left-0 -z-20 lg:hidden"
+            className="absolute top-[90px] left-0 -z-10 lg:hidden"
           />
           <Image
             src={motifDesk1}
             alt="leave-motif-mob-1"
-            className="absolute top-[-90px] left-0 -z-10 hidden lg:block"
+            className="absolute top-[-90px] left-0  hidden lg:block"
           />
           <Image
             src={shadowMob}
@@ -104,7 +104,7 @@ const HeroPath = ({ onTypeSelect, selectedType }) => {
           <Image
             src={motifMob2}
             alt="leave-motif-mob-1"
-            className="absolute top-[175px] md:top-[160px] right-0 -z-20 lg:hidden"
+            className="absolute top-[175px] md:top-[160px] right-0 -z-10 lg:hidden"
           />
           <Image
             src={motifDesk2}

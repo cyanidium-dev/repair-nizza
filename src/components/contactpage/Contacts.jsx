@@ -42,7 +42,7 @@ const Contacts = () => {
       <Image
         src={imgShadowMob}
         alt="interior image"
-        className="absolute top-0 right-0 -z-10 opacity-50 lg:hidden"
+        className="absolute top-0 right-0 -z-20 opacity-50 lg:hidden"
       />
       <div className="pt-[34px] lg:pt-[54px] pb-[94px] lg:pb-[150px] lg:flex">
         <div className="mb-[110px] md:mb-[70px] lg:mr-[182px]">
@@ -102,7 +102,7 @@ const Contacts = () => {
           <Image
             src={imgShadowMob}
             alt="interior image"
-            className="absolute top-[110px] md:top-[310px] right-[85px] md:right-[245px] -z-10 lg:top-[-40px] lg:right-[195px] lg:rotate-[-40deg] opacity-70"
+            className="absolute top-[110px] md:top-[310px] right-[85px] md:right-[245px] -z-20 lg:top-[-40px] lg:right-[195px] lg:rotate-[-40deg] opacity-70"
           />
           <motion.ul
             ref={contactsRef}

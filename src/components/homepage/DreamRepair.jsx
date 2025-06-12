@@ -2,8 +2,12 @@
 
 import Image from "next/image";
 import logo from "../../../public/images/SVG/logo-svg.svg";
-import dreamMob from "../../../public/images/image/dream-img-mob.webp";
-import dreamDesk from "../../../public/images/image/dream-img-desk.webp";
+import dreamMob1 from "../../../public/images/image/dream-img-mob.webp";
+import dreamMob2 from "../../../public/images/image/dream-img-mob-2.jpg";
+import dreamMob3 from "../../../public/images/image/dream-img-mob-3.jpg";
+import dreamDesk1 from "../../../public/images/image/dream-img-desk.webp";
+import dreamDesk2 from "../../../public/images/image/dream-img-desk-2.jpg";
+import dreamDesk3 from "../../../public/images/image/dream-img-desk-3.jpg";
 import { useTranslations } from "next-intl";
 import Container from "../Container";
 import { useEffect, useState, useRef } from "react";
@@ -22,9 +26,24 @@ const DreamRepair = () => {
   const router = useRouter();
   const locale = useLocale();
   const [cards, setCards] = useState([
-    { id: 1, className: "top-card" },
-    { id: 2, className: "middle-card" },
-    { id: 3, className: "bottom-card" },
+    {
+      id: 1,
+      className: "top-card",
+      mobImage: dreamMob1,
+      deskImage: dreamDesk1,
+    },
+    {
+      id: 2,
+      className: "middle-card",
+      mobImage: dreamMob2,
+      deskImage: dreamDesk2,
+    },
+    {
+      id: 3,
+      className: "bottom-card",
+      mobImage: dreamMob3,
+      deskImage: dreamDesk3,
+    },
   ]);
 
   const titleRef = useRef(null);
@@ -154,14 +173,14 @@ const DreamRepair = () => {
                 {cards.map((card) => (
                   <div key={card.id} className={`card-item ${card.className}`}>
                     <Image
-                      src={dreamMob}
+                      src={card.mobImage}
                       alt="dream image"
-                      className="w-[310px] h-[167px] object-cover mx-auto lg:hidden"
+                      className="w-[310px] h-[167px] object-cover mx-auto rounded-md lg:hidden"
                     />
                     <Image
-                      src={dreamDesk}
+                      src={card.deskImage}
                       alt="dream image"
-                      className="w-[564px] h-[338px] object-cover mx-auto hidden lg:block"
+                      className="w-[564px] h-[338px] object-cover mx-auto hidden rounded-xl lg:block"
                     />
                   </div>
                 ))}
