@@ -3,11 +3,11 @@
 import Image from "next/image";
 import logo from "../../../public/images/SVG/logo-svg.svg";
 import dreamMob1 from "../../../public/images/image/dream-img-mob.webp";
-import dreamMob2 from "../../../public/images/image/dream-img-mob-2.jpg";
-import dreamMob3 from "../../../public/images/image/dream-img-mob-3.jpg";
+import dreamMob2 from "../../../public/images/image/dream-img-mob-2.webp";
+import dreamMob3 from "../../../public/images/image/dream-img-mob-3.webp";
 import dreamDesk1 from "../../../public/images/image/dream-img-desk.webp";
-import dreamDesk2 from "../../../public/images/image/dream-img-desk-2.jpg";
-import dreamDesk3 from "../../../public/images/image/dream-img-desk-3.jpg";
+import dreamDesk2 from "../../../public/images/image/dream-img-desk-2.webp";
+import dreamDesk3 from "../../../public/images/image/dream-img-desk-3.webp";
 import { useTranslations } from "next-intl";
 import Container from "../Container";
 import { useEffect, useState, useRef } from "react";
