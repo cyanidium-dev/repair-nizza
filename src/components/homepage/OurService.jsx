@@ -157,11 +157,15 @@ const OurService = () => {
                 src={sericeImg1Mob1}
                 alt="service image"
                 className="mb-10 rounded-lg lg:hidden"
+                width={310}
+                height={295}
               />
               <Image
                 src={sericeImgMobDesk1}
                 alt="service image"
                 className="rounded-lg lg:block hidden lg:mr-[118px]"
+                width={488}
+                height={518}
               />
             </motion.div>
             <motion.div
@@ -278,11 +282,15 @@ const OurService = () => {
                   src={sericeImg2Mob2}
                   alt="second service image"
                   className="rounded-lg mt-9 md:mt-0 md:ml-auto md:h-[295px] lg:hidden"
+                  width={310}
+                  height={222}
                 />
                 <Image
                   src={sericeImgMobDesk2}
                   alt="second service image"
                   className="rounded-lg lg:block hidden mt-[62px]"
+                  width={594}
+                  height={222}
                 />
               </motion.div>
             </motion.div>
