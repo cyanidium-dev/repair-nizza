@@ -6,8 +6,8 @@ import Container from "../Container";
 import { useTranslations } from "next-intl";
 import galleryIconBtnMob from "../../../public/images/SVG/gallery-icon-btn-mob.svg";
 import galleryIconBtnDesk from "../../../public/images/SVG/gallery-icon-btn-desk.svg";
-import treeMob from "../../../public/images/image/project-page/gallery-tree-mob.png";
-import treeDesk from "../../../public/images/image/project-page/gallery-tree-desk.png";
+import treeMob from "../../../public/images/image/project-page/gallery-tree-mob.webp";
+import treeDesk from "../../../public/images/image/project-page/gallery-tree-desk.webp";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -135,11 +135,15 @@ const ProjectGallery = ({ gallery }) => {
         src={treeMob}
         alt="tree"
         className="absolute bottom-[-145px] left-0 md:hidden"
+        width={140}
+        height={140}
       />
       <Image
         src={treeDesk}
         alt="tree"
         className="absolute bottom-[-215px] lg:bottom-[-175px] left-0 md:block hidden"
+        width={270}
+        height={270}
       />
     </div>
   );

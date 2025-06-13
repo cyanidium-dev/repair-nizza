@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Container from "../Container";
 import { useTranslations, useLocale } from "next-intl";
-import tree from "../../../public/images/image/project-page/review-tree.png";
+import tree from "../../../public/images/image/project-page/review-tree.webp";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -75,11 +75,15 @@ const ClientReview = ({ data }) => {
         src={tree}
         alt="tree"
         className="absolute bottom-0 right-0 -z-10 lg:hidden"
+        width={200}
+        height={200}
       />
       <Image
         src={tree}
         alt="tree"
         className="absolute top-[-93px] left-[270px] -z-10 rotate-180 lg:block hidden"
+        width={250}
+        height={250}
       />
     </Container>
   );

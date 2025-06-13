@@ -9,7 +9,7 @@ import motifMob from "../../../public/images/image/project-page/plan-motif-mob.p
 import motifDesk from "../../../public/images/image/project-page/plan-motif-desk.png";
 import shadowMob from "../../../public/images/image/project-page/plan-shadow-mob.png";
 import shadowDesk from "../../../public/images/image/project-page/plan-shadow-desk.png";
-import treeMob from "../../../public/images/image/project-page/plan-tree-mob.png";
+import treeMob from "../../../public/images/image/project-page/plan-tree-mob.webp";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -101,6 +101,8 @@ const TypeOfRoom = ({ data }) => {
         src={treeMob}
         alt="motif"
         className="absolute top-[350px] left-0 md:hidden"
+        width={150}
+        height={150}
       />
       {/* Mobile Version */}
       <div className="block md:hidden">

@@ -10,7 +10,7 @@ import motifMob from "../../../public/images/image/project-page/ba-motif-mob.png
 import motifDesk from "../../../public/images/image/project-page/ba-motif-desk.png";
 import shadowMob from "../../../public/images/image/project-page/ba-shadow-mob.png";
 import shadowDesk from "../../../public/images/image/project-page/ba-shadow-desk.png";
-import treeDesk from "../../../public/images/image/project-page/plan-tree-desk.png";
+import treeDesk from "../../../public/images/image/project-page/plan-tree-desk.webp";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -74,6 +74,8 @@ const BeforeAndAfter = ({ data }) => {
         src={treeDesk}
         alt="motif"
         className="absolute bottom-[-140px] right-0 hidden lg:block"
+        width={210}
+        height={210}
       />
       <Container className="pt-[136px] pb-[94px] lg:py-[150px] relative z-10">
         <Image
