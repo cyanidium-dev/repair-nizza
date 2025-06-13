@@ -3,10 +3,10 @@
 import Image from "next/image";
 import Container from "../Container";
 import { useTranslations } from "next-intl";
-import step1Mob from "../../../public/images/image/step-1-mob.png";
-import step2Mob from "../../../public/images/image/step-2-mob.png";
-import step3Mob from "../../../public/images/image/step-1-desk.png";
-import step4Mob from "../../../public/images/image/step-2-desk.png";
+import step1Mob from "../../../public/images/image/step-1-mob.webp";
+import step2Mob from "../../../public/images/image/step-2-mob.webp";
+import step3Mob from "../../../public/images/image/step-1-desk.webp";
+import step4Mob from "../../../public/images/image/step-2-desk.webp";
 import motifMob from "../../../public/images/image/step-motif-mob.png";
 import motifDesk from "../../../public/images/image/step-motif-desk.png";
 import motifShadowMob from "../../../public/images/image/service-bg-shadow.png";
@@ -39,11 +39,15 @@ const StepToDream = () => {
         src={step1Mob}
         alt="path of three"
         className="absolute top-0 right-0 -z-10 lg:hidden"
+        width={120}
+        height={120}
       />
       <Image
         src={step3Mob}
         alt="path of three"
         className="hidden absolute top-0 left-[400px] -z-10 lg:block"
+        width={280}
+        height={280}
       />
       <Container className="relative overflow-hidden">
         <Image
@@ -124,11 +128,15 @@ const StepToDream = () => {
         src={step2Mob}
         alt="path of three"
         className="absolute bottom-[130px] left-0 -z-10 lg:hidden"
+        width={200}
+        height={200}
       />
       <Image
         src={step4Mob}
         alt="path of three"
         className="hidden absolute bottom-[42px] right-0 -z-10 lg:block"
+        width={380}
+        height={380}
       />
     </div>
   );
