@@ -11,10 +11,10 @@ import imgMob3 from "../../../public/images/image/leave-request-img/leave-reques
 import imgDesk1 from "../../../public/images/image/leave-request-img/leave-request-desk-1.webp";
 import imgDesk2 from "../../../public/images/image/leave-request-img/leave-request-desk-2.webp";
 import imgDesk3 from "../../../public/images/image/leave-request-img/leave-request-desk-3.webp";
-import motifMob1 from "../../../public/images/image/leave-request-img/leave-motif-mob-1.png";
-import motifMob2 from "../../../public/images/image/leave-request-img/leave-motif-mob-2.png";
-import motifDesk1 from "../../../public/images/image/leave-request-img/leave-motif-desk-1.png";
-import motifDesk2 from "../../../public/images/image/leave-request-img/leave-motif-desk-2.png";
+import motifMob1 from "../../../public/images/image/leave-request-img/leave-motif-mob-1.webp";
+import motifMob2 from "../../../public/images/image/leave-request-img/leave-motif-mob-2.webp";
+import motifDesk1 from "../../../public/images/image/leave-request-img/leave-motif-desk-1.webp";
+import motifDesk2 from "../../../public/images/image/leave-request-img/leave-motif-desk-2.webp";
 import shadowMob from "../../../public/images/image/leave-request-img/leave-shadow-mob.png";
 import shadowDesk from "../../../public/images/image/leave-request-img/leave-shadow-desk.png";
 import mainMotifMob from "../../../public/images/image/leave-request-img/request-page-motif-mob.png";
@@ -75,11 +75,15 @@ const HeroPath = ({ onTypeSelect, selectedType }) => {
             src={motifMob1}
             alt="leave-motif-mob-1"
             className="absolute top-[90px] left-0 -z-10 lg:hidden"
+            width={140}
+            height={140}
           />
           <Image
             src={motifDesk1}
             alt="leave-motif-mob-1"
             className="absolute top-[-90px] left-0  hidden lg:block"
+            width={230}
+            height={230}
           />
           <Image
             src={shadowMob}
@@ -105,11 +109,15 @@ const HeroPath = ({ onTypeSelect, selectedType }) => {
             src={motifMob2}
             alt="leave-motif-mob-1"
             className="absolute top-[175px] md:top-[160px] right-0 -z-10 lg:hidden"
+            width={210}
+            height={210}
           />
           <Image
             src={motifDesk2}
             alt="leave-motif-mob-1"
             className="absolute bottom-[190px] right-0 -z-10 hidden lg:block"
+            width={360}
+            height={360}
           />
           <div>
             <motion.h2
@@ -166,11 +174,15 @@ const HeroPath = ({ onTypeSelect, selectedType }) => {
                     src={imgMob1}
                     alt="leave-request-img"
                     className="rounded-xl lg:hidden"
+                    width={310}
+                    height={254}
                   />
                   <Image
                     src={imgDesk1}
                     alt="leave-request-img"
                     className="rounded-xl hidden lg:block"
+                    width={387}
+                    height={254}
                   />
                 </div>
                 <p className="font-arsenal font-normal text-base text-center mt-3 lg:mt-[18px] text-primary-black uppercase">
@@ -206,11 +218,15 @@ const HeroPath = ({ onTypeSelect, selectedType }) => {
                     src={imgMob2}
                     alt="leave-request-img"
                     className="rounded-xl lg:hidden"
+                    width={310}
+                    height={254}
                   />
                   <Image
                     src={imgDesk2}
                     alt="leave-request-img"
                     className="rounded-xl hidden lg:block"
+                    width={387}
+                    height={254}
                   />
                 </div>
                 <p className="font-arsenal font-normal text-base text-center mt-3 lg:mt-[18px] text-primary-black uppercase">
@@ -246,11 +262,15 @@ const HeroPath = ({ onTypeSelect, selectedType }) => {
                     src={imgMob3}
                     alt="leave-request-img"
                     className="rounded-xl lg:hidden"
+                    width={310}
+                    height={254}
                   />
                   <Image
                     src={imgDesk3}
                     alt="leave-request-img"
                     className="rounded-xl hidden lg:block"
+                    width={387}
+                    height={254}
                   />
                 </div>
                 <p className="font-arsenal font-normal text-base text-center mt-3 lg:mt-[18px] text-primary-black uppercase">

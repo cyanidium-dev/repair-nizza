@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Field, ErrorMessage } from "formik";
 import Image from "next/image";
-import motif from "../../../public/images/image/leave-request-img/leave-motif-desk-2.png";
+import motif from "../../../public/images/image/leave-request-img/leave-motif-desk-2.webp";
 import mainMotif from "../../../public/images/image/leave-request-img/request-page-motif-desk.png";
 import shadowDesk from "../../../public/images/image/leave-request-img/leave-shadow-desk.png";
 import mainShadowDesk from "../../../public/images/image/leave-request-img/request-page-shadow.png";
@@ -118,6 +118,8 @@ const MainForm = () => {
         src={motif}
         alt="motif"
         className="hidden absolute bottom-[-190px] left-[-40px] rotate-[120deg] lg:block"
+        width={370}
+        height={370}
       />
       <Image
         src={shadowDesk}
