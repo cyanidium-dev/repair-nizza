@@ -139,13 +139,13 @@ const HeroPath = ({ onTypeSelect, selectedType }) => {
             <div className="flex flex-col gap-6 md:items-center lg:flex-row lg:gap-5">
               <motion.div
                 ref={image1Ref}
-                initial={{ x: -100, opacity: 0 }}
-                animate={
-                  isImage1InView
-                    ? { x: 0, opacity: 1 }
-                    : { x: -100, opacity: 0 }
-                }
-                transition={{ duration: 0.7, ease: "easeOut" }}
+                initial={{ opacity: 0 }}
+                animate={isImage1InView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeInOut",
+                  delay: 0.2,
+                }}
                 onClick={() => handleTypeClick("capital")}
                 className="cursor-pointer transition-all duration-300"
               >
@@ -179,11 +179,13 @@ const HeroPath = ({ onTypeSelect, selectedType }) => {
               </motion.div>
               <motion.div
                 ref={image2Ref}
-                initial={{ y: 100, opacity: 0 }}
-                animate={
-                  isImage2InView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }
-                }
-                transition={{ duration: 0.7, ease: "easeOut" }}
+                initial={{ opacity: 0 }}
+                animate={isImage2InView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeInOut",
+                  delay: 0.4,
+                }}
                 onClick={() => handleTypeClick("cosmetic")}
                 className="cursor-pointer transition-all duration-300"
               >
@@ -217,11 +219,13 @@ const HeroPath = ({ onTypeSelect, selectedType }) => {
               </motion.div>
               <motion.div
                 ref={image3Ref}
-                initial={{ x: 100, opacity: 0 }}
-                animate={
-                  isImage3InView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }
-                }
-                transition={{ duration: 0.7, ease: "easeOut" }}
+                initial={{ opacity: 0 }}
+                animate={isImage3InView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeInOut",
+                  delay: 0.6,
+                }}
                 onClick={() => handleTypeClick("design")}
                 className="cursor-pointer transition-all duration-300"
               >

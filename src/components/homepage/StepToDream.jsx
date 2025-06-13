@@ -81,15 +81,14 @@ const StepToDream = () => {
             </motion.h2>
             <motion.button
               ref={desktopButtonRef}
-              initial={{ x: -100, opacity: 0 }}
-              animate={
-                isDesktopButtonInView
-                  ? { x: 0, opacity: 1 }
-                  : { x: -100, opacity: 0 }
-              }
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              initial={{ opacity: 0 }}
+              animate={isDesktopButtonInView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{
+                duration: 0.6,
+                ease: "easeInOut",
+              }}
               onClick={handleConsultationClick}
-              className="hidden lg:block font-montserrat font-normal text-sm text-primary-white bg-primary-black rounded-[32px] w-[317px] h-[52px] mr-auto hover:bg-transparent hover:text-primary-black hover:border-primary-black border transition-all duration-300"
+              className="hidden lg:block font-montserrat font-normal text-sm text-primary-white bg-primary-black rounded-[32px] w-[317px] h-[52px] mr-auto hover:bg-transparent hover:text-primary-black hover:border-primary-black border transition-all duration-300 will-change-opacity"
             >
               {t("button")}
             </motion.button>
@@ -108,13 +107,14 @@ const StepToDream = () => {
 
           <motion.button
             ref={buttonRef}
-            initial={{ x: -100, opacity: 0 }}
-            animate={
-              isButtonInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }
-            }
-            transition={{ duration: 0.7, ease: "easeOut" }}
+            initial={{ opacity: 0 }}
+            animate={isButtonInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{
+              duration: 0.6,
+              ease: "easeInOut",
+            }}
             onClick={handleConsultationClick}
-            className="lg:hidden font-montserrat font-normal text-sm text-primary-white bg-primary-black rounded-[32px] w-[310px] h-[52px] flex justify-center items-center mx-auto hover:bg-transparent hover:text-primary-black hover:border-primary-black border transition-all duration-300"
+            className="lg:hidden font-montserrat font-normal text-sm text-primary-white bg-primary-black rounded-[32px] w-[310px] h-[52px] flex justify-center items-center mx-auto hover:bg-transparent hover:text-primary-black hover:border-primary-black border transition-all duration-300 will-change-opacity"
           >
             {t("button")}
           </motion.button>

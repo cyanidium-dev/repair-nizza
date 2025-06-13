@@ -54,24 +54,24 @@ const DreamRepair = () => {
   const desktopButtonRef = useRef(null);
   const additionalInfoRef = useRef(null);
 
-  const isTitleInView = useInView(titleRef, { once: true, margin: "-100px" });
+  const isTitleInView = useInView(titleRef, { once: true, margin: "-50px" });
   const isContentInView = useInView(contentRef, {
     once: true,
-    margin: "-100px",
+    margin: "-50px",
   });
-  const isLogoInView = useInView(logoRef, { once: true, margin: "-100px" });
-  const isCardsInView = useInView(cardsRef, { once: true, margin: "-100px" });
+  const isLogoInView = useInView(logoRef, { once: true, margin: "-50px" });
+  const isCardsInView = useInView(cardsRef, { once: true, margin: "-50px" });
   const isMobileButtonInView = useInView(mobileButtonRef, {
     once: true,
-    margin: "-100px",
+    margin: "-50px",
   });
   const isDesktopButtonInView = useInView(desktopButtonRef, {
     once: true,
-    margin: "-100px",
+    margin: "-50px",
   });
   const isAdditionalInfoInView = useInView(additionalInfoRef, {
     once: true,
-    margin: "-100px",
+    margin: "-50px",
   });
 
   const handleConsultationClick = () => {
@@ -84,26 +84,31 @@ const DreamRepair = () => {
         src={motifMob1}
         alt="motif image"
         className="absolute top-[130px] right-0 -z-20 md:top-[50px] lg:hidden"
+        loading="lazy"
       />
       <Image
         src={motifDesk1}
         alt="motif image"
         className="absolute top-[50px] left-[90px] -z-20 lg:block hidden"
+        loading="lazy"
       />
       <Image
         src={motifShadowMob}
         alt="motif image"
         className="absolute top-[140px] md:right-[350px] md:rotate-[90deg] opacity-80 right-0 -z-20 lg:hidden"
+        loading="lazy"
       />
       <Image
         src={motifShadowDesk}
         alt="motif image"
         className="absolute top-[160px] left-[360px] -z-20 lg:block hidden"
+        loading="lazy"
       />
       <Image
         src={motifShadowDesk}
         alt="motif image"
         className="absolute top-[40px] right-0 -z-20 lg:block hidden"
+        loading="lazy"
       />
       <div className="pt-[94px] pb-[137px] lg:flex lg:justify-between lg:flex-row-reverse lg:pt-[213px] lg:pb-[186px]">
         <div className="mb-auto">
@@ -133,15 +138,14 @@ const DreamRepair = () => {
             </motion.div>
             <motion.button
               ref={desktopButtonRef}
-              initial={{ x: 100, opacity: 0 }}
-              animate={
-                isDesktopButtonInView
-                  ? { x: 0, opacity: 1 }
-                  : { x: 100, opacity: 0 }
-              }
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              initial={{ opacity: 0 }}
+              animate={isDesktopButtonInView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{
+                duration: 0.6,
+                ease: "easeInOut",
+              }}
               onClick={handleConsultationClick}
-              className="hidden md:hidden lg:block w-[317px] h-[52px] rounded-[32px] bg-primary-black text-primary-white font-montserrat font-normal text-sm leading-5 hover:bg-primary-white hover:text-primary-black hover:border-primary-black border transition-all duration-300"
+              className="hidden md:hidden lg:block w-[317px] h-[52px] rounded-[32px] bg-primary-black text-primary-white font-montserrat font-normal text-sm leading-5 hover:bg-primary-white hover:text-primary-black hover:border-primary-black border transition-all duration-300 will-change-opacity"
             >
               {t("dreamRepair.button")}
             </motion.button>
@@ -203,13 +207,14 @@ const DreamRepair = () => {
         </div>
         <motion.button
           ref={mobileButtonRef}
-          initial={{ y: 100, opacity: 0 }}
-          animate={
-            isMobileButtonInView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }
-          }
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          initial={{ opacity: 0 }}
+          animate={isMobileButtonInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{
+            duration: 0.6,
+            ease: "easeInOut",
+          }}
           onClick={handleConsultationClick}
-          className="lg:hidden w-[310px] h-[52px] rounded-[32px] bg-primary-black text-primary-white font-montserrat font-normal text-sm leading-5 mx-auto md:flex md:justify-center md:items-center hover:bg-primary-white hover:text-primary-black hover:border-primary-black border transition-all duration-300"
+          className="lg:hidden w-[310px] h-[52px] rounded-[32px] bg-primary-black text-primary-white font-montserrat font-normal text-sm leading-5 mx-auto md:flex md:justify-center md:items-center hover:bg-primary-white hover:text-primary-black hover:border-primary-black border transition-all duration-300 will-change-opacity"
         >
           {t("dreamRepair.button")}
         </motion.button>

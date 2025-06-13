@@ -67,11 +67,15 @@ const MobNavMenu = ({ isOpen, setIsOpen, openModal }) => {
               {t("mobileMenu.leaveContacts")}
             </motion.p>
             <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.3 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                duration: 0.8,
+                ease: "easeInOut",
+                delay: 0.2,
+              }}
               onClick={openModal}
-              className="w-[241px] h-10 bg-transparent border border-primary-black text-primary-black font-montserrat font-light text-sm mx-auto rounded-[20px] mb-20 hover:bg-primary-black hover:text-primary-white transition-all duration-300"
+              className="w-[241px] h-10 bg-transparent border border-primary-black text-primary-black font-montserrat font-light text-sm mx-auto rounded-[20px] mb-20 hover:bg-primary-black hover:text-primary-white transition-all duration-300 will-change-opacity"
             >
               {t("mobileMenu.contactButton")}
             </motion.button>

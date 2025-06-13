@@ -112,15 +112,14 @@ const AboutUs = () => {
               </motion.p>
               <motion.button
                 ref={mobileButtonRef}
-                initial={{ x: 100, opacity: 0 }}
-                animate={
-                  isMobileButtonInView
-                    ? { x: 0, opacity: 1 }
-                    : { x: 100, opacity: 0 }
-                }
-                transition={{ duration: 0.7, ease: "easeOut" }}
+                initial={{ opacity: 0 }}
+                animate={isMobileButtonInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{
+                  duration: 0.6,
+                  ease: "easeInOut",
+                }}
                 onClick={handlePortfolioClick}
-                className="w-[310px] h-[52px] rounded-[32px] bg-primary-white text-primary-black font-montserrat font-normal text-sm mx-auto leading-5 hover:bg-transparent hover:text-primary-white hover:border-primary-white border transition-all duration-300"
+                className="w-[310px] h-[52px] rounded-[32px] bg-primary-white text-primary-black font-montserrat font-normal text-sm mx-auto leading-5 hover:bg-transparent hover:text-primary-white hover:border-primary-white border transition-all duration-300 will-change-opacity"
               >
                 {t("aboutUs.button")}
               </motion.button>
@@ -206,13 +205,14 @@ const AboutUs = () => {
               </motion.p>
               <motion.button
                 ref={buttonRef}
-                initial={{ y: 100, opacity: 0 }}
-                animate={
-                  isButtonInView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }
-                }
-                transition={{ duration: 0.7, ease: "easeOut" }}
+                initial={{ opacity: 0 }}
+                animate={isButtonInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{
+                  duration: 0.6,
+                  ease: "easeInOut",
+                }}
                 onClick={handlePortfolioClick}
-                className="w-[310px] lg:w-[317px] h-[52px] rounded-[32px] lg:mx-0 lg:ml-auto bg-primary-white text-primary-black font-montserrat font-normal text-sm mx-auto leading-5 hover:bg-transparent hover:text-primary-white hover:border-primary-white border transition-all duration-300"
+                className="w-[310px] lg:w-[317px] h-[52px] rounded-[32px] lg:mx-0 lg:ml-auto bg-primary-white text-primary-black font-montserrat font-normal text-sm mx-auto leading-5 hover:bg-transparent hover:text-primary-white hover:border-primary-white border transition-all duration-300 will-change-opacity"
               >
                 {t("aboutUs.button")}
               </motion.button>
