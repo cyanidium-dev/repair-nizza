@@ -5,8 +5,8 @@ import Container from "../Container";
 import { useTranslations } from "next-intl";
 import imgMob from "../../../public/images/image/contacts-page-mob.webp";
 import imgDesk from "../../../public/images/image/contacts-page-desk.webp";
-import imgMotifMob from "../../../public/images/image/contacts-page-motif-mob.png";
-import imgMotifDesk from "../../../public/images/image/contacts-page-motif-desk.png";
+import imgMotifMob from "../../../public/images/image/contacts-page-motif-mob.webp";
+import imgMotifDesk from "../../../public/images/image/contacts-page-motif-desk.webp";
 import imgShadowMob from "../../../public/images/image/contacts-page-shadow-mob.png";
 import motifMob from "../../../public/images/image/contact-page-motif-mob.png";
 import motifDesk from "../../../public/images/image/contact-page-motif-desk.png";
@@ -82,22 +82,30 @@ const Contacts = () => {
               src={imgMob}
               alt="interior image"
               className="rounded-lg mb-[100px] md:hidden"
+              width={310}
+              height={150}
             />
             <Image
               src={imgDesk}
               alt="interior image"
               className="hidden rounded-lg mb-[100px] lg:mb-0 md:block md:mx-auto"
+              width={679}
+              height={338}
             />
           </motion.div>
           <Image
             src={imgMotifMob}
             alt="interior image"
             className="absolute top-[50px] right-[50px] rotate-[10deg] md:top-[250px] md:right-[210px] -z-10 lg:hidden"
+            width={270}
+            height={270}
           />
           <Image
             src={imgMotifDesk}
             alt="interior image"
             className="hidden absolute top-0 right-[147px] -z-10 lg:block"
+            width={380}
+            height={380}
           />
           <Image
             src={imgShadowMob}
